@@ -4,15 +4,10 @@ import { Button } from "@/components/ui/button";
 import {
   Scale,
   CheckCircle,
-  Mail,
   Building,
-  TrendingUp,
   Eye,
   BookOpen,
-  Briefcase,
   ArrowRight,
-  Users,
-  Award,
   Calendar,
   Target,
   Zap,
@@ -20,6 +15,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import NavigationBar from "@/components/custom/NavigationBar";
+import Footer from "@/components/custom/Footer";
 
 export default function PolkadotLawPortal() {
   const legalResources = [
@@ -27,7 +23,7 @@ export default function PolkadotLawPortal() {
       icon: Building,
       title: "Community Foundation (PCF)",
       description:
-        "Complete guide to the Polkadot Community Foundation structure, governance, and operations including Cayman Islands incorporation and Hong Kong subsidiary operations",
+        "A overview and contact information of the Polkadot Community Foundation structure, governance, and operations including Cayman Islands incorporation and Hong Kong subsidiary operations",
       category: "Foundation",
       features: [
         "Cayman Islands Structure",
@@ -56,11 +52,6 @@ export default function PolkadotLawPortal() {
       color: "purple",
       status: "Published",
       priority: "high",
-      funding: {
-        title: "Referendum #1676",
-        subtitle: "Treasury Funded",
-        url: "https://polkadot.subsquare.io/referenda/1676",
-      },
     },
     {
       icon: Scale,
@@ -76,36 +67,6 @@ export default function PolkadotLawPortal() {
       link: "/legalbounty",
       color: "blue",
       status: "Development",
-      priority: "medium",
-    },
-  ];
-
-  const recentUpdates = [
-    {
-      title: "Treasury-Funded Legal Research Published",
-      date: "September 2025",
-      category: "Research",
-      description:
-        "Comprehensive academic research on Polkadot DAO structures under U.S. and international law completed and published",
-      link: "/research",
-      priority: "high",
-    },
-    {
-      title: "PCF Hong Kong Subsidiary Operational",
-      date: "August 2025",
-      category: "Foundation",
-      description:
-        "Asia-Pacific operational entity established for regional market expansion and institutional engagement",
-      link: "/pcf#structure",
-      priority: "high",
-    },
-    {
-      title: "Community Director Nominations Active",
-      date: "September 2025",
-      category: "Governance",
-      description:
-        "Open nomination process for 2 DOT Directors to represent community interests on PCF board",
-      link: "/pcf#nominate",
       priority: "medium",
     },
   ];
@@ -173,10 +134,14 @@ export default function PolkadotLawPortal() {
 
   const getStatusColor = (status: string): string => {
     const statusMap: Record<string, string> = {
-      Active: "bg-green-600/20 text-green-600 dark:text-green-300 border-green-600/30",
-      Published: "bg-blue-600/20 text-blue-600 dark:text-blue-300 border-blue-600/30",
-      Development: "bg-yellow-600/20 text-yellow-600 dark:text-yellow-300 border-yellow-600/30",
-      Planning: "bg-gray-600/20 text-gray-600 dark:text-gray-300 border-gray-600/30",
+      Active:
+        "bg-green-600/20 text-green-600 dark:text-green-300 border-green-600/30",
+      Published:
+        "bg-blue-600/20 text-blue-600 dark:text-blue-300 border-blue-600/30",
+      Development:
+        "bg-yellow-600/20 text-yellow-600 dark:text-yellow-300 border-yellow-600/30",
+      Planning:
+        "bg-gray-600/20 text-gray-600 dark:text-gray-300 border-gray-600/30",
     };
     return statusMap[status] || statusMap.Planning;
   };
@@ -207,7 +172,12 @@ export default function PolkadotLawPortal() {
             {/* Network Animation Background */}
             <div className="absolute inset-0 opacity-30">
               <svg className="w-full h-full" viewBox="0 0 1000 600">
-                <g className="stroke-gray-600 dark:stroke-white transition-colors duration-300" strokeWidth="1" fill="none" opacity="0.4">
+                <g
+                  className="stroke-gray-600 dark:stroke-white transition-colors duration-300"
+                  strokeWidth="1"
+                  fill="none"
+                  opacity="0.4"
+                >
                   <line
                     x1="50"
                     y1="100"
@@ -279,7 +249,10 @@ export default function PolkadotLawPortal() {
                     className="animate-pulse delay-100"
                   />
                 </g>
-                <g className="fill-gray-600 dark:fill-white transition-colors duration-300" opacity="0.6">
+                <g
+                  className="fill-gray-600 dark:fill-white transition-colors duration-300"
+                  opacity="0.6"
+                >
                   <circle
                     cx="200"
                     cy="150"
@@ -368,22 +341,6 @@ export default function PolkadotLawPortal() {
                   </div>
                 </div>
 
-                {/* Treasury Funding Badge */}
-                <div className="inline-flex items-center gap-2 bg-pink-600/20 border border-pink-600/30 px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
-                  <Award className="w-4 h-4 text-pink-600 dark:text-pink-400" />
-                  <span className="text-sm font-medium text-pink-700 dark:text-pink-300">
-                    Treasury Funded
-                  </span>
-                  <a
-                    href="https://polkadot.subsquare.io/referenda/1676"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-pink-600 dark:text-pink-400 hover:text-pink-700 dark:hover:text-pink-300 underline"
-                  >
-                    Referendum #1676
-                  </a>
-                </div>
-
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8 font-unbounded">
                   <span
                     style={{
@@ -398,14 +355,11 @@ export default function PolkadotLawPortal() {
                 </h1>
 
                 <p className="text-xl sm:text-2xl md:text-3xl mb-6 sm:mb-8 max-w-4xl mx-auto text-gray-700 dark:text-gray-200 leading-relaxed font-light">
-                  Comprehensive Legal Resource Portal
+                  Legal Resource Portal
                 </p>
 
                 <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-12 max-w-4xl mx-auto text-gray-600 dark:text-gray-300 leading-relaxed">
-                  Community-approved legal infrastructure supporting
-                  Polkadot&apos;s decentralized governance with traditional
-                  legal frameworks. Research, compliance guidance, and vetted
-                  services for the entire ecosystem.
+                  Comprehensive legal portal for the Polkadot ecosystem.
                 </p>
               </div>
             </div>
@@ -415,13 +369,8 @@ export default function PolkadotLawPortal() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-black dark:text-white mb-4 font-unbounded">
-                Polkadot Ecosystem Legal Resources & Services
+                Resources
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
-                Comprehensive legal infrastructure developed through community
-                funding to support the Polkadot ecosystem&apos;s governance,
-                compliance, and operational needs.
-              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
@@ -461,25 +410,6 @@ export default function PolkadotLawPortal() {
                     <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
                       {resource.description}
                     </p>
-
-                    {resource.funding && (
-                      <div className="bg-gray-100/70 dark:bg-black/40 border border-gray-300 dark:border-white/10 p-3 rounded-lg mb-3">
-                        <div className="flex items-center gap-2">
-                          <Award className="w-4 h-4 text-yellow-600 dark:text-yellow-400" />
-                          <a
-                            href={resource.funding.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-yellow-600 dark:text-yellow-400 hover:text-yellow-700 dark:hover:text-yellow-300 text-sm font-medium underline"
-                          >
-                            {resource.funding.title}
-                          </a>
-                        </div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                          {resource.funding.subtitle}
-                        </div>
-                      </div>
-                    )}
                   </CardHeader>
 
                   <CardContent className="pt-0">
@@ -558,58 +488,6 @@ export default function PolkadotLawPortal() {
               </CardContent>
             </Card>
 
-            {/* Enhanced Recent Updates */}
-            <Card className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl mb-16">
-              <CardHeader className="bg-gradient-to-r from-blue-600/90 to-purple-600/90 backdrop-blur-sm text-white rounded-t-lg">
-                <CardTitle className="flex items-center gap-3 text-2xl">
-                  <TrendingUp className="w-6 h-6" />
-                  Recent Developments & Updates
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {recentUpdates.map((update, index) => (
-                    <div
-                      key={index}
-                      className="bg-gray-100/50 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-600/30 p-6 rounded-lg hover:bg-gray-200/50 dark:hover:bg-gray-800/70 transition-colors"
-                    >
-                      <div className="flex items-start justify-between mb-3">
-                        <div className="flex items-center gap-2">
-                          <span className="px-3 py-1 text-xs font-medium bg-pink-600/20 text-pink-700 dark:text-pink-300 rounded-full">
-                            {update.category}
-                          </span>
-                          {getPriorityIcon(update.priority)}
-                        </div>
-                        <span className="text-sm text-gray-500 dark:text-gray-400">
-                          {update.date}
-                        </span>
-                      </div>
-                      <h4 className="font-semibold text-black dark:text-white text-lg mb-2">
-                        {update.title}
-                      </h4>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
-                        {update.description}
-                      </p>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="text-pink-600 dark:text-pink-400 border-pink-600/50 dark:border-pink-400/30 hover:bg-pink-600/10 dark:hover:bg-pink-600/20"
-                        asChild
-                      >
-                        <Link
-                          href={update.link}
-                          className="flex items-center gap-2"
-                        >
-                          Learn More
-                          <ArrowRight className="w-3 h-3" />
-                        </Link>
-                      </Button>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
             {/* Enhanced Featured Resources */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
               {/* Treasury Research Highlight */}
@@ -660,18 +538,17 @@ export default function PolkadotLawPortal() {
                       <Building className="w-6 h-6 text-pink-300" />
                     </div>
                     <span className="px-3 py-1 text-xs font-medium bg-pink-600/20 text-pink-300 rounded-full">
-                      Foundation
+                      PCF
                     </span>
                   </div>
                   <CardTitle className="text-2xl font-bold text-white">
-                    Community Foundation Structure
+                    Community Director Nominations Active
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                    Complete guide to the Polkadot Community Foundation
-                    including Cayman Islands incorporation, Hong Kong
-                    subsidiary, and active director nomination process.
+                    Open nomination process for 2 DOT Directors to represent
+                    community interests on PCF board
                   </p>
                   <div className="flex gap-3">
                     <Button
@@ -697,70 +574,12 @@ export default function PolkadotLawPortal() {
                 </CardContent>
               </Card>
             </div>
-
-            {/* Enhanced CTA */}
-            <div className="text-center">
-              <div className="bg-gradient-to-r from-gray-100/80 to-pink-100/60 dark:from-black/80 dark:to-pink-600/20 backdrop-blur-md border border-gray-300 dark:border-white/10 text-black dark:text-white p-8 sm:p-12 rounded-2xl shadow-xl">
-                <div className="flex justify-center mb-6">
-                  <div className="p-4 bg-pink-600/20 rounded-full">
-                    <Scale className="w-8 h-8 text-pink-600 dark:text-pink-400" />
-                  </div>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-                  Community-Driven Legal Infrastructure
-                </h3>
-                <p className="text-lg mb-8 opacity-90 text-gray-700 dark:text-gray-200 max-w-3xl mx-auto">
-                  Built with treasury funding and community oversight, providing
-                  essential legal resources for Polkadot&apos;s decentralized
-                  ecosystem. Connect with vetted legal professionals or explore
-                  our comprehensive research.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    size="lg"
-                    className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-4 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
-                    asChild
-                  >
-                    <Link href="/services">
-                      <Briefcase className="w-5 h-5 mr-2" />
-                      Find Legal Services
-                    </Link>
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-gray-400 dark:border-white/30 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-white/10 px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
-                    asChild
-                  >
-                    <a href="mailto:legal@polkadot.law">
-                      <Mail className="w-5 h-5 mr-2" />
-                      Contact Legal Team
-                    </a>
-                  </Button>
-                </div>
-
-                {/* Community Transparency */}
-                <div className="mt-8 pt-6 border-t border-gray-400 dark:border-white/10">
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-gray-600 dark:text-gray-400">
-                    <div className="flex items-center gap-2">
-                      <Award className="w-4 h-4" />
-                      <span>Community Funded via Treasury</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Eye className="w-4 h-4" />
-                      <span>Open Source & Transparent</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Users className="w-4 h-4" />
-                      <span>DOT Holder Governed</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </>
   );
 }
