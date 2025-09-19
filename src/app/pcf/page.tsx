@@ -155,10 +155,10 @@ export default function PCFComprehensivePage() {
 
       {/* Main Content */}
       <div className="pt-14 sm:pt-16">
-        <div className="min-h-screen bg-gradient-to-br from-black via-pink-600 to-black">
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-pink-100 to-gray-50 dark:from-black dark:via-pink-600 dark:to-black">
           {/* PCF Hero Section */}
           <div className="relative overflow-hidden">
-            <div className="absolute inset-0 bg-black/20"></div>
+            <div className="absolute inset-0 bg-white/20 dark:bg-black/20"></div>
             <div
               className="absolute inset-0 opacity-50"
               style={{
@@ -169,7 +169,7 @@ export default function PCFComprehensivePage() {
               }}
             />
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
-              <div className="text-center text-white">
+              <div className="text-center text-black dark:text-black dark:text-white">
                 <div className="flex justify-center mb-4 sm:mb-6">
                   <div className="p-3 sm:p-4 bg-white/10 rounded-full backdrop-blur-sm">
                     <Scale className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
@@ -187,7 +187,7 @@ export default function PCFComprehensivePage() {
                     Polkadot Community Foundation
                   </span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-4xl mx-auto text-gray-200 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-4xl mx-auto text-gray-700 dark:text-gray-600 dark:text-gray-200 leading-relaxed">
                   A comprehensive overview of the{" "}
                   <strong>PCF corporate structure</strong>, including the Cayman
                   Islands Foundation Company and global subsidiary operations
@@ -196,7 +196,7 @@ export default function PCFComprehensivePage() {
                 <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto bg-pink-600 hover:bg-pink-700 text-white px-6 sm:px-8 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
+                    className="w-full sm:w-auto bg-pink-600 hover:bg-pink-700 text-black dark:text-white px-6 sm:px-8 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
                     asChild
                   >
                     <a href="#nominate">
@@ -222,16 +222,16 @@ export default function PCFComprehensivePage() {
               {keyStats.map((stat, index) => (
                 <Card
                   key={index}
-                  className="bg-black/70 backdrop-blur-md shadow-xl border border-white/10"
+                  className="bg-white/70 dark:bg-black/70 backdrop-blur-md shadow-xl border border-gray-300 dark:border-white/10"
                 >
-                  <CardContent className="p-4 sm:p-6 text-center text-white">
+                  <CardContent className="p-4 sm:p-6 text-center text-black dark:text-black dark:text-white">
                     <div className="inline-flex p-2 sm:p-3 rounded-full bg-pink-600/20 mb-3 sm:mb-4">
                       <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-pink-400" />
                     </div>
-                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1">
+                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-black dark:text-white mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-xs sm:text-sm text-gray-300">
+                    <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">
                       {stat.label}
                     </div>
                   </CardContent>
@@ -246,17 +246,17 @@ export default function PCFComprehensivePage() {
                   key={index}
                   className="bg-gray-800/70 backdrop-blur-md shadow-xl border border-gray-600/30"
                 >
-                  <CardContent className="p-4 sm:p-6 text-center text-white">
+                  <CardContent className="p-4 sm:p-6 text-center text-black dark:text-black dark:text-white">
                     <div className="inline-flex p-2 sm:p-3 rounded-full bg-blue-600/20 mb-3 sm:mb-4">
                       <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
                     </div>
-                    <div className="text-lg sm:text-xl font-bold text-white mb-1">
+                    <div className="text-lg sm:text-xl font-bold text-black dark:text-white mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-xs sm:text-sm text-gray-300 mb-2">
+                    <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-2">
                       {stat.label}
                     </div>
-                    <div className="text-xs text-gray-400">
+                    <div className="text-xs text-gray-500 dark:text-gray-400">
                       {stat.description}
                     </div>
                   </CardContent>
@@ -270,8 +270,8 @@ export default function PCFComprehensivePage() {
             id="structure"
             className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12"
           >
-            <Card className="bg-black/70 backdrop-blur-md border border-white/10 shadow-xl mb-8 sm:mb-12">
-              <CardHeader className="bg-gradient-to-r from-pink-600/90 to-purple-600/90 backdrop-blur-sm text-white rounded-t-lg">
+            <Card className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl mb-8 sm:mb-12">
+              <CardHeader className="bg-gradient-to-r from-pink-600/90 to-purple-600/90 backdrop-blur-sm text-black dark:text-white rounded-t-lg">
                 <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl">
                   <Building className="w-5 h-5 sm:w-6 sm:h-6" />
                   PCF Corporate Structure & Global Operations
@@ -281,7 +281,7 @@ export default function PCFComprehensivePage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
                   {/* Cayman Islands Foundation */}
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
+                    <h3 className="text-xl sm:text-2xl font-bold text-black dark:text-white mb-4 sm:mb-6">
                       Cayman Islands Foundation Company
                     </h3>
                     <div className="space-y-4 sm:space-y-6">
@@ -289,7 +289,7 @@ export default function PCFComprehensivePage() {
                         <h4 className="font-semibold text-pink-400 mb-3 text-base sm:text-lg">
                           Primary Entity Structure
                         </h4>
-                        <ul className="space-y-2 text-gray-200 text-sm sm:text-base">
+                        <ul className="space-y-2 text-gray-600 dark:text-gray-200 text-sm sm:text-base">
                           <li className="flex items-start gap-2">
                             <CheckCircle className="w-4 h-4 text-pink-400 mt-1 flex-shrink-0" />
                             Foundation Company under Cayman Islands Law
@@ -315,7 +315,7 @@ export default function PCFComprehensivePage() {
                         <h4 className="font-semibold text-blue-400 mb-3 text-base sm:text-lg">
                           Legal Advantages
                         </h4>
-                        <ul className="space-y-2 text-gray-200 text-sm sm:text-base">
+                        <ul className="space-y-2 text-gray-600 dark:text-gray-200 text-sm sm:text-base">
                           <li className="flex items-start gap-2">
                             <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
                             <div>
@@ -359,7 +359,7 @@ export default function PCFComprehensivePage() {
 
                   {/* Subsidiary Structure */}
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
+                    <h3 className="text-xl sm:text-2xl font-bold text-black dark:text-white mb-4 sm:mb-6">
                       Subsidiary & Operating Structure
                     </h3>
                     <div className="space-y-4 sm:space-y-6">
@@ -367,7 +367,7 @@ export default function PCFComprehensivePage() {
                         <h4 className="font-semibold text-purple-400 mb-3 text-base sm:text-lg">
                           Multi-Jurisdictional Operations
                         </h4>
-                        <ul className="space-y-2 text-gray-200 text-sm sm:text-base">
+                        <ul className="space-y-2 text-gray-600 dark:text-gray-200 text-sm sm:text-base">
                           <li className="flex items-start gap-2">
                             <MapPin className="w-4 h-4 text-purple-400 mt-1 flex-shrink-0" />
                             <div>
@@ -412,7 +412,7 @@ export default function PCFComprehensivePage() {
                           <Eye className="w-4 h-4" />
                           Subsidiary Oversight Framework
                         </h4>
-                        <ul className="space-y-2 text-gray-200 text-sm sm:text-base">
+                        <ul className="space-y-2 text-gray-600 dark:text-gray-200 text-sm sm:text-base">
                           <li className="flex items-start gap-2">
                             <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
                             <div>
@@ -466,7 +466,7 @@ export default function PCFComprehensivePage() {
                       <h5 className="font-medium text-blue-300 mb-3 text-base sm:text-lg">
                         Operational Focus
                       </h5>
-                      <ul className="space-y-2 text-gray-200 text-sm sm:text-base">
+                      <ul className="space-y-2 text-gray-600 dark:text-gray-200 text-sm sm:text-base">
                         <li>
                           • Asia-Pacific market development and partnerships
                         </li>
@@ -483,7 +483,7 @@ export default function PCFComprehensivePage() {
                       <h5 className="font-medium text-blue-300 mb-3 text-base sm:text-lg">
                         Strategic Advantages
                       </h5>
-                      <ul className="space-y-2 text-gray-200 text-sm sm:text-base">
+                      <ul className="space-y-2 text-gray-600 dark:text-gray-200 text-sm sm:text-base">
                         <li>• Gateway to China and broader Asian markets</li>
                         <li>
                           • Established fintech and crypto regulatory framework
@@ -505,15 +505,15 @@ export default function PCFComprehensivePage() {
             {/* What is PCF Section - Enhanced */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16">
               {/* PCF Overview - Enhanced */}
-              <Card className="bg-black/70 backdrop-blur-md border border-white/10 shadow-xl">
-                <CardHeader className="bg-pink-600/90 backdrop-blur-sm text-white rounded-t-lg">
+              <Card className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl">
+                <CardHeader className="bg-pink-600/90 backdrop-blur-sm text-black dark:text-white rounded-t-lg">
                   <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl">
                     <Building className="w-5 h-5 sm:w-6 sm:h-6" />
                     What is the Polkadot Community Foundation?
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="p-6 sm:p-8 space-y-4 sm:space-y-6 text-white">
-                  <p className="text-gray-200 leading-relaxed text-sm sm:text-base">
+                <CardContent className="p-6 sm:p-8 space-y-4 sm:space-y-6 text-black dark:text-white">
+                  <p className="text-gray-600 dark:text-gray-200 leading-relaxed text-sm sm:text-base">
                     The{" "}
                     <strong className="text-pink-400">
                       Polkadot Community Foundation (PCF)
@@ -525,10 +525,10 @@ export default function PCFComprehensivePage() {
                   </p>
 
                   <div className="space-y-3 sm:space-y-4">
-                    <h4 className="font-semibold text-white text-base sm:text-lg">
+                    <h4 className="font-semibold text-black dark:text-white text-base sm:text-lg">
                       Core Functions:
                     </h4>
-                    <ul className="space-y-2 text-gray-200 text-sm sm:text-base">
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-200 text-sm sm:text-base">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-pink-400 mt-1 flex-shrink-0" />
                         Execute legally binding agreements on behalf of approved
@@ -560,7 +560,7 @@ export default function PCFComprehensivePage() {
                     <h5 className="font-semibold text-pink-400 mb-2 text-sm sm:text-base">
                       Critical Infrastructure Role
                     </h5>
-                    <p className="text-gray-200 text-xs sm:text-sm">
+                    <p className="text-gray-600 dark:text-gray-200 text-xs sm:text-sm">
                       As Polkadot evolves toward full decentralization, the PCF
                       provides essential infrastructure for the community to
                       interact with traditional legal, financial, and regulatory
@@ -572,15 +572,15 @@ export default function PCFComprehensivePage() {
               </Card>
 
               {/* Governance & Community Oversight */}
-              <Card className="bg-black/70 backdrop-blur-md border border-white/10 shadow-xl">
-                <CardHeader className="bg-gray-800/90 backdrop-blur-sm text-white rounded-t-lg">
+              <Card className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl">
+                <CardHeader className="bg-gray-800/90 backdrop-blur-sm text-black dark:text-white rounded-t-lg">
                   <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl">
                     <Gavel className="w-5 h-5 sm:w-6 sm:h-6" />
                     Governance & Community Oversight
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="p-6 sm:p-8 space-y-4 sm:space-y-6 text-white">
-                  <p className="text-gray-200 leading-relaxed text-sm sm:text-base">
+                <CardContent className="p-6 sm:p-8 space-y-4 sm:space-y-6 text-black dark:text-white">
+                  <p className="text-gray-600 dark:text-gray-200 leading-relaxed text-sm sm:text-base">
                     The PCF operates under{" "}
                     <strong className="text-blue-400">
                       strict community governance
@@ -591,10 +591,10 @@ export default function PCFComprehensivePage() {
                   </p>
 
                   <div className="space-y-3 sm:space-y-4">
-                    <h4 className="font-semibold text-white text-base sm:text-lg">
+                    <h4 className="font-semibold text-black dark:text-white text-base sm:text-lg">
                       Governance Mechanisms:
                     </h4>
-                    <ul className="space-y-2 text-gray-200 text-sm sm:text-base">
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-200 text-sm sm:text-base">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-blue-400 mt-1 flex-shrink-0" />
                         All activities directed through OpenGov referenda
@@ -623,7 +623,7 @@ export default function PCFComprehensivePage() {
                       <AlertCircle className="w-4 h-4" />
                       Subsidiary Governance Considerations
                     </h5>
-                    <p className="text-gray-200 text-xs sm:text-sm">
+                    <p className="text-gray-600 dark:text-gray-200 text-xs sm:text-sm">
                       Community discussions are ongoing regarding the
                       appropriate level of oversight for PCF subsidiaries,
                       balancing operational efficiency with community
@@ -635,8 +635,8 @@ export default function PCFComprehensivePage() {
             </div>
 
             {/* Legal Framework Details - Enhanced */}
-            <Card className="bg-black/70 backdrop-blur-md border border-white/10 shadow-xl mb-8 sm:mb-12">
-              <CardHeader className="bg-gray-800/90 backdrop-blur-sm text-white rounded-t-lg">
+            <Card className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl mb-8 sm:mb-12">
+              <CardHeader className="bg-gray-800/90 backdrop-blur-sm text-black dark:text-white rounded-t-lg">
                 <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl">
                   <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
                   Comprehensive Legal Framework & Global Operations
@@ -645,7 +645,7 @@ export default function PCFComprehensivePage() {
               <CardContent className="p-6 sm:p-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8">
                   <div>
-                    <h4 className="font-semibold text-white mb-3 sm:mb-4 text-base sm:text-lg">
+                    <h4 className="font-semibold text-black dark:text-white mb-3 sm:mb-4 text-base sm:text-lg">
                       Board Composition
                     </h4>
                     <div className="space-y-3 text-xs sm:text-sm">
@@ -653,13 +653,13 @@ export default function PCFComprehensivePage() {
                         <div className="font-medium text-pink-400">
                           Current Structure:
                         </div>
-                        <div className="text-gray-300">5 Directors Total</div>
+                        <div className="text-gray-600 dark:text-gray-300">5 Directors Total</div>
                       </div>
                       <div className="bg-pink-600/20 border border-pink-600/30 p-3 rounded-lg">
                         <div className="font-medium text-pink-400">
                           Seeking:
                         </div>
-                        <div className="text-gray-200">
+                        <div className="text-gray-600 dark:text-gray-200">
                           2 Community DOT Directors
                         </div>
                       </div>
@@ -667,7 +667,7 @@ export default function PCFComprehensivePage() {
                         <div className="font-medium text-pink-400">
                           Professional:
                         </div>
-                        <div className="text-gray-300">
+                        <div className="text-gray-600 dark:text-gray-300">
                           3 Cayman Resident Directors
                         </div>
                       </div>
@@ -675,10 +675,10 @@ export default function PCFComprehensivePage() {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-white mb-3 sm:mb-4 text-base sm:text-lg">
+                    <h4 className="font-semibold text-black dark:text-white mb-3 sm:mb-4 text-base sm:text-lg">
                       Decision Making
                     </h4>
-                    <ul className="space-y-2 text-xs sm:text-sm text-gray-200">
+                    <ul className="space-y-2 text-xs sm:text-sm text-gray-600 dark:text-gray-200">
                       <li className="flex items-start gap-2">
                         <div className="w-1.5 h-1.5 bg-pink-400 rounded-full mt-2 flex-shrink-0"></div>
                         Board resolutions require majority vote
@@ -703,10 +703,10 @@ export default function PCFComprehensivePage() {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-white mb-3 sm:mb-4 text-base sm:text-lg">
+                    <h4 className="font-semibold text-black dark:text-white mb-3 sm:mb-4 text-base sm:text-lg">
                       Risk Management
                     </h4>
-                    <ul className="space-y-2 text-xs sm:text-sm text-gray-200">
+                    <ul className="space-y-2 text-xs sm:text-sm text-gray-600 dark:text-gray-200">
                       <li className="flex items-start gap-2">
                         <div className="w-1.5 h-1.5 bg-pink-400 rounded-full mt-2 flex-shrink-0"></div>
                         Comprehensive D&O insurance coverage
@@ -742,7 +742,7 @@ export default function PCFComprehensivePage() {
                       <div className="font-medium text-blue-300 mb-2">
                         Cayman Islands Compliance:
                       </div>
-                      <ul className="text-gray-200 space-y-1">
+                      <ul className="text-gray-600 dark:text-gray-200 space-y-1">
                         <li>• Foundation Companies Act 2017 compliance</li>
                         <li>• Economic substance requirements</li>
                         <li>• CIMA regulatory oversight</li>
@@ -754,7 +754,7 @@ export default function PCFComprehensivePage() {
                       <div className="font-medium text-blue-300 mb-2">
                         Subsidiary Jurisdictions:
                       </div>
-                      <ul className="text-gray-200 space-y-1">
+                      <ul className="text-gray-600 dark:text-gray-200 space-y-1">
                         <li>• Hong Kong: SFC and local regulations</li>
                         <li>• EU: MiCA and national implementations</li>
                         <li>• US: State-specific compliance requirements</li>
@@ -775,7 +775,7 @@ export default function PCFComprehensivePage() {
                       <div className="font-medium text-yellow-300 mb-2">
                         Primary Responsibilities:
                       </div>
-                      <ul className="text-gray-200 space-y-1">
+                      <ul className="text-gray-600 dark:text-gray-200 space-y-1">
                         <li>
                           • Fiduciary duty to foundation and community interests
                         </li>
@@ -789,7 +789,7 @@ export default function PCFComprehensivePage() {
                       <div className="font-medium text-yellow-300 mb-2">
                         Protection & Support:
                       </div>
-                      <ul className="text-gray-200 space-y-1">
+                      <ul className="text-gray-600 dark:text-gray-200 space-y-1">
                         <li>• Comprehensive global D&O insurance</li>
                         <li>• Multi-jurisdictional legal counsel access</li>
                         <li>• Collective decision-making processes</li>
@@ -805,9 +805,9 @@ export default function PCFComprehensivePage() {
             {/* Process Section - Enhanced */}
             <Card
               id="process"
-              className="bg-black/70 backdrop-blur-md border border-white/10 shadow-xl mb-8 sm:mb-12"
+              className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl mb-8 sm:mb-12"
             >
-              <CardHeader className="bg-pink-600/90 backdrop-blur-sm text-white rounded-t-lg">
+              <CardHeader className="bg-pink-600/90 backdrop-blur-sm text-black dark:text-white rounded-t-lg">
                 <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl">
                   <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
                   Director Selection Process & Reference Materials
@@ -848,7 +848,7 @@ export default function PCFComprehensivePage() {
                     <div key={index} className="flex gap-4 sm:gap-6">
                       <div className="flex-shrink-0">
                         <div
-                          className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white font-bold text-base sm:text-lg border-2 ${
+                          className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-black dark:text-white font-bold text-base sm:text-lg border-2 ${
                             step.status === "active"
                               ? "bg-pink-600 border-pink-400"
                               : "bg-gray-800/70 border-gray-600"
@@ -858,10 +858,10 @@ export default function PCFComprehensivePage() {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                        <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-2">
                           {step.title}
                         </h3>
-                        <p className="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">
+                        <p className="text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">
                           {step.description}
                         </p>
                         {step.status === "active" && (
@@ -870,7 +870,7 @@ export default function PCFComprehensivePage() {
                           </span>
                         )}
                         {step.status === "pending" && (
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-800/50 border border-gray-600/30 text-gray-400">
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-800/50 border border-gray-600/30 text-gray-500 dark:text-gray-400">
                             Pending
                           </span>
                         )}
@@ -881,7 +881,7 @@ export default function PCFComprehensivePage() {
 
                 {/* Comprehensive Reference Links */}
                 <div className="space-y-4 sm:space-y-6">
-                  <h3 className="text-lg sm:text-xl font-semibold text-white">
+                  <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white">
                     Comprehensive Reference Materials
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
@@ -898,10 +898,10 @@ export default function PCFComprehensivePage() {
                         >
                           <div className="flex items-center justify-between">
                             <div>
-                              <div className="font-semibold text-white text-sm sm:text-base">
+                              <div className="font-semibold text-black dark:text-white text-sm sm:text-base">
                                 {link.title}
                               </div>
-                              <div className="text-xs sm:text-sm text-gray-400">
+                              <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                                 {link.subtitle}
                               </div>
                             </div>
@@ -916,7 +916,7 @@ export default function PCFComprehensivePage() {
                     <h4 className="font-semibold text-blue-400 mb-3 text-base sm:text-lg">
                       Additional Resources
                     </h4>
-                    <ul className="text-gray-200 text-sm sm:text-base space-y-2">
+                    <ul className="text-gray-600 dark:text-gray-200 text-sm sm:text-base space-y-2">
                       <li>
                         • <strong>PCF Wiki:</strong> Comprehensive documentation
                         and operational guidelines
@@ -940,8 +940,8 @@ export default function PCFComprehensivePage() {
             </Card>
 
             {/* DOT Directors Information Section */}
-            <Card className="bg-black/70 backdrop-blur-md border border-white/10 shadow-xl mb-8 sm:mb-12">
-              <CardHeader className="bg-gradient-to-r from-green-600/90 to-blue-600/90 backdrop-blur-sm text-white rounded-t-lg">
+            <Card className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl mb-8 sm:mb-12">
+              <CardHeader className="bg-gradient-to-r from-green-600/90 to-blue-600/90 backdrop-blur-sm text-black dark:text-white rounded-t-lg">
                 <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl">
                   <Users className="w-5 h-5 sm:w-6 sm:h-6" />
                   DOT Directors Application Information
@@ -949,10 +949,10 @@ export default function PCFComprehensivePage() {
               </CardHeader>
               <CardContent className="p-6 sm:p-8">
                 <div className="bg-gradient-to-r from-green-600/20 to-blue-600/20 border border-green-600/30 p-6 sm:p-8 rounded-lg">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
+                  <h3 className="text-xl sm:text-2xl font-bold text-black dark:text-white mb-4 sm:mb-6">
                     Interested in Serving as a DOT Director?
                   </h3>
-                  <p className="text-gray-200 leading-relaxed text-base sm:text-lg mb-6">
+                  <p className="text-gray-600 dark:text-gray-200 leading-relaxed text-base sm:text-lg mb-6">
                     We are seeking{" "}
                     <strong className="text-green-400">
                       2 qualified community members
@@ -967,7 +967,7 @@ export default function PCFComprehensivePage() {
                       <h4 className="font-semibold text-green-400 mb-3 text-base sm:text-lg">
                         Application Process
                       </h4>
-                      <ul className="space-y-2 text-gray-200 text-sm sm:text-base">
+                      <ul className="space-y-2 text-gray-600 dark:text-gray-200 text-sm sm:text-base">
                         <li className="flex items-start gap-2">
                           <CheckCircle className="w-4 h-4 text-green-400 mt-1 flex-shrink-0" />
                           Complete the nomination form below
@@ -993,7 +993,7 @@ export default function PCFComprehensivePage() {
                       <div className="bg-blue-600/20 border border-blue-600/30 p-4 rounded-lg">
                         <div className="text-center">
                           <Mail className="w-8 h-8 text-blue-400 mx-auto mb-3" />
-                          <div className="text-white font-semibold text-base sm:text-lg mb-2">
+                          <div className="text-black dark:text-white font-semibold text-base sm:text-lg mb-2">
                             PCF Administrators
                           </div>
                           <div className="text-blue-300 text-sm sm:text-base mb-2">
@@ -1015,7 +1015,7 @@ export default function PCFComprehensivePage() {
                       <AlertCircle className="w-4 h-4" />
                       Required Information
                     </h5>
-                    <p className="text-gray-200 text-xs sm:text-sm">
+                    <p className="text-gray-600 dark:text-gray-200 text-xs sm:text-sm">
                       Please include your detailed CV, Polkadot ecosystem
                       involvement history, relevant governance experience, and a
                       statement of commitment. All applications will be reviewed
@@ -1027,8 +1027,8 @@ export default function PCFComprehensivePage() {
             </Card>
 
             {/* PCF Funding History Section */}
-            <Card className="bg-black/70 backdrop-blur-md border border-white/10 shadow-xl mb-8 sm:mb-12">
-              <CardHeader className="bg-gradient-to-r from-purple-600/90 to-pink-600/90 backdrop-blur-sm text-white rounded-t-lg">
+            <Card className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl mb-8 sm:mb-12">
+              <CardHeader className="bg-gradient-to-r from-purple-600/90 to-pink-600/90 backdrop-blur-sm text-black dark:text-white rounded-t-lg">
                 <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl">
                   <DollarSign className="w-5 h-5 sm:w-6 sm:h-6" />
                   PCF Funding History & Treasury Allocations
@@ -1041,7 +1041,7 @@ export default function PCFComprehensivePage() {
                       <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-1">
                         $1,356,916
                       </div>
-                      <div className="text-sm text-gray-300">
+                      <div className="text-sm text-gray-600 dark:text-gray-300">
                         Total Approved Funding
                       </div>
                     </div>
@@ -1049,7 +1049,7 @@ export default function PCFComprehensivePage() {
                       <div className="text-2xl sm:text-3xl font-bold text-blue-400 mb-1">
                         12
                       </div>
-                      <div className="text-sm text-gray-300">
+                      <div className="text-sm text-gray-600 dark:text-gray-300">
                         Successful Referenda
                       </div>
                     </div>
@@ -1057,14 +1057,14 @@ export default function PCFComprehensivePage() {
                       <div className="text-2xl sm:text-3xl font-bold text-red-400 mb-1">
                         2
                       </div>
-                      <div className="text-sm text-gray-300">
+                      <div className="text-sm text-gray-600 dark:text-gray-300">
                         Failed Proposals
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <h3 className="text-lg sm:text-xl font-semibold text-white mb-4 sm:mb-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white mb-4 sm:mb-6">
                   Detailed Funding Breakdown
                 </h3>
 
@@ -1094,7 +1094,7 @@ export default function PCFComprehensivePage() {
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="text-gray-200">
+                      <tbody className="text-gray-600 dark:text-gray-200">
                         <tr className="border-b border-gray-700 hover:bg-gray-800/30">
                           <td className="p-3 font-medium">#730</td>
                           <td className="p-3">Autonomous Projects</td>
@@ -1264,7 +1264,7 @@ export default function PCFComprehensivePage() {
                 </div>
 
                 {/* Wish For Change Proposals */}
-                <h4 className="text-lg font-semibold text-white mb-4">
+                <h4 className="text-lg font-semibold text-black dark:text-white mb-4">
                   Wish For Change (WFC) Proposals
                 </h4>
                 <div className="overflow-x-auto mb-8">
@@ -1286,7 +1286,7 @@ export default function PCFComprehensivePage() {
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="text-gray-200">
+                      <tbody className="text-gray-600 dark:text-gray-200">
                         <tr className="border-b border-gray-700 hover:bg-gray-800/30">
                           <td className="p-3 font-medium">#1416</td>
                           <td className="p-3">Alice und Bob</td>
@@ -1362,17 +1362,17 @@ export default function PCFComprehensivePage() {
                 </div>
 
                 {/* Failed Proposals */}
-                <h4 className="text-lg font-semibold text-white mb-4">
+                <h4 className="text-lg font-semibold text-black dark:text-white mb-4">
                   Failed Proposals
                 </h4>
                 <div className="bg-red-600/10 border border-red-600/30 p-4 rounded-lg">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="flex justify-between items-center p-3 bg-red-600/20 rounded">
                       <div>
-                        <div className="font-medium text-white">
+                        <div className="font-medium text-black dark:text-white">
                           Referendum #1078
                         </div>
-                        <div className="text-sm text-gray-300">
+                        <div className="text-sm text-gray-600 dark:text-gray-300">
                           DOTomi - Medium Spender
                         </div>
                       </div>
@@ -1387,10 +1387,10 @@ export default function PCFComprehensivePage() {
                     </div>
                     <div className="flex justify-between items-center p-3 bg-red-600/20 rounded">
                       <div>
-                        <div className="font-medium text-white">
+                        <div className="font-medium text-black dark:text-white">
                           Referendum #820
                         </div>
-                        <div className="text-sm text-gray-300">
+                        <div className="text-sm text-gray-600 dark:text-gray-300">
                           10,000 DOT - WFC
                         </div>
                       </div>
@@ -1402,8 +1402,8 @@ export default function PCFComprehensivePage() {
             </Card>
 
             {/* Research & Documentation Section */}
-            <Card className="bg-black/70 backdrop-blur-md border border-white/10 shadow-xl mb-8 sm:mb-12">
-              <CardHeader className="bg-gradient-to-r from-indigo-600/90 to-purple-600/90 backdrop-blur-sm text-white rounded-t-lg">
+            <Card className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl mb-8 sm:mb-12">
+              <CardHeader className="bg-gradient-to-r from-indigo-600/90 to-purple-600/90 backdrop-blur-sm text-black dark:text-white rounded-t-lg">
                 <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl">
                   <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
                   Research & Academic Documentation
@@ -1411,14 +1411,14 @@ export default function PCFComprehensivePage() {
               </CardHeader>
               <CardContent className="p-6 sm:p-8">
                 <div className="bg-gradient-to-r from-indigo-600/20 to-purple-600/20 border border-indigo-600/30 p-6 sm:p-8 rounded-lg">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-3">
+                  <h3 className="text-xl sm:text-2xl font-bold text-black dark:text-white mb-4 sm:mb-6 flex items-center gap-3">
                     <Building className="w-6 h-6 text-indigo-400" />
                     Autonomous Organization Research
                   </h3>
 
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
                     <div>
-                      <p className="text-gray-200 leading-relaxed text-base sm:text-lg mb-6">
+                      <p className="text-gray-600 dark:text-gray-200 leading-relaxed text-base sm:text-lg mb-6">
                         The{" "}
                         <strong className="text-indigo-400">
                           BlockGov Cookbook
@@ -1433,7 +1433,7 @@ export default function PCFComprehensivePage() {
                       <h4 className="font-semibold text-indigo-400 mb-3 text-base sm:text-lg">
                         Research Highlights
                       </h4>
-                      <ul className="space-y-2 text-gray-200 text-sm sm:text-base">
+                      <ul className="space-y-2 text-gray-600 dark:text-gray-200 text-sm sm:text-base">
                         <li className="flex items-start gap-2">
                           <CheckCircle className="w-4 h-4 text-indigo-400 mt-1 flex-shrink-0" />
                           Comprehensive blockchain governance framework analysis
@@ -1460,16 +1460,16 @@ export default function PCFComprehensivePage() {
                     <div className="flex flex-col justify-center">
                       <div className="bg-indigo-600/30 border border-indigo-600/50 p-6 rounded-lg text-center">
                         <FileText className="w-16 h-16 text-indigo-400 mx-auto mb-4" />
-                        <h5 className="font-bold text-white text-lg mb-3">
+                        <h5 className="font-bold text-black dark:text-white text-lg mb-3">
                           BlockGov Cookbook
                         </h5>
-                        <p className="text-gray-300 text-sm mb-6">
+                        <p className="text-gray-600 dark:text-gray-300 text-sm mb-6">
                           Academic research publication providing comprehensive
                           frameworks for blockchain governance and legal entity
                           design
                         </p>
                         <Button
-                          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                          className="w-full bg-indigo-600 hover:bg-indigo-700 text-black dark:text-white px-6 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                           asChild
                         >
                           <a
@@ -1490,7 +1490,7 @@ export default function PCFComprehensivePage() {
                     <h5 className="font-semibold text-purple-400 mb-2 text-sm sm:text-base">
                       Research Impact on PCF Design
                     </h5>
-                    <p className="text-gray-200 text-xs sm:text-sm">
+                    <p className="text-gray-600 dark:text-gray-200 text-xs sm:text-sm">
                       This research directly informed the design and
                       implementation of the Polkadot Community Foundation,
                       providing the theoretical foundation for bridging
@@ -1509,11 +1509,11 @@ export default function PCFComprehensivePage() {
 
             {/* Enhanced CTA Section */}
             <div className="text-center mt-8 sm:mt-12">
-              <div className="bg-gradient-to-r from-black/80 to-pink-600/20 backdrop-blur-md border border-white/10 text-white p-6 sm:p-8 rounded-2xl shadow-xl">
+              <div className="bg-gradient-to-r from-gray-100/80 to-pink-100/60 dark:from-black/80 dark:to-pink-600/20 backdrop-blur-md border border-gray-300 dark:border-white/10 text-black dark:text-white p-6 sm:p-8 rounded-2xl shadow-xl">
                 <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
                   Shape the Future of Polkadot Governance
                 </h3>
-                <p className="text-base sm:text-lg mb-4 sm:mb-6 opacity-90 text-gray-200">
+                <p className="text-base sm:text-lg mb-4 sm:mb-6 opacity-90 text-gray-600 dark:text-gray-200">
                   Join the PCF board and help bridge decentralized governance
                   with global real-world execution across multiple
                   jurisdictions.
@@ -1521,7 +1521,7 @@ export default function PCFComprehensivePage() {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto bg-pink-600 hover:bg-pink-700 text-white px-6 sm:px-8 py-3 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
+                    className="w-full sm:w-auto bg-pink-600 hover:bg-pink-700 text-black dark:text-white px-6 sm:px-8 py-3 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
                     asChild
                   >
                     <a href="#nominate">

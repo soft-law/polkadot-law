@@ -230,9 +230,9 @@ const PolkadotDAOStructure = () => {
     },
   ];
 
-  // Organize bounties by category for two-column layout
-  // First column: Development, Community, Marketing
-  // Second column: Security, Infrastructure, Governance
+  // Organize bounties by category for full-width layout
+  // First row: Development, Community, Marketing (extreme right)
+  // Second row: Security, Infrastructure, Governance
   const bountyCategories: Record<CategoryName, Bounty[]> = {
     Development: bounties.filter((b) => b.category === "Development"),
     Community: bounties.filter((b) => b.category === "Community"),
@@ -303,10 +303,10 @@ const PolkadotDAOStructure = () => {
     <>
       <NavigationBar />
 
-      <div className="min-h-screen bg-gradient-to-br from-black via-pink-600 to-black text-white">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-pink-100 to-gray-50 dark:from-black dark:via-pink-600 dark:to-black text-black dark:text-white">
         {/* Header */}
         <div className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-white/20 dark:bg-black/20"></div>
           <div
             className="absolute inset-0 opacity-50"
             style={{
@@ -315,7 +315,7 @@ const PolkadotDAOStructure = () => {
           />
 
           <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 py-16 sm:py-24">
-            <div className="text-center text-white">
+            <div className="text-center text-black dark:text-white">
               <div className="flex justify-center mb-6">
                 <div className="p-4 bg-white/10 rounded-full backdrop-blur-sm">
                   <svg
@@ -336,7 +336,7 @@ const PolkadotDAOStructure = () => {
                 >
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
-                <span className="text-sm font-medium text-purple-300">
+                <span className="text-lg font-medium text-purple-300">
                   Treasury-Funded Research
                 </span>
                 <a
@@ -362,11 +362,11 @@ const PolkadotDAOStructure = () => {
                 </span>
               </h1>
 
-              <p className="text-xl md:text-2xl mb-6 text-gray-200 font-light">
+              <p className="text-xl md:text-2xl mb-6 text-gray-700 dark:text-gray-600 dark:text-gray-200 font-light">
                 Hierarchical Treasury Governance System
               </p>
 
-              <p className="text-lg mb-8 max-w-4xl mx-auto text-gray-300 leading-relaxed">
+              <p className="text-lg mb-8 max-w-4xl mx-auto text-gray-600 dark:text-gray-600 dark:text-gray-300 leading-relaxed">
                 Comprehensive overview of Polkadot&apos;s decentralized
                 governance structure, showing how DOT token holders exercise
                 authority through OpenGov to fund ecosystem development via
@@ -382,13 +382,13 @@ const PolkadotDAOStructure = () => {
             {daoStats.map((stat, index) => (
               <div
                 key={index}
-                className="bg-black/70 backdrop-blur-md shadow-xl border border-white/10 rounded-lg p-6 text-center text-white"
+                className="bg-white/70 dark:bg-black/70 backdrop-blur-md shadow-xl border border-gray-300 dark:border-white/10 rounded-lg p-6 text-center text-black dark:text-white"
               >
-                <div className="text-2xl font-bold text-white mb-1">
+                <div className="text-2xl font-bold text-black dark:text-white mb-1">
                   {stat.value}
                 </div>
-                <div className="text-sm text-gray-300 mb-1">{stat.label}</div>
-                <div className="text-xs text-gray-400">{stat.description}</div>
+                <div className="text-lg text-gray-600 dark:text-gray-300 mb-1">{stat.label}</div>
+                <div className="text-base text-gray-500 dark:text-gray-400">{stat.description}</div>
               </div>
             ))}
           </div>
@@ -399,8 +399,8 @@ const PolkadotDAOStructure = () => {
           id="dao-structure"
           className="max-w-[1400px] mx-auto px-4 sm:px-6 py-12"
         >
-          <div className="bg-black/70 backdrop-blur-md border border-white/10 shadow-xl rounded-lg mb-16">
-            <div className="bg-gradient-to-r from-purple-600/90 to-pink-600/90 backdrop-blur-sm text-white rounded-t-lg p-6">
+          <div className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl rounded-lg mb-16">
+            <div className="bg-gradient-to-r from-purple-600/90 to-pink-600/90 backdrop-blur-sm text-black dark:text-white rounded-t-lg p-6">
               <h2 className="text-2xl font-bold flex items-center gap-3">
                 <svg
                   className="w-6 h-6"
@@ -415,12 +415,48 @@ const PolkadotDAOStructure = () => {
 
             <div className="p-8">
               <div className="mb-6">
-                <p className="text-gray-300 text-center max-w-4xl mx-auto mb-6">
+                <p className="text-gray-600 dark:text-gray-300 text-center max-w-4xl mx-auto mb-6">
                   Hierarchical structure showing the flow of authority from DOT
                   token holders through OpenGov to treasury-funded bounty
                   programs. Each bounty card displays its name, category, and
                   description. Click on any bounty to view its treasury page.
                 </p>
+
+                {/* Limited Legal Coverage Section */}
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 border-2 border-yellow-300 dark:border-yellow-600 rounded-lg p-6 mb-8 max-w-5xl mx-auto">
+                  <h3 className="text-2xl font-bold text-yellow-800 dark:text-yellow-200 mb-4 text-center">
+                    ⚖️ LIMITED LEGAL COVERAGE ENTITIES
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg border border-green-300 dark:border-green-600">
+                      <h4 className="font-bold text-green-800 dark:text-green-200 mb-2">
+                        🏛️ PCF: Only Marketing Bounty (#33) - Cayman Islands
+                      </h4>
+                      <ul className="text-sm text-green-700 dark:text-green-300 space-y-1">
+                        <li>• Corporate liability protection for 1/20 bounties</li>
+                        <li>• VASP/AML compliance framework (PCF only)</li>
+                        <li>• Polkadot App also protected</li>
+                      </ul>
+                    </div>
+                    <div className="bg-purple-100 dark:bg-purple-900/30 p-4 rounded-lg border border-purple-300 dark:border-purple-600">
+                      <h4 className="font-bold text-purple-800 dark:text-purple-200 mb-2">
+                        🏢 Parity: Some Technical Fellowship members only
+                      </h4>
+                      <ul className="text-sm text-purple-700 dark:text-purple-300 space-y-1">
+                        <li>• Corporate protection for employed developers</li>
+                        <li>• Limited to Parity Technologies employees</li>
+                        <li>• Does not cover freelance contributors</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="mt-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-300 dark:border-red-600 rounded">
+                    <p className="text-red-800 dark:text-red-200 text-sm font-medium text-center">
+                      ⚠️ <strong>Important:</strong> 19 of 20 bounties operate without legal entity protection.
+                      Contributors assume personal liability risks including potential lawsuits, regulatory actions,
+                      and contract enforcement gaps.
+                    </p>
+                  </div>
+                </div>
 
                 {/* Category Legend */}
                 <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
@@ -434,10 +470,10 @@ const PolkadotDAOStructure = () => {
                         style={{ backgroundColor: info.color }}
                       ></div>
                       <div>
-                        <div className="text-white text-sm font-medium">
+                        <div className="text-black dark:text-white text-lg font-medium">
                           {category}
                         </div>
-                        <div className="text-gray-400 text-xs">
+                        <div className="text-gray-500 dark:text-gray-400 text-base">
                           {info.count} bounties • {info.description}
                         </div>
                       </div>
@@ -447,12 +483,41 @@ const PolkadotDAOStructure = () => {
               </div>
 
               {/* SVG Hierarchical Governance Structure */}
-              <div className="relative bg-gray-900/50 rounded-xl p-4 mb-8">
+              <div className="relative bg-gray-100/80 dark:bg-gray-900/50 rounded-xl p-4 mb-8 transition-colors duration-300">
                 <svg
                   viewBox="0 0 2800 4000"
-                  className="w-full h-[800px] md:h-[1600px] lg:h-[2000px]"
+                  className="w-full h-[800px] md:h-[1600px] lg:h-[2000px] transition-all duration-300"
                 >
                   <defs>
+                    <style>
+                      {`
+                        /* Light mode colors */
+                        .svg-text-primary { fill: #1f2937; transition: fill 0.3s ease; }
+                        .svg-text-secondary { fill: #6b7280; transition: fill 0.3s ease; }
+                        .svg-text-accent { fill: #e6007a; transition: fill 0.3s ease; }
+                        .svg-stroke-primary { stroke: #374151; transition: stroke 0.3s ease; }
+                        .svg-stroke-light { stroke: #9ca3af; transition: stroke 0.3s ease; }
+                        .svg-fill-light { fill: rgba(107, 114, 128, 0.1); transition: fill 0.3s ease; }
+                        .svg-fill-medium { fill: rgba(107, 114, 128, 0.3); transition: fill 0.3s ease; }
+
+                        /* Dark mode colors */
+                        .dark .svg-text-primary { fill: #ffffff; }
+                        .dark .svg-text-secondary { fill: #d1d5db; }
+                        .dark .svg-text-accent { fill: #f472b6; }
+                        .dark .svg-stroke-primary { stroke: #e5e7eb; }
+                        .dark .svg-stroke-light { stroke: #6b7280; }
+                        .dark .svg-fill-light { fill: rgba(255, 255, 255, 0.1); }
+                        .dark .svg-fill-medium { fill: rgba(255, 255, 255, 0.2); }
+
+                        /* Connection lines - adaptive colors */
+                        .svg-connection-line { stroke: rgba(107, 114, 128, 0.4); stroke-width: 2; transition: all 0.3s ease; }
+                        .dark .svg-connection-line { stroke: rgba(255, 255, 255, 0.3); }
+
+                        .svg-connection-line:hover { stroke: rgba(230, 0, 122, 0.8); stroke-width: 3; }
+                        .dark .svg-connection-line:hover { stroke: rgba(244, 114, 182, 0.8); }
+                      `}
+                    </style>
+
                     {/* Gradients for different governance levels */}
                     <radialGradient
                       id="tokenHolderGradient"
@@ -513,287 +578,220 @@ const PolkadotDAOStructure = () => {
                   <g>
                     {/* Validators */}
                     <circle
-                      cx="700"
-                      cy="280"
-                      r="40"
+                      cx="900"
+                      cy="360"
+                      r="80"
                       fill="rgba(245, 158, 11, 0.8)"
                       stroke="#F59E0B"
-                      strokeWidth="3"
+                      strokeWidth="6"
                     />
                     <text
-                      x="700"
-                      y="275"
+                      x="900"
+                      y="355"
                       textAnchor="middle"
-                      className="fill-white font-bold text-sm"
+                      className="svg-text-primary font-bold text-xl"
                     >
                       Validators
                     </text>
                     <text
-                      x="700"
-                      y="290"
+                      x="900"
+                      y="370"
                       textAnchor="middle"
-                      className="fill-gray-200 text-xs"
+                      className="svg-text-secondary text-base"
                     >
                       (~300 Active)
                     </text>
                     <text
-                      x="700"
-                      y="340"
+                      x="900"
+                      y="420"
                       textAnchor="middle"
-                      className="fill-amber-300 text-xs"
+                      className="svg-text-accent text-base"
                     >
                       Block Production & Consensus
                     </text>
 
                     {/* Nominators */}
                     <circle
-                      cx="1000"
-                      cy="280"
-                      r="35"
+                      cx="1200"
+                      cy="360"
+                      r="70"
                       fill="rgba(59, 130, 246, 0.8)"
                       stroke="#3B82F6"
-                      strokeWidth="3"
+                      strokeWidth="6"
                     />
                     <text
-                      x="1000"
-                      y="275"
+                      x="1200"
+                      y="355"
                       textAnchor="middle"
-                      className="fill-white font-bold text-sm"
+                      className="svg-text-primary font-bold text-xl"
                     >
                       Nominators
                     </text>
                     <text
-                      x="1000"
-                      y="290"
+                      x="1200"
+                      y="370"
                       textAnchor="middle"
-                      className="fill-gray-200 text-xs"
+                      className="svg-text-secondary text-base"
                     >
                       (~50K Active)
                     </text>
                     <text
-                      x="1000"
-                      y="330"
+                      x="1200"
+                      y="410"
                       textAnchor="middle"
-                      className="fill-blue-300 text-xs"
+                      className="fill-blue-300 text-base"
                     >
                       Stake & Delegate
                     </text>
 
                     {/* Nomination Pools */}
                     <circle
-                      cx="1400"
-                      cy="280"
-                      r="35"
+                      cx="1600"
+                      cy="360"
+                      r="70"
                       fill="rgba(16, 185, 129, 0.8)"
                       stroke="#10B981"
-                      strokeWidth="3"
+                      strokeWidth="6"
                     />
                     <text
-                      x="1400"
-                      y="275"
+                      x="1600"
+                      y="355"
                       textAnchor="middle"
-                      className="fill-white font-bold text-sm"
+                      className="svg-text-primary font-bold text-xl"
                     >
                       Pools
                     </text>
                     <text
-                      x="1400"
-                      y="290"
+                      x="1600"
+                      y="370"
                       textAnchor="middle"
-                      className="fill-gray-200 text-xs"
+                      className="svg-text-secondary text-base"
                     >
                       (~150 Active)
                     </text>
                     <text
-                      x="1400"
-                      y="330"
+                      x="1600"
+                      y="410"
                       textAnchor="middle"
-                      className="fill-green-300 text-xs"
+                      className="fill-green-300 text-base"
                     >
                       Pool Staking
                     </text>
 
                     {/* Lines from Token Holders to Network participants */}
                     <line
-                      x1="1160"
-                      y1="180"
-                      x2="730"
-                      y2="240"
-                      stroke="rgba(245, 158, 11, 0.5)"
-                      strokeWidth="3"
+                      x1="1320"
+                      y1="280"
+                      x2="930"
+                      y2="320"
+                      className="svg-connection-line" stroke="rgba(245, 158, 11, 0.5)"
+                      strokeWidth="6"
                     />
                     <line
-                      x1="1200"
-                      y1="190"
-                      x2="1000"
-                      y2="240"
-                      stroke="rgba(59, 130, 246, 0.5)"
-                      strokeWidth="3"
+                      x1="1400"
+                      y1="290"
+                      x2="1200"
+                      y2="320"
+                      className="svg-connection-line" stroke="rgba(59, 130, 246, 0.5)"
+                      strokeWidth="6"
                     />
                     <line
-                      x1="1240"
-                      y1="180"
-                      x2="1400"
-                      y2="240"
+                      x1="1480"
+                      y1="280"
+                      x2="1600"
+                      y2="320"
                       stroke="rgba(16, 185, 129, 0.5)"
-                      strokeWidth="3"
+                      strokeWidth="6"
                     />
                   </g>
 
                   {/* Authority Flow Lines - Token Holders to OpenGov */}
                   <line
-                    x1="1150"
-                    y1="190"
-                    x2="700"
-                    y2="510"
-                    stroke="rgba(230, 0, 122, 0.5)"
-                    strokeWidth="4"
+                    x1="1320"
+                    y1="290"
+                    x2="900"
+                    y2="590"
+                    className="svg-connection-line" stroke="rgba(230, 0, 122, 0.5)"
+                    strokeWidth="8"
                     strokeDasharray="8,8"
                   />
                   <line
-                    x1="1200"
-                    y1="190"
-                    x2="1200"
-                    y2="480"
-                    stroke="rgba(230, 0, 122, 0.5)"
-                    strokeWidth="6"
+                    x1="1400"
+                    y1="300"
+                    x2="1400"
+                    y2="580"
+                    className="svg-connection-line" stroke="rgba(230, 0, 122, 0.5)"
+                    strokeWidth="12"
                   />
                   <line
-                    x1="1250"
-                    y1="190"
-                    x2="1700"
-                    y2="400"
+                    x1="1480"
+                    y1="290"
+                    x2="1900"
+                    y2="500"
                     stroke="rgba(139, 92, 246, 0.5)"
-                    strokeWidth="4"
+                    strokeWidth="8"
                     strokeDasharray="8,8"
                   />
 
-                  {/* OpenGov to Treasury */}
+                  {/* OpenGov to Treasury - Updated for new positions */}
                   <line
-                    x1="700"
-                    y1="600"
-                    x2="1150"
-                    y2="750"
-                    stroke="rgba(59, 130, 246, 0.5)"
-                    strokeWidth="4"
+                    x1="900"
+                    y1="680"
+                    x2="1300"
+                    y2="850"
+                    className="svg-connection-line" stroke="rgba(59, 130, 246, 0.5)"
+                    strokeWidth="8"
                   />
                   <line
-                    x1="1200"
-                    y1="620"
-                    x2="1200"
-                    y2="730"
-                    stroke="rgba(59, 130, 246, 0.5)"
-                    strokeWidth="6"
+                    x1="1400"
+                    y1="700"
+                    x2="1400"
+                    y2="800"
+                    className="svg-connection-line" stroke="rgba(59, 130, 246, 0.5)"
+                    strokeWidth="12"
                   />
                   <line
-                    x1="1700"
-                    y1="500"
-                    x2="1250"
-                    y2="750"
+                    x1="1900"
+                    y1="580"
+                    x2="1500"
+                    y2="850"
                     stroke="rgba(139, 92, 246, 0.5)"
-                    strokeWidth="4"
+                    strokeWidth="8"
                     strokeDasharray="6,6"
                   />
 
-                  {/* Treasury to Bounty Categories - Two Column Layout */}
-                  {(
-                    Object.entries(bountyCategories) as [
-                      CategoryName,
-                      Bounty[]
-                    ][]
-                  ).map(([categoryName, categoryBounties], catIndex) => {
-                    if (categoryBounties.length === 0) return null;
-
-                    // First row: Development, Community, Marketing (indices 0,1,2)
-                    // Second row: Security, Infrastructure, Governance (indices 3,4,5)
-                    const isFirstRow = catIndex < 3;
-                    const rowIndex = catIndex % 3;
-
-                    const categoryX = 400 + rowIndex * 800; // Community and Infrastructure further right
-                    const categoryY = isFirstRow ? 1100 : 1800; // Security row further down to separate from Development
-
-                    return (
-                      <g key={categoryName}>
-                        {/* Line from treasury to category */}
-                        <line
-                          x1="1200"
-                          y1="870"
-                          x2={categoryX}
-                          y2={categoryY}
-                          stroke="rgba(16, 185, 129, 0.4)"
-                          strokeWidth="3"
-                        />
-
-                        {/* Category to individual bounties */}
-                        {categoryBounties.map((bounty, bountyIndex) => {
-                          const bounciesPerRow = 2; // Reduce to 2 per row for better fit in columns
-                          const row = Math.floor(bountyIndex / bounciesPerRow);
-                          const col = bountyIndex % bounciesPerRow;
-
-                          const baseY = isFirstRow ? 1250 : 1950; // More separation between rows
-                          const rowSpacing = 300;
-                          const bountyY = baseY + row * rowSpacing;
-
-                          const colSpacing = 250;
-                          const startX =
-                            categoryX -
-                            (colSpacing *
-                              (Math.min(
-                                categoryBounties.length,
-                                bounciesPerRow
-                              ) -
-                                1)) /
-                              2;
-                          const bountyX = startX + col * colSpacing;
-
-                          return (
-                            <line
-                              key={bounty.id}
-                              x1={categoryX}
-                              y1={categoryY + 30}
-                              x2={bountyX}
-                              y2={bountyY - 50}
-                              stroke="rgba(128, 128, 128, 0.6)"
-                              strokeWidth="2"
-                              strokeDasharray="3,3"
-                            />
-                          );
-                        })}
-                      </g>
-                    );
-                  })}
 
                   {/* Level 1: DOT Token Holders */}
                   <circle
-                    cx="1200"
-                    cy="120"
-                    r="70"
+                    cx="1400"
+                    cy="200"
+                    r="140"
                     fill="url(#tokenHolderGradient)"
                     stroke="#E6007A"
                     strokeWidth="5"
                     filter="url(#glow)"
                   />
                   <text
-                    x="1200"
-                    y="110"
+                    x="1400"
+                    y="190"
                     textAnchor="middle"
-                    className="fill-white font-bold text-lg"
+                    className="svg-text-primary font-bold text-3xl"
                   >
                     DOT Token
                   </text>
                   <text
-                    x="1200"
-                    y="130"
+                    x="1400"
+                    y="210"
                     textAnchor="middle"
-                    className="fill-gray-200 text-base"
+                    className="svg-text-secondary text-xl"
                   >
                     Holders
                   </text>
                   <text
-                    x="1200"
-                    y="200"
+                    x="1400"
+                    y="280"
                     textAnchor="middle"
-                    className="fill-gray-400 text-sm"
+                    className="svg-text-secondary text-lg"
                   >
                     Authority & Voting Power (~1% Participation)
                   </text>
@@ -803,19 +801,19 @@ const PolkadotDAOStructure = () => {
                     <rect
                       x="1550"
                       y="180"
-                      width="220"
-                      height="100"
+                      width="440"
+                      height="200"
                       fill="rgba(239, 68, 68, 0.15)"
                       stroke="#EF4444"
-                      strokeWidth="2"
+                      strokeWidth="4"
                       strokeDasharray="6,3"
-                      rx="8"
+                      rx="16"
                     />
                     <text
                       x="1660"
                       y="200"
                       textAnchor="middle"
-                      className="fill-red-400 text-xs font-bold"
+                      className="fill-red-400 text-base font-bold"
                     >
                       ⚠️ DIRECT LIABILITY RISK
                     </text>
@@ -823,7 +821,7 @@ const PolkadotDAOStructure = () => {
                       x="1660"
                       y="215"
                       textAnchor="middle"
-                      className="fill-red-300 text-xs"
+                      className="fill-red-300 text-base"
                     >
                       High voting power entities have
                     </text>
@@ -831,7 +829,7 @@ const PolkadotDAOStructure = () => {
                       x="1660"
                       y="230"
                       textAnchor="middle"
-                      className="fill-red-300 text-xs"
+                      className="fill-red-300 text-base"
                     >
                       direct responsibility for treasury
                     </text>
@@ -839,7 +837,7 @@ const PolkadotDAOStructure = () => {
                       x="1660"
                       y="245"
                       textAnchor="middle"
-                      className="fill-red-300 text-xs"
+                      className="fill-red-300 text-base"
                     >
                       decisions without protection
                     </text>
@@ -847,7 +845,7 @@ const PolkadotDAOStructure = () => {
                       x="1660"
                       y="265"
                       textAnchor="middle"
-                      className="fill-red-200 text-xs"
+                      className="fill-red-200 text-base"
                     >
                       Concentrated voting power = Greater liability
                     </text>
@@ -858,19 +856,19 @@ const PolkadotDAOStructure = () => {
                     <rect
                       x="50"
                       y="20"
-                      width="400"
-                      height="140"
+                      width="800"
+                      height="280"
                       fill="rgba(251, 146, 60, 0.15)"
                       stroke="#F59E0B"
-                      strokeWidth="2"
+                      strokeWidth="4"
                       strokeDasharray="6,3"
-                      rx="8"
+                      rx="16"
                     />
                     <text
                       x="250"
                       y="45"
                       textAnchor="middle"
-                      className="fill-amber-400 text-xs font-bold"
+                      className="fill-amber-400 text-base font-bold"
                     >
                       📊 VOTING PARTICIPATION CRISIS
                     </text>
@@ -878,7 +876,7 @@ const PolkadotDAOStructure = () => {
                       x="250"
                       y="65"
                       textAnchor="middle"
-                      className="fill-amber-300 text-xs font-medium"
+                      className="fill-amber-300 text-base font-medium"
                     >
                       Only ~1% of total DOT supply participates in OpenGov voting
                     </text>
@@ -886,7 +884,7 @@ const PolkadotDAOStructure = () => {
                       x="250"
                       y="80"
                       textAnchor="middle"
-                      className="fill-amber-300 text-xs"
+                      className="svg-text-accent text-base"
                     >
                       Vast majority of holders: Non-voting / Passive in governance
                     </text>
@@ -894,7 +892,7 @@ const PolkadotDAOStructure = () => {
                       x="250"
                       y="100"
                       textAnchor="middle"
-                      className="fill-amber-200 text-xs"
+                      className="fill-amber-200 text-base"
                     >
                       • Decisions made by tiny minority of token holders
                     </text>
@@ -902,7 +900,7 @@ const PolkadotDAOStructure = () => {
                       x="250"
                       y="115"
                       textAnchor="middle"
-                      className="fill-amber-200 text-xs"
+                      className="fill-amber-200 text-base"
                     >
                       • SubDAOs and organized groups control majority vote
                     </text>
@@ -910,7 +908,7 @@ const PolkadotDAOStructure = () => {
                       x="250"
                       y="130"
                       textAnchor="middle"
-                      className="fill-amber-200 text-xs"
+                      className="fill-amber-200 text-base"
                     >
                       • Democratic legitimacy questionable vs network security
                     </text>
@@ -918,7 +916,7 @@ const PolkadotDAOStructure = () => {
                       x="250"
                       y="145"
                       textAnchor="middle"
-                      className="fill-amber-200 text-xs"
+                      className="fill-amber-200 text-base"
                     >
                       • Most DOT holders focus on staking rewards, not governance
                     </text>
@@ -928,34 +926,34 @@ const PolkadotDAOStructure = () => {
                   <g>
                     {/* Community Proposers */}
                     <circle
-                      cx="700"
-                      cy="550"
-                      r="50"
+                      cx="900"
+                      cy="630"
+                      r="100"
                       fill="url(#opengovGradient)"
                       stroke="#3B82F6"
-                      strokeWidth="4"
+                      strokeWidth="8"
                     />
                     <text
-                      x="700"
-                      y="540"
+                      x="900"
+                      y="620"
                       textAnchor="middle"
-                      className="fill-white font-bold text-base"
+                      className="svg-text-primary font-bold text-2xl"
                     >
                       Community
                     </text>
                     <text
-                      x="700"
-                      y="560"
+                      x="900"
+                      y="640"
                       textAnchor="middle"
-                      className="fill-gray-200 text-sm"
+                      className="svg-text-secondary text-lg"
                     >
                       Proposers
                     </text>
                     <text
-                      x="700"
-                      y="620"
+                      x="900"
+                      y="700"
                       textAnchor="middle"
-                      className="fill-gray-400 text-sm"
+                      className="svg-text-secondary text-lg"
                     >
                       Any DOT Holder
                     </text>
@@ -966,17 +964,17 @@ const PolkadotDAOStructure = () => {
                       <circle
                         cx="500"
                         cy="220"
-                        r="30"
+                        r="60"
                         fill="rgba(168, 85, 247, 0.8)"
                         stroke="#A855F7"
-                        strokeWidth="3"
+                        strokeWidth="6"
                         strokeDasharray="5,5"
                       />
                       <text
                         x="500"
                         y="210"
                         textAnchor="middle"
-                        className="fill-white text-xs font-bold"
+                        className="svg-text-primary text-base font-bold"
                       >
                         Web3
                       </text>
@@ -984,7 +982,7 @@ const PolkadotDAOStructure = () => {
                         x="500"
                         y="225"
                         textAnchor="middle"
-                        className="fill-gray-200 text-xs"
+                        className="svg-text-secondary text-base"
                       >
                         Foundation
                       </text>
@@ -992,7 +990,7 @@ const PolkadotDAOStructure = () => {
                         x="500"
                         y="260"
                         textAnchor="middle"
-                        className="fill-purple-300 text-xs"
+                        className="fill-purple-300 text-base"
                       >
                         High Vote Power
                       </text>
@@ -1002,17 +1000,17 @@ const PolkadotDAOStructure = () => {
                       <circle
                         cx="1200"
                         cy="220"
-                        r="30"
+                        r="60"
                         fill="rgba(168, 85, 247, 0.8)"
                         stroke="#A855F7"
-                        strokeWidth="3"
+                        strokeWidth="6"
                         strokeDasharray="5,5"
                       />
                       <text
                         x="1200"
                         y="210"
                         textAnchor="middle"
-                        className="fill-white text-xs font-bold"
+                        className="svg-text-primary text-base font-bold"
                       >
                         Large
                       </text>
@@ -1020,7 +1018,7 @@ const PolkadotDAOStructure = () => {
                         x="1200"
                         y="225"
                         textAnchor="middle"
-                        className="fill-gray-200 text-xs"
+                        className="svg-text-secondary text-base"
                       >
                         Holders
                       </text>
@@ -1028,7 +1026,7 @@ const PolkadotDAOStructure = () => {
                         x="1200"
                         y="260"
                         textAnchor="middle"
-                        className="fill-purple-300 text-xs"
+                        className="fill-purple-300 text-base"
                       >
                         Whale Votes
                       </text>
@@ -1037,17 +1035,17 @@ const PolkadotDAOStructure = () => {
                       <circle
                         cx="1450"
                         cy="220"
-                        r="30"
+                        r="60"
                         fill="rgba(168, 85, 247, 0.8)"
                         stroke="#A855F7"
-                        strokeWidth="3"
+                        strokeWidth="6"
                         strokeDasharray="5,5"
                       />
                       <text
                         x="1450"
                         y="210"
                         textAnchor="middle"
-                        className="fill-white text-xs font-bold"
+                        className="svg-text-primary text-base font-bold"
                       >
                         Institutional
                       </text>
@@ -1055,7 +1053,7 @@ const PolkadotDAOStructure = () => {
                         x="1450"
                         y="225"
                         textAnchor="middle"
-                        className="fill-gray-200 text-xs"
+                        className="svg-text-secondary text-base"
                       >
                         Investors
                       </text>
@@ -1063,7 +1061,7 @@ const PolkadotDAOStructure = () => {
                         x="1450"
                         y="260"
                         textAnchor="middle"
-                        className="fill-purple-300 text-xs"
+                        className="fill-purple-300 text-base"
                       >
                         Corporate Stake
                       </text>
@@ -1075,7 +1073,7 @@ const PolkadotDAOStructure = () => {
                         x2="1150"
                         y2="150"
                         stroke="rgba(168, 85, 247, 0.6)"
-                        strokeWidth="3"
+                        strokeWidth="6"
                         strokeDasharray="6,3"
                       />
                       <line
@@ -1084,7 +1082,7 @@ const PolkadotDAOStructure = () => {
                         x2="1200"
                         y2="190"
                         stroke="rgba(168, 85, 247, 0.6)"
-                        strokeWidth="3"
+                        strokeWidth="6"
                         strokeDasharray="6,3"
                       />
                       <line
@@ -1093,49 +1091,49 @@ const PolkadotDAOStructure = () => {
                         x2="1250"
                         y2="160"
                         stroke="rgba(168, 85, 247, 0.6)"
-                        strokeWidth="3"
+                        strokeWidth="6"
                         strokeDasharray="6,3"
                       />
                     </g>
 
                     {/* Technical Fellowship */}
                     <circle
-                      cx="1700"
-                      cy="450"
-                      r="50"
+                      cx="1900"
+                      cy="530"
+                      r="100"
                       fill="url(#opengovGradient)"
                       stroke="#8B5CF6"
-                      strokeWidth="4"
+                      strokeWidth="8"
                     />
                     <text
-                      x="1700"
-                      y="430"
+                      x="1900"
+                      y="510"
                       textAnchor="middle"
-                      className="fill-white font-bold text-base"
+                      className="svg-text-primary font-bold text-2xl"
                     >
                       Technical
                     </text>
                     <text
-                      x="1700"
-                      y="450"
+                      x="1900"
+                      y="530"
                       textAnchor="middle"
-                      className="fill-gray-200 text-sm"
+                      className="svg-text-secondary text-lg"
                     >
                       Fellowship
                     </text>
                     <text
-                      x="1700"
-                      y="470"
+                      x="1900"
+                      y="550"
                       textAnchor="middle"
-                      className="fill-gray-200 text-sm"
+                      className="svg-text-secondary text-lg"
                     >
                       Collective
                     </text>
                     <text
-                      x="1700"
-                      y="520"
+                      x="1900"
+                      y="600"
                       textAnchor="middle"
-                      className="fill-gray-400 text-sm"
+                      className="svg-text-secondary text-lg"
                     >
                       Runtime Experts & Scientists
                     </text>
@@ -1146,17 +1144,17 @@ const PolkadotDAOStructure = () => {
                       <circle
                         cx="2000"
                         cy="450"
-                        r="50"
+                        r="100"
                         fill="rgba(34, 197, 94, 0.8)"
                         stroke="#22C55E"
-                        strokeWidth="4"
+                        strokeWidth="8"
                         strokeDasharray="5,5"
                       />
                       <text
                         x="2000"
                         y="430"
                         textAnchor="middle"
-                        className="fill-white font-bold text-base"
+                        className="svg-text-primary font-bold text-2xl"
                       >
                         Parity Technologies
                       </text>
@@ -1164,7 +1162,7 @@ const PolkadotDAOStructure = () => {
                         x="2000"
                         y="450"
                         textAnchor="middle"
-                        className="fill-gray-200 text-sm"
+                        className="svg-text-secondary text-lg"
                       >
                         Corporate Entity
                       </text>
@@ -1172,7 +1170,7 @@ const PolkadotDAOStructure = () => {
                         x="2000"
                         y="210"
                         textAnchor="middle"
-                        className="fill-green-300 text-sm"
+                        className="fill-green-300 text-lg"
                       >
                         UK Company
                       </text>
@@ -1180,7 +1178,7 @@ const PolkadotDAOStructure = () => {
                         x="2000"
                         y="260"
                         textAnchor="middle"
-                        className="fill-green-200 text-sm"
+                        className="fill-green-200 text-lg"
                       >
                         • Protects ONLY Employed Fellowship Members
                       </text>
@@ -1188,7 +1186,7 @@ const PolkadotDAOStructure = () => {
                         x="2000"
                         y="535"
                         textAnchor="middle"
-                        className="fill-green-200 text-sm"
+                        className="fill-green-200 text-lg"
                       >
                         • Independent Fellowship members UNPROTECTED
                       </text>
@@ -1196,7 +1194,7 @@ const PolkadotDAOStructure = () => {
                         x="2000"
                         y="550"
                         textAnchor="middle"
-                        className="fill-green-200 text-sm"
+                        className="fill-green-200 text-lg"
                       >
                         • Creates 2-tier system within Fellowship
                       </text>
@@ -1204,7 +1202,7 @@ const PolkadotDAOStructure = () => {
                         x="2000"
                         y="565"
                         textAnchor="middle"
-                        className="fill-orange-300 text-sm"
+                        className="fill-orange-300 text-lg"
                       >
                         • Minority of Fellowship members protected
                       </text>
@@ -1216,7 +1214,7 @@ const PolkadotDAOStructure = () => {
                         x2="1950"
                         y2="450"
                         stroke="rgba(34, 197, 94, 0.6)"
-                        strokeWidth="3"
+                        strokeWidth="6"
                         strokeDasharray="5,5"
                       />
 
@@ -1224,16 +1222,16 @@ const PolkadotDAOStructure = () => {
                       <circle
                         cx="1850"
                         cy="400"
-                        r="12"
+                        r="24"
                         fill="rgba(251, 146, 60, 0.8)"
                         stroke="#F59E0B"
-                        strokeWidth="2"
+                        strokeWidth="4"
                       />
                       <text
                         x="1850"
                         y="407"
                         textAnchor="middle"
-                        className="fill-white font-bold text-xs"
+                        className="svg-text-primary font-bold text-lg"
                       >
                         ⚠️
                       </text>
@@ -1241,7 +1239,7 @@ const PolkadotDAOStructure = () => {
                         x="1850"
                         y="425"
                         textAnchor="middle"
-                        className="fill-orange-300 text-xs"
+                        className="fill-orange-300 text-base"
                       >
                         PARTIAL
                       </text>
@@ -1249,7 +1247,7 @@ const PolkadotDAOStructure = () => {
                         x="1850"
                         y="440"
                         textAnchor="middle"
-                        className="fill-orange-300 text-xs"
+                        className="fill-orange-300 text-base"
                       >
                         PROTECTION
                       </text>
@@ -1261,7 +1259,7 @@ const PolkadotDAOStructure = () => {
                         x2="1420"
                         y2="290"
                         stroke="rgba(34, 197, 94, 0.6)"
-                        strokeWidth="3"
+                        strokeWidth="6"
                         strokeDasharray="6,6"
                       />
                     </g>
@@ -1269,184 +1267,237 @@ const PolkadotDAOStructure = () => {
 
                     {/* OpenGov Referenda (Central) */}
                     <circle
-                      cx="1200"
-                      cy="550"
-                      r="65"
+                      cx="1400"
+                      cy="630"
+                      r="130"
                       fill="url(#opengovGradient)"
                       stroke="#3B82F6"
                       strokeWidth="5"
                     />
                     <text
-                      x="1200"
-                      y="530"
+                      x="1400"
+                      y="610"
                       textAnchor="middle"
-                      className="fill-white font-bold text-lg"
+                      className="svg-text-primary font-bold text-3xl"
                     >
                       OpenGov
                     </text>
                     <text
-                      x="1200"
-                      y="550"
+                      x="1400"
+                      y="630"
                       textAnchor="middle"
-                      className="fill-gray-200 text-base"
+                      className="svg-text-secondary text-xl"
                     >
                       Referenda
                     </text>
                     <text
-                      x="1200"
-                      y="570"
+                      x="1400"
+                      y="650"
                       textAnchor="middle"
-                      className="fill-gray-200 text-sm"
+                      className="svg-text-secondary text-lg"
                     >
                       AYE / NAY Voting
                     </text>
                     <text
-                      x="1200"
-                      y="620"
+                      x="1400"
+                      y="700"
                       textAnchor="middle"
-                      className="fill-gray-400 text-sm"
+                      className="svg-text-secondary text-lg"
                     >
                       Direct Democracy with Conviction
                     </text>
 
                   </g>
 
-                  {/* Level 3: Treasury */}
+                  {/* Level 3: Treasury - Enlarged and Centered */}
                   <circle
-                    cx="1200"
-                    cy="800"
-                    r="70"
+                    cx="1400"
+                    cy="900"
+                    r="180"
                     fill="url(#treasuryGradient)"
                     stroke="#10B981"
-                    strokeWidth="5"
+                    strokeWidth="8"
                     filter="url(#glow)"
                   />
                   <text
-                    x="1200"
-                    y="780"
+                    x="1400"
+                    y="880"
                     textAnchor="middle"
-                    className="fill-white font-bold text-lg"
+                    className="svg-text-primary font-bold text-4xl"
                   >
                     Polkadot
                   </text>
                   <text
-                    x="1200"
-                    y="805"
+                    x="1400"
+                    y="910"
                     textAnchor="middle"
-                    className="fill-gray-200 text-base"
+                    className="svg-text-secondary text-2xl"
                   >
                     Treasury
                   </text>
                   <text
-                    x="1200"
-                    y="825"
+                    x="1400"
+                    y="935"
                     textAnchor="middle"
-                    className="fill-gray-200 text-sm"
+                    className="svg-text-secondary text-xl"
                   >
                     Community Funds
                   </text>
                   <text
-                    x="1200"
-                    y="890"
+                    x="1400"
+                    y="980"
                     textAnchor="middle"
-                    className="fill-gray-400 text-sm"
+                    className="svg-text-secondary text-lg"
                   >
                     Inflation + Transaction Fees
                   </text>
 
+                  {/* Level 4: Bounties Central Hub - Even Lower */}
+                  <circle
+                    cx="1400"
+                    cy="2100"
+                    r="220"
+                    fill="rgba(139, 92, 246, 0.2)"
+                    stroke="#8B5CF6"
+                    strokeWidth="10"
+                    filter="url(#glow)"
+                  />
+                  <text
+                    x="1400"
+                    y="2070"
+                    textAnchor="middle"
+                    className="svg-text-primary font-bold text-5xl"
+                  >
+                    Treasury
+                  </text>
+                  <text
+                    x="1400"
+                    y="2110"
+                    textAnchor="middle"
+                    className="svg-text-secondary text-3xl"
+                  >
+                    Bounties
+                  </text>
+                  <text
+                    x="1400"
+                    y="2140"
+                    textAnchor="middle"
+                    className="svg-text-secondary text-2xl"
+                  >
+                    20 Active Programs
+                  </text>
+                  <text
+                    x="1400"
+                    y="2180"
+                    textAnchor="middle"
+                    className="svg-text-secondary text-xl"
+                  >
+                    Specialized Working Groups
+                  </text>
+
+                  {/* Connection from Treasury to Bounties */}
+                  <line
+                    x1="1400"
+                    y1="1080"
+                    x2="1400"
+                    y2="1880"
+                    stroke="rgba(139, 92, 246, 0.6)"
+                    strokeWidth="15"
+                  />
+
                   {/* Direct Treasury Proposals - MAJORITY UNPROTECTED */}
                   <g>
-                    {/* Direct Treasury Proposals Circle - Moved to left */}
+                    {/* Direct Treasury Proposals Circle - Positioned to left of treasury */}
                     <circle
-                      cx="800"
-                      cy="800"
-                      r="60"
+                      cx="1000"
+                      cy="900"
+                      r="140"
                       fill="rgba(239, 68, 68, 0.2)"
                       stroke="#EF4444"
-                      strokeWidth="4"
+                      strokeWidth="8"
                       strokeDasharray="8,4"
                     />
                     <text
-                      x="800"
-                      y="780"
+                      x="1000"
+                      y="870"
                       textAnchor="middle"
-                      className="fill-red-300 font-bold text-base"
+                      className="fill-red-300 font-bold text-2xl"
                     >
                       Direct Treasury
                     </text>
                     <text
-                      x="800"
-                      y="800"
+                      x="1000"
+                      y="895"
                       textAnchor="middle"
-                      className="fill-red-300 text-base"
+                      className="fill-red-300 text-xl"
                     >
                       Proposals
                     </text>
                     <text
-                      x="800"
-                      y="820"
+                      x="1000"
+                      y="920"
                       textAnchor="middle"
-                      className="fill-red-400 text-sm"
+                      className="fill-red-400 text-lg"
                     >
                       MAJORITY - NO PROTECTION
                     </text>
                     <text
-                      x="800"
-                      y="870"
+                      x="1000"
+                      y="970"
                       textAnchor="middle"
-                      className="fill-red-200 text-sm"
+                      className="fill-red-200 text-lg"
                     >
                       • App Development (No IP Entity)
                     </text>
                     <text
-                      x="800"
-                      y="885"
+                      x="1000"
+                      y="985"
                       textAnchor="middle"
-                      className="fill-red-200 text-sm"
+                      className="fill-red-200 text-lg"
                     >
                       • Infrastructure Projects
                     </text>
                     <text
-                      x="800"
-                      y="900"
+                      x="1000"
+                      y="1000"
                       textAnchor="middle"
-                      className="fill-red-200 text-sm"
+                      className="fill-red-200 text-lg"
                     >
                       • Individual Contributors
                     </text>
                     <text
-                      x="800"
-                      y="915"
+                      x="1000"
+                      y="1015"
                       textAnchor="middle"
-                      className="fill-red-200 text-sm"
+                      className="fill-red-200 text-lg"
                     >
                       • Most Grant Recipients
                     </text>
 
                     {/* Line from Treasury to Direct Proposals */}
                     <line
-                      x1="1140"
-                      y1="780"
-                      x2="860"
-                      y2="790"
+                      x1="1280"
+                      y1="880"
+                      x2="1140"
+                      y2="890"
                       stroke="rgba(239, 68, 68, 0.6)"
-                      strokeWidth="4"
+                      strokeWidth="8"
                     />
 
                     {/* Warning Icon for Direct Proposals */}
                     <circle
-                      cx="750"
-                      cy="750"
-                      r="15"
+                      cx="950"
+                      cy="850"
+                      r="30"
                       fill="rgba(239, 68, 68, 0.8)"
                       stroke="#EF4444"
-                      strokeWidth="3"
+                      strokeWidth="6"
                     />
                     <text
-                      x="750"
-                      y="758"
+                      x="950"
+                      y="858"
                       textAnchor="middle"
-                      className="fill-white font-bold text-base"
+                      className="svg-text-primary font-bold text-2xl"
                     >
                       ⚠️
                     </text>
@@ -1456,173 +1507,294 @@ const PolkadotDAOStructure = () => {
                   <g>
                     {/* PCF Circle - Positioned to the right of Treasury */}
                     <circle
-                      cx="1600"
-                      cy="800"
-                      r="60"
+                      cx="1800"
+                      cy="900"
+                      r="140"
                       fill="rgba(34, 197, 94, 0.3)"
                       stroke="#22C55E"
-                      strokeWidth="4"
+                      strokeWidth="8"
                       className="cursor-pointer hover:fill-green-600/90"
                       onClick={() => window.location.href = "/pcf"}
                     />
                     <text
-                      x="1600"
-                      y="775"
+                      x="1800"
+                      y="870"
                       textAnchor="middle"
-                      className="fill-green-300 font-bold text-base cursor-pointer"
+                      className="fill-green-300 font-bold text-2xl cursor-pointer"
                       onClick={() => window.location.href = "/pcf"}
                     >
                       Polkadot Community
                     </text>
                     <text
-                      x="1600"
-                      y="795"
+                      x="1800"
+                      y="895"
                       textAnchor="middle"
-                      className="fill-green-300 font-bold text-base cursor-pointer"
+                      className="fill-green-300 font-bold text-2xl cursor-pointer"
                       onClick={() => window.location.href = "/pcf"}
                     >
                       Foundation (PCF)
                     </text>
                     <text
-                      x="1600"
-                      y="815"
+                      x="1800"
+                      y="920"
                       textAnchor="middle"
-                      className="fill-green-400 text-sm cursor-pointer"
+                      className="fill-green-400 text-lg cursor-pointer"
                       onClick={() => window.location.href = "/pcf"}
                     >
                       Cayman Islands Entity
                     </text>
                     <text
-                      x="1600"
-                      y="870"
+                      x="1800"
+                      y="970"
                       textAnchor="middle"
-                      className="fill-green-200 text-sm cursor-pointer"
+                      className="fill-green-200 text-lg cursor-pointer"
                       onClick={() => window.location.href = "/pcf"}
                     >
                       • Born from Treasury Proposal (Ref #1591)
                     </text>
                     <text
-                      x="1600"
-                      y="885"
+                      x="1800"
+                      y="985"
                       textAnchor="middle"
-                      className="fill-green-200 text-sm cursor-pointer"
+                      className="fill-green-200 text-lg cursor-pointer"
                       onClick={() => window.location.href = "/pcf"}
                     >
                       • Protects Marketing Bounty (#33)
                     </text>
                     <text
-                      x="1600"
-                      y="900"
+                      x="1800"
+                      y="1000"
                       textAnchor="middle"
-                      className="fill-green-200 text-sm cursor-pointer"
+                      className="fill-green-200 text-lg cursor-pointer"
                       onClick={() => window.location.href = "/pcf"}
                     >
                       • Protects Polkadot App
                     </text>
                     <text
-                      x="1600"
-                      y="915"
+                      x="1800"
+                      y="1015"
                       textAnchor="middle"
-                      className="fill-green-200 text-sm cursor-pointer"
+                      className="fill-green-200 text-lg cursor-pointer"
                       onClick={() => window.location.href = "/pcf"}
                     >
                       • VASP/AML Compliance Framework
                     </text>
                     <text
-                      x="1600"
-                      y="930"
+                      x="1800"
+                      y="1030"
                       textAnchor="middle"
-                      className="fill-green-200 text-sm cursor-pointer"
+                      className="fill-green-200 text-lg cursor-pointer"
                       onClick={() => window.location.href = "/pcf"}
                     >
-                      • 1 of 20 Bounties + App Protected
+                      • 1 of 20 Bounties (#33) + App Protected
                     </text>
 
-                    {/* Polkadot App Entity - Protected by PCF */}
+                    {/* PCF Hong Kong Entity */}
                     <g>
                       <circle
-                        cx="1950"
-                        cy="800"
-                        r="50"
+                        cx="2200"
+                        cy="1000"
+                        r="120"
+                        fill="rgba(34, 197, 94, 0.25)"
+                        stroke="#22C55E"
+                        strokeWidth="6"
+                        strokeDasharray="10,5"
+                        className="cursor-pointer hover:fill-green-600/40"
+                      />
+                      <text
+                        x="2200"
+                        y="980"
+                        textAnchor="middle"
+                        className="fill-green-300 font-bold text-xl"
+                      >
+                        PCF Hong Kong
+                      </text>
+                      <text
+                        x="2200"
+                        y="1000"
+                        textAnchor="middle"
+                        className="fill-green-400 text-lg"
+                      >
+                        Hong Kong Entity
+                      </text>
+                      <text
+                        x="2200"
+                        y="1020"
+                        textAnchor="middle"
+                        className="fill-green-300 text-base"
+                      >
+                        Asia-Pacific Operations
+                      </text>
+                      <text
+                        x="2200"
+                        y="1050"
+                        textAnchor="middle"
+                        className="fill-green-200 text-base"
+                      >
+                        • Regional Compliance
+                      </text>
+                      <text
+                        x="2200"
+                        y="1065"
+                        textAnchor="middle"
+                        className="fill-green-200 text-base"
+                      >
+                        • Local Partnerships
+                      </text>
+                      <text
+                        x="2200"
+                        y="1080"
+                        textAnchor="middle"
+                        className="fill-green-200 text-base"
+                      >
+                        • Asian Market Focus
+                      </text>
+
+                      {/* Connection from PCF Cayman to PCF Hong Kong */}
+                      <line
+                        x1="1940"
+                        y1="1000"
+                        x2="2080"
+                        y2="1000"
+                        stroke="#22C55E"
+                        strokeWidth="6"
+                        strokeDasharray="12,6"
+                        strokeOpacity="0.7"
+                      />
+
+                      {/* Connection indicator */}
+                      <circle
+                        cx="2010"
+                        cy="970"
+                        r="20"
+                        fill="rgba(34, 197, 94, 0.6)"
+                        stroke="#22C55E"
+                        strokeWidth="4"
+                      />
+                      <text
+                        x="2010"
+                        y="977"
+                        textAnchor="middle"
+                        className="svg-text-primary font-bold text-base"
+                      >
+                        🌏
+                      </text>
+                    </g>
+
+                    {/* Polkadot App Entity - Protected by PCF - Repositioned */}
+                    <g>
+                      {/* PCF Protection Wrapper around Polkadot App */}
+                      <ellipse
+                        cx="2000"
+                        cy="1200"
+                        rx="160"
+                        ry="120"
+                        fill="rgba(34, 197, 94, 0.1)"
+                        stroke="#22C55E"
+                        strokeWidth="8"
+                        strokeDasharray="12,8"
+                      />
+                      <text
+                        x="2000"
+                        y="1100"
+                        textAnchor="middle"
+                        className="fill-green-400 text-xl font-bold"
+                      >
+                        🛡️ PCF LEGAL PROTECTION
+                      </text>
+
+                      {/* Polkadot App Main Circle */}
+                      <circle
+                        cx="2000"
+                        cy="1200"
+                        r="100"
                         fill="rgba(139, 92, 246, 0.3)"
                         stroke="#8B5CF6"
-                        strokeWidth="4"
+                        strokeWidth="8"
                         className="cursor-pointer hover:fill-purple-600/50"
                       />
                       <text
-                        x="1950"
-                        y="785"
+                        x="2000"
+                        y="1185"
                         textAnchor="middle"
-                        className="fill-purple-300 font-bold text-base"
+                        className="fill-purple-300 font-bold text-2xl"
                       >
                         Polkadot App
                       </text>
                       <text
-                        x="1950"
-                        y="805"
+                        x="2000"
+                        y="1205"
                         textAnchor="middle"
-                        className="fill-purple-300 text-sm"
+                        className="fill-purple-300 text-lg"
                       >
                         Application
                       </text>
                       <text
-                        x="1950"
-                        y="820"
+                        x="2000"
+                        y="1220"
                         textAnchor="middle"
-                        className="fill-purple-400 text-sm"
+                        className="fill-purple-400 text-lg"
                       >
                         Protected by PCF
                       </text>
                       <text
-                        x="1950"
-                        y="860"
+                        x="2000"
+                        y="1260"
                         textAnchor="middle"
-                        className="fill-purple-200 text-sm"
+                        className="fill-purple-200 text-lg"
                       >
                         • User Interface Development
                       </text>
                       <text
-                        x="1950"
-                        y="875"
+                        x="2000"
+                        y="1275"
                         textAnchor="middle"
-                        className="fill-purple-200 text-sm"
+                        className="fill-purple-200 text-lg"
                       >
                         • IP & Legal Protection
                       </text>
                       <text
-                        x="1950"
-                        y="890"
+                        x="2000"
+                        y="1290"
                         textAnchor="middle"
-                        className="fill-purple-200 text-sm"
+                        className="fill-purple-200 text-lg"
                       >
                         • Corporate Veil Coverage
                       </text>
+                      <text
+                        x="2000"
+                        y="1320"
+                        textAnchor="middle"
+                        className="fill-green-300 text-lg"
+                      >
+                        Polkadot Community Foundation
+                      </text>
 
-                      {/* Protection Line from PCF to Polkadot App */}
+                      {/* Enhanced Protection Line from PCF to Polkadot App */}
                       <line
-                        x1="1660"
-                        y1="800"
-                        x2="1900"
-                        y2="800"
+                        x1="1800"
+                        y1="1040"
+                        x2="1850"
+                        y2="1150"
                         stroke="#22C55E"
-                        strokeWidth="4"
-                        strokeDasharray="8,8"
+                        strokeWidth="10"
+                        strokeDasharray="12,8"
                       />
 
                       {/* Protection Shield Icon for Polkadot App */}
                       <circle
-                        cx="1780"
-                        cy="770"
-                        r="12"
+                        cx="1820"
+                        cy="1080"
+                        r="30"
                         fill="rgba(34, 197, 94, 0.8)"
                         stroke="#22C55E"
-                        strokeWidth="3"
+                        strokeWidth="6"
                       />
                       <text
-                        x="1780"
-                        y="778"
+                        x="1820"
+                        y="1088"
                         textAnchor="middle"
-                        className="fill-white font-bold text-xs"
+                        className="svg-text-primary font-bold text-2xl"
                       >
                         🛡️
                       </text>
@@ -1630,28 +1802,28 @@ const PolkadotDAOStructure = () => {
 
                     {/* Line from Treasury to PCF */}
                     <line
-                      x1="1260"
-                      y1="780"
-                      x2="1540"
-                      y2="800"
+                      x1="1500"
+                      y1="980"
+                      x2="1660"
+                      y2="1000"
                       stroke="rgba(34, 197, 94, 0.6)"
-                      strokeWidth="4"
+                      strokeWidth="8"
                     />
 
                     {/* Protection Shield Icon */}
                     <circle
                       cx="1650"
                       cy="750"
-                      r="15"
+                      r="30"
                       fill="rgba(34, 197, 94, 0.8)"
                       stroke="#22C55E"
-                      strokeWidth="3"
+                      strokeWidth="6"
                     />
                     <text
                       x="1650"
                       y="758"
                       textAnchor="middle"
-                      className="fill-white font-bold text-base"
+                      className="svg-text-primary font-bold text-2xl"
                     >
                       🛡️
                     </text>
@@ -1664,7 +1836,7 @@ const PolkadotDAOStructure = () => {
                       <circle
                         cx="1045"
                         cy="665"
-                        r="8"
+                        r="16"
                         fill="rgba(249, 115, 22, 0.2)"
                         stroke="#F97316"
                         strokeWidth="1"
@@ -1679,304 +1851,275 @@ const PolkadotDAOStructure = () => {
                     </g>
                   </g>
 
-                  {/* Level 4: Bounty Categories */}
-                  {(
-                    Object.entries(bountyCategories) as [
-                      CategoryName,
-                      Bounty[]
-                    ][]
-                  ).map(([categoryName, categoryBounties], catIndex) => {
-                    if (categoryBounties.length === 0) return null;
 
-                    // Two-row layout for category display
-                    const isFirstRow = catIndex < 3;
-                    const rowIndex = catIndex % 3;
-                    const categoryX = 400 + rowIndex * 800;
-                    const categoryY = isFirstRow ? 1100 : 1800;
-                    const categoryInfo = categories[categoryName];
+                  {/* Level 5: Individual Bounties - Two Layers with Strategic Positioning */}
+                  {bounties.map((bounty, index) => {
+                    // Calculate positioning in two layers around the central Bounties hub
+                    const centerX = 1400;
+                    const centerY = 2100; // Match new hub position
+
+                    // Special positioning: Swap physical positions of #33 and #62
+                    let actualBounty = bounty;
+                    let swappedIndex = index;
+
+                    // Find the indices of bounties #33 and #62
+                    const bounty33Index = bounties.findIndex(b => b.id === 33);
+                    const bounty62Index = bounties.findIndex(b => b.id === 62);
+
+                    // Swap positions: #33 takes #62's position, #62 takes #33's position
+                    if (bounty.id === 33) {
+                      swappedIndex = bounty62Index;
+                    } else if (bounty.id === 62) {
+                      swappedIndex = bounty33Index;
+                    }
+
+                    // Special positioning for Marketing Bounty #33 - put near Polkadot App (upper right)
+                    let finalIndex = swappedIndex;
+                    let isSpecialPositioned = false;
+
+                    if (bounty.id === 33) {
+                      // Position Marketing Bounty #33 in outer ring, upper right side near Polkadot App
+                      finalIndex = Math.floor(bounties.length * 0.75); // 3/4 around the circle (upper right)
+                      isSpecialPositioned = true;
+                    }
+
+                    // Create two layers: even indices (closer) and odd indices (farther)
+                    const isInnerLayer = finalIndex % 2 === 0;
+                    const innerRadius = 550; // Inner layer distance
+                    const outerRadius = 900; // Outer layer distance - increased separation
+
+                    const radius = isInnerLayer ? innerRadius : outerRadius;
+
+                    // Calculate how many bounties in each layer
+                    const evenBounties = bounties.filter((_, i) => i % 2 === 0).length;
+                    const oddBounties = bounties.filter((_, i) => i % 2 === 1).length;
+
+                    // Get position within the layer
+                    const layerIndex = isInnerLayer ? Math.floor(finalIndex / 2) : Math.floor(finalIndex / 2);
+                    const layerTotal = isInnerLayer ? evenBounties : oddBounties;
+
+                    let angle;
+                    if (isSpecialPositioned && bounty.id === 33) {
+                      // Position Marketing Bounty #33 in upper right side (near Polkadot App)
+                      angle = -0.5; // Upper right quadrant (negative for upper, small value for right)
+                    } else {
+                      // Calculate angle for this bounty within its layer
+                      angle = (layerIndex * 2 * Math.PI) / layerTotal;
+                    }
+
+                    const bountyX = centerX + radius * Math.cos(angle);
+                    const bountyY = centerY + radius * Math.sin(angle);
 
                     return (
-                      <g key={categoryName}>
-                        {/* Category Node */}
-                        <rect
-                          x={categoryX - 60}
-                          y={categoryY - 15}
-                          width="120"
-                          height="30"
-                          fill={categoryInfo.color}
-                          stroke="white"
-                          strokeWidth="2"
-                          rx="15"
+                      <g key={bounty.id}>
+                        {/* Connection from Bounties hub to individual bounty - Different styles for layers */}
+                        <line
+                          x1={centerX}
+                          y1={centerY}
+                          x2={bountyX}
+                          y2={bountyY}
+                          stroke="rgba(139, 92, 246, 0.5)"
+                          strokeWidth={isInnerLayer ? "6" : "10"} // Thinner for inner, much thicker for outer
+                          strokeDasharray={isInnerLayer ? "8,4" : "15,8"}
+                          opacity={isInnerLayer ? "0.6" : "0.8"}
                         />
-                        <text
-                          x={categoryX}
-                          y={categoryY + 5}
-                          textAnchor="middle"
-                          className="fill-white font-bold text-xs"
-                        >
-                          {categoryName.toUpperCase()}
-                        </text>
-                        <text
-                          x={categoryX}
-                          y={categoryY + 45}
-                          textAnchor="middle"
-                          className="fill-gray-400 text-xs"
-                        >
-                          {categoryBounties.length} Bounties
-                        </text>
-                      </g>
-                    );
-                  })}
 
-                  {/* Level 5: Individual Bounties */}
-                  {(
-                    Object.entries(bountyCategories) as [
-                      CategoryName,
-                      Bounty[]
-                    ][]
-                  ).map(([, categoryBounties], catIndex) => {
-                    if (categoryBounties.length === 0) return null;
+                        {/* PCF Legal Protection Wrapper for Marketing Bounty #33 Only */}
+                        {bounty.id === 33 && (
+                          <>
+                            <ellipse
+                              cx={bountyX}
+                              cy={bountyY}
+                              rx="200"
+                              ry="140"
+                              fill="rgba(34, 197, 94, 0.1)"
+                              stroke="#22C55E"
+                              strokeWidth="8"
+                              strokeDasharray="12,8"
+                            />
+                            <text
+                              x={bountyX}
+                              y={bountyY - 120}
+                              textAnchor="middle"
+                              className="fill-green-400 text-xl font-bold"
+                            >
+                              🛡️ PCF LEGAL PROTECTION
+                            </text>
+                            <text
+                              x={bountyX}
+                              y={bountyY + 115}
+                              textAnchor="middle"
+                              className="fill-green-300 text-lg"
+                            >
+                              Polkadot Community Foundation
+                            </text>
 
-                    // Two-row layout for bounty positioning
-                    const isFirstRow = catIndex < 3;
-                    const rowIndex = catIndex % 3;
-                    const categoryX = 400 + rowIndex * 800;
+                            {/* Line from PCF to Protected Bounty - Updated to connect via Polkadot App area */}
+                            <line
+                              x1="2000"
+                              y1="1100"
+                              x2={bountyX}
+                              y2={bountyY - 140}
+                              stroke="#22C55E"
+                              strokeWidth="10"
+                              strokeDasharray="12,8"
+                            />
+                          </>
+                        )}
 
-                    return categoryBounties.map((bounty, bountyIndex) => {
-                      // Create multiple rows for bounties to avoid overcrowding
-                      const bounciesPerRow = 2; // 2 bounties per row for column layout
-                      const row = Math.floor(bountyIndex / bounciesPerRow);
-                      const col = bountyIndex % bounciesPerRow;
-
-                      const baseY = isFirstRow ? 1250 : 1950; // More separation between rows
-                      const rowSpacing = 300;
-                      const bountyY = baseY + row * rowSpacing;
-
-                      const colSpacing = 250;
-                      const startX =
-                        categoryX -
-                        (colSpacing *
-                          (Math.min(categoryBounties.length, bounciesPerRow) -
-                            1)) /
-                          2;
-                      const bountyX = startX + col * colSpacing;
-
-                      return (
-                        <g key={bounty.id}>
-                          {/* PCF Legal Protection Wrapper for Marketing Bounty Only */}
-                          {bounty.id === 33 && (
-                            <>
-                              <rect
-                                x={bountyX - 110}
-                                y={bountyY - 100}
-                                width="220"
-                                height="220"
-                                fill="rgba(34, 197, 94, 0.1)"
-                                stroke="#22C55E"
-                                strokeWidth="4"
-                                strokeDasharray="12,8"
-                                rx="15"
-                              />
-                              <text
-                                x={bountyX}
-                                y={bountyY - 115}
-                                textAnchor="middle"
-                                className="fill-green-400 text-base font-bold"
-                              >
-                                🛡️ PCF LEGAL PROTECTION
-                              </text>
-                              <text
-                                x={bountyX}
-                                y={bountyY + 120}
-                                textAnchor="middle"
-                                className="fill-green-300 text-base"
-                              >
-                                Polkadot Community Foundation
-                              </text>
-                              <text
-                                x={bountyX}
-                                y={bountyY + 140}
-                                textAnchor="middle"
-                                className="fill-green-300 text-sm"
-                              >
-                                Cayman Islands Entity
-                              </text>
-
-                              {/* Line from PCF to Protected Bounty */}
-                              <line
-                                x1="1600"
-                                y1="860"
-                                x2={bountyX}
-                                y2={bountyY - 100}
-                                stroke="#22C55E"
-                                strokeWidth="4"
-                                strokeDasharray="8,8"
-                              />
-                              {/* Line from PCF to Marketing Bounty */}
-                              <line
-                                x1="1600"
-                                y1="860"
-                                x2={bountyX}
-                                y2={bountyY - 70}
-                                stroke="#F97316"
-                                strokeWidth="4"
-                                strokeDasharray="8,4"
-                              />
-                            </>
-                          )}
-
-                          {/* Bounty Card Background */}
-                          <rect
-                            x={bountyX - 60}
-                            y={bountyY - 50}
-                            width="120"
-                            height="120"
-                            fill="rgba(0, 0, 0, 0.7)"
-                            stroke="rgba(255, 255, 255, 0.2)"
-                            strokeWidth="2"
-                            rx="12"
-                            className="cursor-pointer hover:fill-gray-800/80"
-                            onClick={() => window.open(bounty.treasuryLink, "_blank")}
-                          />
-                          <circle
+                          {/* Combined Oval Bounty Shape */}
+                          <ellipse
                             cx={bountyX}
-                            cy={bountyY - 15}
-                            r="40"
+                            cy={bountyY}
+                            rx="170"
+                            ry="110"
                             fill={bounty.color}
-                            stroke="white"
-                            strokeWidth="4"
-                            className="cursor-pointer drop-shadow-lg"
+                            fillOpacity="0.2"
+                            stroke={bounty.color}
+                            strokeWidth="6"
+                            className="cursor-pointer hover:fill-opacity-30"
                             onClick={() => window.open(bounty.treasuryLink, "_blank")}
                           />
+
+                          {/* Inner gradient oval for depth */}
+                          <ellipse
+                            cx={bountyX}
+                            cy={bountyY - 10}
+                            rx="120"
+                            ry="70"
+                            fill={bounty.color}
+                            fillOpacity="0.4"
+                            className="cursor-pointer"
+                            onClick={() => window.open(bounty.treasuryLink, "_blank")}
+                          />
+
+                          {/* Bounty ID */}
                           <text
                             x={bountyX}
-                            y={bountyY - 10}
+                            y={bountyY - 40}
                             textAnchor="middle"
-                            className="fill-white font-bold text-base cursor-pointer"
+                            className="svg-text-primary font-bold text-3xl cursor-pointer"
                             onClick={() => window.open(bounty.treasuryLink, "_blank")}
                           >
                             #{bounty.id}
                           </text>
+
+                          {/* Bounty Name */}
+                          <text
+                            x={bountyX}
+                            y={bountyY - 10}
+                            textAnchor="middle"
+                            className="svg-text-primary font-semibold text-xl cursor-pointer"
+                            onClick={() => window.open(bounty.treasuryLink, "_blank")}
+                          >
+                            {bounty.name.length > 18
+                              ? bounty.name.substring(0, 18) + "..."
+                              : bounty.name}
+                          </text>
+
+                          {/* Category */}
                           <text
                             x={bountyX}
                             y={bountyY + 15}
                             textAnchor="middle"
-                            className="fill-white font-semibold text-base cursor-pointer"
+                            className="svg-text-secondary text-lg cursor-pointer opacity-80"
                             onClick={() => window.open(bounty.treasuryLink, "_blank")}
                           >
-                            {bounty.name.length > 16
-                              ? bounty.name.substring(0, 16) + "..."
-                              : bounty.name}
+                            {bounty.category}
                           </text>
+
+                          {/* Description */}
                           <text
                             x={bountyX}
                             y={bountyY + 35}
                             textAnchor="middle"
-                            className="fill-gray-300 text-sm cursor-pointer opacity-80"
+                            className="svg-text-secondary text-base cursor-pointer opacity-70"
                             onClick={() => window.open(bounty.treasuryLink, "_blank")}
                           >
-                            {bounty.category.slice(0, 3).toUpperCase()}
+                            {bounty.description.length > 30
+                              ? bounty.description.substring(0, 30) + "..."
+                              : bounty.description}
                           </text>
+
+                          {/* Status and Link indicator */}
                           <text
                             x={bountyX}
                             y={bountyY + 55}
                             textAnchor="middle"
-                            className="fill-gray-300 text-sm cursor-pointer opacity-70"
+                            className="svg-text-accent text-lg cursor-pointer font-medium"
                             onClick={() => window.open(bounty.treasuryLink, "_blank")}
                           >
-                            {bounty.description.length > 24
-                              ? bounty.description.substring(0, 24) + "..."
-                              : bounty.description}
+                            {bounty.status.toUpperCase()} • View Treasury →
                           </text>
-
-                          {/* Link Icon */}
-                          <g
-                            className="cursor-pointer opacity-60 hover:opacity-100"
-                            onClick={() => window.open(bounty.treasuryLink, "_blank")}
-                          >
-                            <circle
-                              cx={bountyX + 45}
-                              cy={bountyY + 40}
-                              r="8"
-                              fill="rgba(59, 130, 246, 0.2)"
-                              stroke="#3B82F6"
-                              strokeWidth="1"
-                            />
-                            <path
-                              d={`M ${bountyX + 41} ${bountyY + 37} L ${bountyX + 45} ${bountyY + 33} L ${bountyX + 49} ${bountyY + 37} M ${bountyX + 45} ${bountyY + 33} L ${bountyX + 45} ${bountyY + 47} M ${bountyX + 41} ${bountyY + 43} L ${bountyX + 49} ${bountyY + 43}`}
-                              stroke="#3B82F6"
-                              strokeWidth="1.5"
-                              fill="none"
-                              strokeLinecap="round"
-                            />
-                          </g>
 
                           {/* Legal Risk Warning for Non-PCF Bounties */}
                           {bounty.id !== 33 && (
                             <g>
-                              <circle
-                                cx={bountyX - 70}
-                                cy={bountyY - 20}
-                                r="12"
+                              <ellipse
+                                cx={bountyX - 120}
+                                cy={bountyY - 40}
+                                rx="35"
+                                ry="25"
                                 fill="rgba(239, 68, 68, 0.8)"
                                 stroke="#EF4444"
-                                strokeWidth="2"
+                                strokeWidth="4"
                               />
                               <text
-                                x={bountyX - 70}
-                                y={bountyY - 15}
+                                x={bountyX - 120}
+                                y={bountyY - 45}
                                 textAnchor="middle"
-                                className="fill-white font-bold text-xs"
+                                className="svg-text-primary font-bold text-lg"
                               >
                                 ⚠️
                               </text>
                               <text
-                                x={bountyX - 70}
-                                y={bountyY + 5}
+                                x={bountyX - 120}
+                                y={bountyY - 30}
                                 textAnchor="middle"
-                                className="fill-red-300 text-xs"
+                                className="fill-red-300 text-base"
                               >
                                 NO LEGAL
                               </text>
                               <text
-                                x={bountyX - 70}
-                                y={bountyY + 18}
+                                x={bountyX - 120}
+                                y={bountyY - 20}
                                 textAnchor="middle"
-                                className="fill-red-300 text-xs"
+                                className="fill-red-300 text-base"
                               >
                                 PROTECTION
                               </text>
 
                               {/* Contract Enforcement Gap Icon */}
-                              <circle
-                                cx={bountyX + 70}
-                                cy={bountyY - 20}
-                                r="10"
+                              <ellipse
+                                cx={bountyX + 120}
+                                cy={bountyY - 40}
+                                rx="30"
+                                ry="25"
                                 fill="rgba(220, 38, 127, 0.8)"
                                 stroke="#DC2679"
-                                strokeWidth="2"
+                                strokeWidth="4"
                               />
                               <text
-                                x={bountyX + 70}
-                                y={bountyY - 15}
+                                x={bountyX + 120}
+                                y={bountyY - 45}
                                 textAnchor="middle"
-                                className="fill-white font-bold text-xs"
+                                className="svg-text-primary font-bold text-lg"
                               >
                                 ⚖️
                               </text>
                               <text
-                                x={bountyX + 70}
-                                y={bountyY + 5}
+                                x={bountyX + 120}
+                                y={bountyY - 30}
                                 textAnchor="middle"
-                                className="fill-pink-300 text-xs"
+                                className="fill-pink-300 text-base"
                               >
                                 NO CONTRACT
                               </text>
                               <text
-                                x={bountyX + 70}
-                                y={bountyY + 18}
+                                x={bountyX + 120}
+                                y={bountyY - 20}
                                 textAnchor="middle"
-                                className="fill-pink-300 text-xs"
+                                className="fill-pink-300 text-base"
                               >
                                 ENFORCEMENT
                               </text>
@@ -1984,26 +2127,25 @@ const PolkadotDAOStructure = () => {
                           )}
                         </g>
                       );
-                    });
-                  })}
+                    })}
 
 
                   {/* Fellowship Info Box */}
                   <rect
                     x="670"
                     y="450"
-                    width="260"
-                    height="60"
+                    width="520"
+                    height="120"
                     fill="rgba(139, 92, 246, 0.1)"
                     stroke="rgba(139, 92, 246, 0.3)"
-                    strokeWidth="2"
-                    rx="8"
+                    strokeWidth="4"
+                    rx="16"
                   />
                   <text
                     x="800"
                     y="475"
                     textAnchor="middle"
-                    className="fill-purple-300 text-sm font-medium"
+                    className="fill-purple-300 text-lg font-medium"
                   >
                     Whitelisted Proposals
                   </text>
@@ -2011,7 +2153,7 @@ const PolkadotDAOStructure = () => {
                     x="800"
                     y="495"
                     textAnchor="middle"
-                    className="fill-purple-400 text-sm"
+                    className="fill-purple-400 text-lg"
                   >
                     Runtime Upgrades & Critical Changes
                   </text>
@@ -2021,19 +2163,19 @@ const PolkadotDAOStructure = () => {
                     <rect
                       x="50"
                       y="2600"
-                      width="500"
-                      height="180"
+                      width="1000"
+                      height="360"
                       fill="rgba(220, 38, 127, 0.15)"
                       stroke="#DC2679"
-                      strokeWidth="2"
+                      strokeWidth="4"
                       strokeDasharray="8,4"
-                      rx="12"
+                      rx="24"
                     />
                     <text
                       x="300"
                       y="2625"
                       textAnchor="middle"
-                      className="fill-pink-400 text-sm font-bold"
+                      className="fill-pink-400 text-lg font-bold"
                     >
                       ⚖️ CONTRACT ENFORCEMENT IMPOSSIBILITY
                     </text>
@@ -2041,7 +2183,7 @@ const PolkadotDAOStructure = () => {
                       x="300"
                       y="2645"
                       textAnchor="middle"
-                      className="fill-pink-300 text-xs font-medium"
+                      className="fill-pink-300 text-base font-medium"
                     >
                       No Legal Entity = No Enforceable Contracts
                     </text>
@@ -2049,7 +2191,7 @@ const PolkadotDAOStructure = () => {
                       x="300"
                       y="2665"
                       textAnchor="middle"
-                      className="fill-pink-300 text-xs"
+                      className="fill-pink-300 text-base"
                     >
                       PROBLEM: Treasury proposals approved but no enforcement mechanism
                     </text>
@@ -2057,7 +2199,7 @@ const PolkadotDAOStructure = () => {
                       x="300"
                       y="2680"
                       textAnchor="middle"
-                      className="fill-pink-300 text-xs"
+                      className="fill-pink-300 text-base"
                     >
                       PROPOSERS: Required to deliver but no legal accountability
                     </text>
@@ -2065,7 +2207,7 @@ const PolkadotDAOStructure = () => {
                       x="300"
                       y="2695"
                       textAnchor="middle"
-                      className="fill-pink-300 text-xs"
+                      className="fill-pink-300 text-base"
                     >
                       TREASURY: Cannot enforce delivery or recover funds
                     </text>
@@ -2073,7 +2215,7 @@ const PolkadotDAOStructure = () => {
                       x="300"
                       y="2715"
                       textAnchor="middle"
-                      className="fill-pink-200 text-xs"
+                      className="fill-pink-200 text-base"
                     >
                       • No legal entity to sign contracts with proposers
                     </text>
@@ -2081,7 +2223,7 @@ const PolkadotDAOStructure = () => {
                       x="300"
                       y="2730"
                       textAnchor="middle"
-                      className="fill-pink-200 text-xs"
+                      className="fill-pink-200 text-base"
                     >
                       • No mechanism for legal recourse if deliverables fail
                     </text>
@@ -2089,7 +2231,7 @@ const PolkadotDAOStructure = () => {
                       x="300"
                       y="2745"
                       textAnchor="middle"
-                      className="fill-pink-200 text-xs"
+                      className="fill-pink-200 text-base"
                     >
                       • Proposers can disappear without legal consequences
                     </text>
@@ -2097,7 +2239,7 @@ const PolkadotDAOStructure = () => {
                       x="300"
                       y="2760"
                       textAnchor="middle"
-                      className="fill-pink-200 text-xs"
+                      className="fill-pink-200 text-base"
                     >
                       • Community funds at risk with no recovery mechanism
                     </text>
@@ -2108,19 +2250,19 @@ const PolkadotDAOStructure = () => {
                     <rect
                       x="1100"
                       y="2600"
-                      width="450"
-                      height="160"
+                      width="900"
+                      height="320"
                       fill="rgba(239, 68, 68, 0.15)"
                       stroke="#EF4444"
-                      strokeWidth="2"
+                      strokeWidth="4"
                       strokeDasharray="8,4"
-                      rx="12"
+                      rx="24"
                     />
                     <text
                       x="1325"
                       y="2625"
                       textAnchor="middle"
-                      className="fill-red-400 text-sm font-bold"
+                      className="fill-red-400 text-lg font-bold"
                     >
                       ⚠️ SYSTEMIC LEGAL PROTECTION GAP
                     </text>
@@ -2128,7 +2270,7 @@ const PolkadotDAOStructure = () => {
                       x="1325"
                       y="2645"
                       textAnchor="middle"
-                      className="fill-red-300 text-xs font-medium"
+                      className="fill-red-300 text-base font-medium"
                     >
                       Per Referendum #1591: PCF only wraps Marketing Bounty
                     </text>
@@ -2136,7 +2278,7 @@ const PolkadotDAOStructure = () => {
                       x="1325"
                       y="2665"
                       textAnchor="middle"
-                      className="fill-red-300 text-xs"
+                      className="fill-red-300 text-base"
                     >
                       BOUNTIES: 19 of 20 operate without legal protection
                     </text>
@@ -2144,7 +2286,7 @@ const PolkadotDAOStructure = () => {
                       x="1325"
                       y="2680"
                       textAnchor="middle"
-                      className="fill-red-300 text-xs"
+                      className="fill-red-300 text-base"
                     >
                       TREASURY PROPOSALS: Direct liability to token holders
                     </text>
@@ -2152,7 +2294,7 @@ const PolkadotDAOStructure = () => {
                       x="1325"
                       y="2695"
                       textAnchor="middle"
-                      className="fill-red-300 text-xs"
+                      className="fill-red-300 text-base"
                     >
                       TECHNICAL FELLOWSHIP: Only Parity employees protected
                     </text>
@@ -2160,7 +2302,7 @@ const PolkadotDAOStructure = () => {
                       x="1325"
                       y="2710"
                       textAnchor="middle"
-                      className="fill-red-300 text-xs"
+                      className="fill-red-300 text-base"
                     >
                       APP DEVELOPMENT: No legal entity for IP management
                     </text>
@@ -2168,7 +2310,7 @@ const PolkadotDAOStructure = () => {
                       x="1325"
                       y="2715"
                       textAnchor="middle"
-                      className="fill-red-200 text-xs"
+                      className="fill-red-200 text-base"
                     >
                       • Token holders: Personal liability exposure when voting
                     </text>
@@ -2176,7 +2318,7 @@ const PolkadotDAOStructure = () => {
                       x="1325"
                       y="2730"
                       textAnchor="middle"
-                      className="fill-red-200 text-xs"
+                      className="fill-red-200 text-base"
                     >
                       • Governance: Only ~1% of supply votes, power concentrated
                     </text>
@@ -2184,7 +2326,7 @@ const PolkadotDAOStructure = () => {
                       x="1325"
                       y="2745"
                       textAnchor="middle"
-                      className="fill-red-200 text-xs"
+                      className="fill-red-200 text-base"
                     >
                       • Contributors: No corporate veil protection
                     </text>
@@ -2192,7 +2334,7 @@ const PolkadotDAOStructure = () => {
                       x="1325"
                       y="2760"
                       textAnchor="middle"
-                      className="fill-red-200 text-xs"
+                      className="fill-red-200 text-base"
                     >
                       • Treasury: No regulatory compliance framework
                     </text>
@@ -2203,18 +2345,18 @@ const PolkadotDAOStructure = () => {
                     <rect
                       x="600"
                       y="2900"
-                      width="450"
-                      height="100"
+                      width="900"
+                      height="200"
                       fill="rgba(34, 197, 94, 0.15)"
                       stroke="#22C55E"
-                      strokeWidth="2"
-                      rx="12"
+                      strokeWidth="4"
+                      rx="24"
                     />
                     <text
                       x="825"
                       y="2925"
                       textAnchor="middle"
-                      className="fill-green-400 text-sm font-bold"
+                      className="fill-green-400 text-lg font-bold"
                     >
                       ✓ LIMITED LEGAL COVERAGE ENTITIES
                     </text>
@@ -2222,7 +2364,7 @@ const PolkadotDAOStructure = () => {
                       x="825"
                       y="2945"
                       textAnchor="middle"
-                      className="fill-green-300 text-xs"
+                      className="fill-green-300 text-base"
                     >
                       PCF: Only Marketing Bounty (#33) - Cayman Islands
                     </text>
@@ -2230,7 +2372,7 @@ const PolkadotDAOStructure = () => {
                       x="825"
                       y="2960"
                       textAnchor="middle"
-                      className="fill-green-300 text-xs"
+                      className="fill-green-300 text-base"
                     >
                       Parity: Some Technical Fellowship members only
                     </text>
@@ -2238,7 +2380,7 @@ const PolkadotDAOStructure = () => {
                       x="825"
                       y="2980"
                       textAnchor="middle"
-                      className="fill-green-200 text-xs"
+                      className="fill-green-200 text-base"
                     >
                       • PCF: Corporate liability protection for 1/20 bounties
                     </text>
@@ -2246,7 +2388,7 @@ const PolkadotDAOStructure = () => {
                       x="825"
                       y="2995"
                       textAnchor="middle"
-                      className="fill-green-200 text-xs"
+                      className="fill-green-200 text-base"
                     >
                       • Parity: Corporate protection for employed developers
                     </text>
@@ -2254,7 +2396,7 @@ const PolkadotDAOStructure = () => {
                       x="825"
                       y="3010"
                       textAnchor="middle"
-                      className="fill-green-200 text-xs"
+                      className="fill-green-200 text-base"
                     >
                       • VASP/AML compliance framework (PCF only)
                     </text>
@@ -2264,7 +2406,7 @@ const PolkadotDAOStructure = () => {
                   <text
                     x="50"
                     y="2800"
-                    className="fill-blue-400 text-xs cursor-pointer underline"
+                    className="fill-blue-400 text-base cursor-pointer underline"
                     onClick={() =>
                       window.open(
                         "https://polkadot.subsquare.io/referenda/1591",
@@ -2279,7 +2421,7 @@ const PolkadotDAOStructure = () => {
                   <text
                     x="1450"
                     y="50"
-                    className="fill-blue-400 text-sm cursor-pointer underline"
+                    className="fill-blue-400 text-lg cursor-pointer underline"
                     onClick={() =>
                       window.open(
                         "https://wiki.polkadot.com/learn/learn-polkadot-opengov/",
@@ -2296,8 +2438,8 @@ const PolkadotDAOStructure = () => {
 
 
           {/* Research Context */}
-          <div className="bg-black/70 backdrop-blur-md border border-white/10 shadow-xl rounded-lg">
-            <div className="bg-gradient-to-r from-indigo-600/90 to-purple-600/90 backdrop-blur-sm text-white rounded-t-lg p-6">
+          <div className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl rounded-lg">
+            <div className="bg-gradient-to-r from-indigo-600/90 to-purple-600/90 backdrop-blur-sm text-black dark:text-white rounded-t-lg p-6">
               <h2 className="text-2xl font-bold flex items-center gap-3">
                 <svg
                   className="w-6 h-6"
@@ -2318,28 +2460,28 @@ const PolkadotDAOStructure = () => {
                       Treasury Funded Research
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">
+                  <h3 className="text-xl font-semibold text-black dark:text-white mb-4">
                     Polkadot Regulatory Analysis: Legal Enforcement of Treasury Proposals
                   </h3>
-                  <p className="text-gray-300 text-sm mb-2">
+                  <p className="text-gray-600 dark:text-gray-300 text-lg mb-2">
                     Approved through Referendum #1676 as part of the Polkadot.law initiative
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                   <div>
-                    <h3 className="font-semibold text-white mb-4 text-lg">
+                    <h3 className="font-semibold text-black dark:text-white mb-4 text-lg">
                       Research Objective
                     </h3>
-                    <p className="text-gray-300 mb-4 leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                       Analyze and evaluate the execution of Polkadot treasury proposals and its ecosystem (Web3/DAOs)
                       under the participation of the Polkadot Community Foundation (PCF) in Cayman Islands,
                       with mapping to USA legislation, identifying obligations, rights, disadvantages and benefits
                       of the current scheme, compared to expansion to the United States (or other jurisdictions).
                     </p>
 
-                    <h4 className="font-medium text-white mb-3">Specific Objectives:</h4>
-                    <ul className="space-y-2 text-gray-300 text-sm">
+                    <h4 className="font-medium text-black dark:text-white mb-3">Specific Objectives:</h4>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300 text-lg">
                       <li className="flex items-start gap-2">
                         <div className="w-2 h-2 bg-pink-400 rounded-full mt-2 flex-shrink-0"></div>
                         <span>Analyze current Polkadot structure and ecosystem (Web3/DAOs), as well as treasury proposals</span>
@@ -2360,35 +2502,35 @@ const PolkadotDAOStructure = () => {
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-white mb-4 text-lg">
+                    <h3 className="font-semibold text-black dark:text-white mb-4 text-lg">
                       Key Research Questions
                     </h3>
-                    <ul className="space-y-3 text-gray-300 text-sm">
+                    <ul className="space-y-3 text-gray-600 dark:text-gray-300 text-lg">
                       <li className="flex items-start gap-2">
                         <div className="w-4 h-4 bg-purple-400 rounded-full mt-1 flex-shrink-0"></div>
                         <div>
-                          <strong className="text-white">Technical Elements:</strong> What technical elements of Polkadot
+                          <strong className="text-black dark:text-white">Technical Elements:</strong> What technical elements of Polkadot
                           (relay chain, parachains, XCM, NPoS, Agile Coretime, OpenGov) are legally relevant?
                         </div>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-4 h-4 bg-blue-400 rounded-full mt-1 flex-shrink-0"></div>
                         <div>
-                          <strong className="text-white">Ecosystem Participation:</strong> What does &quot;being part&quot;
+                          <strong className="text-black dark:text-white">Ecosystem Participation:</strong> What does &quot;being part&quot;
                           of the ecosystem mean and what risks/obligations does each role entail?
                         </div>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-4 h-4 bg-green-400 rounded-full mt-1 flex-shrink-0"></div>
                         <div>
-                          <strong className="text-white">PCF Legal Framework:</strong> How does PCF fit into Cayman Islands
+                          <strong className="text-black dark:text-white">PCF Legal Framework:</strong> How does PCF fit into Cayman Islands
                           law (foundation company) and local VASP/AML regime?
                         </div>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-4 h-4 bg-orange-400 rounded-full mt-1 flex-shrink-0"></div>
                         <div>
-                          <strong className="text-white">Treasury Proposals:</strong> How are treasury proposals regulated
+                          <strong className="text-black dark:text-white">Treasury Proposals:</strong> How are treasury proposals regulated
                           by different legislations? Can they be executed as contracts?
                         </div>
                       </li>
@@ -2398,11 +2540,11 @@ const PolkadotDAOStructure = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                   <div className="bg-gray-800/50 p-6 rounded-lg">
-                    <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                    <h4 className="font-semibold text-black dark:text-white mb-3 flex items-center gap-2">
                       <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                       Technical Analysis
                     </h4>
-                    <ul className="space-y-2 text-gray-300 text-sm">
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300 text-lg">
                       <li>• Blockchain/Web3/Smart Contracts/DAOs fundamentals</li>
                       <li>• Polkadot architecture (Relay Chain, parachains, XCM)</li>
                       <li>• Consensus and security (NPoS)</li>
@@ -2412,11 +2554,11 @@ const PolkadotDAOStructure = () => {
                   </div>
 
                   <div className="bg-gray-800/50 p-6 rounded-lg">
-                    <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                    <h4 className="font-semibold text-black dark:text-white mb-3 flex items-center gap-2">
                       <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
                       Governance/Corporate
                     </h4>
-                    <ul className="space-y-2 text-gray-300 text-sm">
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300 text-lg">
                       <li>• Participation by role: holder, nominator, validator</li>
                       <li>• Collator/parachain teams obligations</li>
                       <li>• Treasury proposal structure and elements</li>
@@ -2426,11 +2568,11 @@ const PolkadotDAOStructure = () => {
                   </div>
 
                   <div className="bg-gray-800/50 p-6 rounded-lg">
-                    <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                    <h4 className="font-semibold text-black dark:text-white mb-3 flex items-center gap-2">
                       <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                       Regulatory Framework
                     </h4>
-                    <ul className="space-y-2 text-gray-300 text-sm">
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300 text-lg">
                       <li>• USA: SEC/CFTC/FinCEN/IRS regulations</li>
                       <li>• Token offering exemptions and case law</li>
                       <li>• European regulatory framework</li>
