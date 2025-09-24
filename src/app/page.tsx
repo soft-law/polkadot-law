@@ -40,7 +40,7 @@ export default function PolkadotLawPortal() {
       icon: BookOpen,
       title: "Academic Research",
       description:
-        "Treasury-funded scholarly research on DAO structures, blockchain governance, and legal precedents under U.S. and international law",
+        "Treasury-funded academic research on DAO structures, blockchain governance, and legal precedents under U.S. and international law",
       category: "Research",
       features: [
         "BlockGov Cookbook",
@@ -50,24 +50,24 @@ export default function PolkadotLawPortal() {
       ],
       link: "/research",
       color: "purple",
-      status: "Published",
+      status: "On Development",
       priority: "high",
     },
     {
       icon: Scale,
       title: "Legal Bounty",
-      description: "Powering Polkadot Ecosystem Startups",
-      category: "Governance",
+      description: "Comprehensive legal support for Polkadot ecosystem projects through international network of legal experts. Led by Amforc with Swiss law firm providing attorney-client privilege protection",
+      category: "Legal Support",
       features: [
-        "Referendum Compliance",
-        "Treasury Legal Framework",
-        "Voting Rights Analysis",
-        "Enforcement Mechanisms",
+        "Global Legal Network",
+        "Legal Templates & Knowledge Base",
+        "Retroactive Payment Model",
+        "96,500 DOT Requested"
       ],
       link: "/legalbounty",
       color: "blue",
-      status: "Development",
-      priority: "medium",
+      status: "Active",
+      priority: "high",
     },
   ];
 

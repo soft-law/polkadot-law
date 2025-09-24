@@ -53,6 +53,17 @@ export default function NavigationBar() {
               PCF
             </Link>
 
+            <Link
+              href="/legalbounty"
+              className={`flex items-center gap-2 px-3 lg:px-4 py-2 rounded-lg transition-all text-sm lg:text-base ${
+                pathname === "/legalbounty"
+                  ? "bg-pink-600 text-white"
+                  : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
+              }`}
+            >
+              Legal Bounty
+            </Link>
+
             <a
               href="https://wiki.polkadot.com/"
               target="_blank"
@@ -80,7 +91,7 @@ export default function NavigationBar() {
           <div className="md:hidden flex items-center space-x-2">
             <Link
               href="/research"
-              className={`px-3 py-2 rounded-lg transition-all text-sm ${
+              className={`px-2 py-2 rounded-lg transition-all text-xs ${
                 pathname === "/research"
                   ? "bg-pink-600 text-white"
                   : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
@@ -91,7 +102,7 @@ export default function NavigationBar() {
 
             <Link
               href="/pcf"
-              className={`flex items-center gap-1 px-3 py-2 rounded-lg transition-all text-sm ${
+              className={`flex items-center gap-1 px-2 py-2 rounded-lg transition-all text-xs ${
                 pathname === "/pcf"
                   ? "bg-pink-600 text-white"
                   : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
@@ -99,6 +110,17 @@ export default function NavigationBar() {
             >
               <Building className="w-3 h-3" />
               PCF
+            </Link>
+
+            <Link
+              href="/legalbounty"
+              className={`px-2 py-2 rounded-lg transition-all text-xs ${
+                pathname === "/legalbounty"
+                  ? "bg-pink-600 text-white"
+                  : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
+              }`}
+            >
+              Legal
             </Link>
 
             <a

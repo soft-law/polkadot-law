@@ -327,6 +327,9 @@ const PolkadotDAOStructure = () => {
                 Wrapping investigation into the Polkadot DAO structure under
                 U.S. and international law.
               </p>
+              <p className="text-xl md:text-2xl mb-6 text-gray-700 dark:text-white dark:text-gray-200 font-light">
+                Comming Soon...
+              </p>
             </div>
           </div>
         </div>
@@ -2014,7 +2017,7 @@ const PolkadotDAOStructure = () => {
           </div>
 
           {/* Limited Legal Coverage Entities */}
-          <div className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl rounded-lg mb-8">
+          {/* <div className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl rounded-lg mb-8">
             <div className="bg-gradient-to-r from-green-600/90 to-emerald-600/90 backdrop-blur-sm text-black dark:text-white rounded-t-lg p-6">
               <h2 className="text-2xl font-bold flex items-center gap-3">
                 <svg
@@ -2071,10 +2074,10 @@ const PolkadotDAOStructure = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Research Context */}
-          <div className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl rounded-lg">
+          {/* <div className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl rounded-lg">
             <div className="bg-gradient-to-r from-indigo-600/90 to-purple-600/90 backdrop-blur-sm text-black dark:text-white rounded-t-lg p-6">
               <h2 className="text-2xl font-bold flex items-center gap-3">
                 <svg
@@ -2084,7 +2087,7 @@ const PolkadotDAOStructure = () => {
                 >
                   <path d="M9 12l2 2 4-4" />
                 </svg>
-                Legal Research Context
+                Legal Research
               </h2>
             </div>
             <div className="p-8">
@@ -2259,7 +2262,7 @@ const PolkadotDAOStructure = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

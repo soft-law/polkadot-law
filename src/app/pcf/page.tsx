@@ -5,7 +5,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "PCF - Polkadot Community Foundation Structure & Director Nominations",
-  description: "Complete guide to the Polkadot Community Foundation including Cayman Islands incorporation, Hong Kong subsidiary, board governance, and active director nomination process. Apply to become a DOT Director.",
+  description:
+    "Complete guide to the Polkadot Community Foundation including Cayman Islands incorporation, Hong Kong subsidiary, board governance, and active director nomination process. Apply to become a DOT Director.",
   keywords: [
     "Polkadot Community Foundation",
     "PCF",
@@ -15,12 +16,13 @@ export const metadata: Metadata = {
     "DOT directors",
     "board governance",
     "PCF structure",
-    "community representation"
+    "community representation",
   ],
   openGraph: {
     title: "PCF - Polkadot Community Foundation",
-    description: "Apply for DOT Director positions and learn about PCF structure, governance, and operations.",
-    images: ['/pcf-og.png'],
+    description:
+      "Apply for DOT Director positions and learn about PCF structure, governance, and operations.",
+    images: ["/pcf-og.png"],
   },
 };
 import {
@@ -196,7 +198,7 @@ export default function PCFComprehensivePage() {
 
           {/* Ecosystem Overview Stats */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 -mt-8 sm:-mt-10 relative z-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 mb-12">
               {ecosystemStats.map((stat, index) => (
                 <Card
                   key={index}
