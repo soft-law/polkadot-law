@@ -149,7 +149,7 @@ export default function PCFComprehensivePage() {
               }}
             />
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
-              <div className="text-center text-black dark:text-black dark:text-white">
+              <div className="text-center text-black dark:text-white">
                 <div className="flex justify-center mb-4 sm:mb-6">
                   <div className="p-3 sm:p-4 bg-white/10 rounded-full backdrop-blur-sm">
                     <Scale className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
@@ -167,7 +167,7 @@ export default function PCFComprehensivePage() {
                     Polkadot Community Foundation
                   </span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-4xl mx-auto text-gray-700 dark:text-white dark:text-gray-200 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-4xl mx-auto text-gray-700 dark:text-gray-200 leading-relaxed">
                   A support and contact information webpage of the{" "}
                   <strong>PCF structure</strong>, including the Cayman Islands
                   Foundation Company and Hong Kong subsidiary operations serving
@@ -176,7 +176,7 @@ export default function PCFComprehensivePage() {
                 <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto bg-pink-600 hover:bg-pink-700 text-black dark:text-white px-6 sm:px-8 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
+                    className="w-full sm:w-auto bg-pink-600 hover:bg-pink-700 text-white px-6 sm:px-8 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
                     asChild
                   >
                     <a href="#nominate">
@@ -204,9 +204,9 @@ export default function PCFComprehensivePage() {
                   key={index}
                   className="bg-gray-800/70 backdrop-blur-md shadow-xl border border-gray-600/30"
                 >
-                  <CardContent className="p-4 sm:p-6 text-center text-black dark:text-black dark:text-white">
-                    <div className="inline-flex p-2 sm:p-3 rounded-full bg-blue-600/20 mb-3 sm:mb-4">
-                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
+                  <CardContent className="p-4 sm:p-6 text-center text-black dark:text-white">
+                    <div className="inline-flex p-2 sm:p-3 rounded-full bg-pink-600/20 mb-3 sm:mb-4">
+                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-pink-400" />
                     </div>
                     <div className="text-lg sm:text-xl font-bold text-black dark:text-white mb-1">
                       {stat.value}
@@ -233,7 +233,7 @@ export default function PCFComprehensivePage() {
               id="process"
               className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl mb-8 sm:mb-12"
             >
-              <CardHeader className="bg-pink-600/90 backdrop-blur-sm text-black dark:text-white rounded-t-lg">
+              <CardHeader className="bg-pink-600/90 backdrop-blur-sm text-white rounded-t-lg">
                 <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl">
                   <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
                   Open-Gov Refs

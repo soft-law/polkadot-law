@@ -88,10 +88,10 @@ export default function NavigationBar() {
           </div>
 
           {/* Mobile menu */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="md:hidden flex items-center space-x-1 overflow-x-auto">
             <Link
               href="/research"
-              className={`px-2 py-2 rounded-lg transition-all text-xs ${
+              className={`px-2 py-1.5 rounded-md transition-all text-xs whitespace-nowrap ${
                 pathname === "/research"
                   ? "bg-pink-600 text-white"
                   : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
@@ -102,7 +102,7 @@ export default function NavigationBar() {
 
             <Link
               href="/pcf"
-              className={`flex items-center gap-1 px-2 py-2 rounded-lg transition-all text-xs ${
+              className={`flex items-center gap-1 px-2 py-1.5 rounded-md transition-all text-xs whitespace-nowrap ${
                 pathname === "/pcf"
                   ? "bg-pink-600 text-white"
                   : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
@@ -114,7 +114,7 @@ export default function NavigationBar() {
 
             <Link
               href="/legalbounty"
-              className={`px-2 py-2 rounded-lg transition-all text-xs ${
+              className={`px-2 py-1.5 rounded-md transition-all text-xs whitespace-nowrap ${
                 pathname === "/legalbounty"
                   ? "bg-pink-600 text-white"
                   : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
@@ -127,7 +127,7 @@ export default function NavigationBar() {
               href="https://wiki.polkadot.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all text-sm"
+              className="px-2 py-1.5 rounded-md text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all text-xs whitespace-nowrap"
             >
               Wiki
             </a>
@@ -135,7 +135,7 @@ export default function NavigationBar() {
             {/* Mobile Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all"
+              className="p-1.5 rounded-md text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all flex-shrink-0"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? (

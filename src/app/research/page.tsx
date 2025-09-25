@@ -35,7 +35,7 @@ const PolkadotDAOStructure = () => {
       id: 10,
       name: "Polkadot Pioneers",
       status: "active",
-      color: "#10B981",
+      color: "#EC4899",
       category: "Community",
       description:
         "Community recognition and rewards program for outstanding contributors to the Polkadot ecosystem",
@@ -45,7 +45,7 @@ const PolkadotDAOStructure = () => {
       id: 11,
       name: "Anti-Scam",
       status: "active",
-      color: "#EF4444",
+      color: "#BE185D",
       category: "Security",
       description:
         "Protection mechanisms and education to prevent scams within the Polkadot ecosystem",
@@ -55,7 +55,7 @@ const PolkadotDAOStructure = () => {
       id: 17,
       name: "Events",
       status: "active",
-      color: "#8B5CF6",
+      color: "#DB2777",
       category: "Community",
       description:
         "Organization and support of Polkadot conferences, workshops, and community events worldwide",
@@ -65,7 +65,7 @@ const PolkadotDAOStructure = () => {
       id: 19,
       name: "Ink!ubator",
       status: "active",
-      color: "#F59E0B",
+      color: "#F472B6",
       category: "Development",
       description:
         "Smart contract development accelerator focusing on ink! and WebAssembly contracts",
@@ -75,7 +75,7 @@ const PolkadotDAOStructure = () => {
       id: 22,
       name: "Assurance Legion",
       status: "active",
-      color: "#06B6D4",
+      color: "#E879F9",
       category: "Security",
       description:
         "Security auditing and assurance services for the Polkadot ecosystem",
@@ -105,7 +105,7 @@ const PolkadotDAOStructure = () => {
       id: 32,
       name: "System Parachains",
       status: "active",
-      color: "#8B5CF6",
+      color: "#DB2777",
       category: "Infrastructure",
       description: "Collator services and maintenance for system parachains",
       treasuryLink: "https://polkadot.subsquare.io/treasury/bounties/32",
@@ -114,7 +114,7 @@ const PolkadotDAOStructure = () => {
       id: 33,
       name: "Marketing",
       status: "active",
-      color: "#F97316",
+      color: "#F9A8D4",
       category: "Marketing",
       description:
         "Strategic marketing initiatives to promote Polkadot ecosystem adoption and awareness",
@@ -124,7 +124,7 @@ const PolkadotDAOStructure = () => {
       id: 36,
       name: "DeFi Infrastructure",
       status: "active",
-      color: "#10B981",
+      color: "#EC4899",
       category: "Development",
       description:
         "Development and maintenance of decentralized finance tools and infrastructure",
@@ -134,7 +134,7 @@ const PolkadotDAOStructure = () => {
       id: 37,
       name: "Paseo Testnet",
       status: "active",
-      color: "#6366F1",
+      color: "#F472B6",
       category: "Infrastructure",
       description:
         "Maintenance and development of the Paseo testnet environment",
@@ -144,7 +144,7 @@ const PolkadotDAOStructure = () => {
       id: 38,
       name: "Games",
       status: "active",
-      color: "#EF4444",
+      color: "#BE185D",
       category: "Development",
       description: "Support and development of gaming applications on Polkadot",
       treasuryLink: "https://polkadot.subsquare.io/treasury/bounties/38",
@@ -163,7 +163,7 @@ const PolkadotDAOStructure = () => {
       id: 44,
       name: "Bridge Security",
       status: "active",
-      color: "#06B6D4",
+      color: "#E879F9",
       category: "Security",
       description:
         "Security services for Polkadot-Kusama bridge infrastructure",
@@ -173,7 +173,7 @@ const PolkadotDAOStructure = () => {
       id: 50,
       name: "Infrastructure Builders Program",
       status: "active",
-      color: "#8B5CF6",
+      color: "#DB2777",
       category: "Infrastructure",
       description:
         "Support and funding for infrastructure builders and developers within the Polkadot ecosystem",
@@ -193,7 +193,7 @@ const PolkadotDAOStructure = () => {
       id: 59,
       name: "Open Source Developer Grants",
       status: "active",
-      color: "#10B981",
+      color: "#EC4899",
       category: "Development",
       description:
         "Grants and funding for open source development projects contributing to the Polkadot ecosystem",
@@ -203,7 +203,7 @@ const PolkadotDAOStructure = () => {
       id: 62,
       name: "Legal Bounty",
       status: "active",
-      color: "#F59E0B",
+      color: "#F472B6",
       category: "Governance",
       description:
         "Legal research, compliance guidance, and governance frameworks for the Polkadot ecosystem",
@@ -213,7 +213,7 @@ const PolkadotDAOStructure = () => {
       id: 63,
       name: "Fast Grants",
       status: "active",
-      color: "#06B6D4",
+      color: "#E879F9",
       category: "Development",
       description:
         "Quick funding mechanism for small-scale development projects and ecosystem contributions",
@@ -223,7 +223,7 @@ const PolkadotDAOStructure = () => {
       id: 64,
       name: "Rust Bounties",
       status: "active",
-      color: "#EF4444",
+      color: "#BE185D",
       category: "Development",
       description:
         "Support and funding for Rust development projects and improvements to the Polkadot tech stack",
@@ -258,32 +258,32 @@ const PolkadotDAOStructure = () => {
   const categories: Record<CategoryName, CategoryInfo> = {
     Development: {
       count: 7,
-      color: "#10B981",
+      color: "#EC4899",
       description: "Building tools, apps, and infrastructure",
     },
     Security: {
       count: 3,
-      color: "#EF4444",
+      color: "#BE185D",
       description: "Protecting the ecosystem",
     },
     Community: {
       count: 4,
-      color: "#8B5CF6",
+      color: "#DB2777",
       description: "Growing and supporting the community",
     },
     Infrastructure: {
       count: 4,
-      color: "#F59E0B",
+      color: "#F472B6",
       description: "Core network services",
     },
     Marketing: {
       count: 1,
-      color: "#F97316",
+      color: "#F9A8D4",
       description: "Ecosystem promotion",
     },
     Governance: {
       count: 1,
-      color: "#06B6D4",
+      color: "#E879F9",
       description: "Legal and compliance",
     },
   };
@@ -318,17 +318,17 @@ const PolkadotDAOStructure = () => {
                 </span>
               </h1>
 
-              <p className="text-xl md:text-2xl mb-6 text-gray-700 dark:text-white dark:text-gray-200 font-light">
+              <p className="text-xl md:text-2xl mb-6 text-gray-700 dark:text-gray-200 font-light">
                 Academic Research
               </p>
 
-              <p className="text-lg mb-8 max-w-4xl mx-auto text-gray-600 dark:text-white dark:text-gray-300 leading-relaxed">
+              <p className="text-lg mb-8 max-w-4xl mx-auto text-gray-600 dark:text-gray-300 leading-relaxed">
                 Making enforceable frameworks for treasury-funded proposals.
                 Wrapping investigation into the Polkadot DAO structure under
                 U.S. and international law.
               </p>
-              <p className="text-xl md:text-2xl mb-6 text-gray-700 dark:text-white dark:text-gray-200 font-light">
-                Comming Soon...
+              <p className="text-xl md:text-2xl mb-6 text-gray-700 dark:text-gray-200 font-light">
+                Coming Soon...
               </p>
             </div>
           </div>
@@ -362,7 +362,7 @@ const PolkadotDAOStructure = () => {
           className="max-w-[1400px] mx-auto px-4 sm:px-6 py-12"
         >
           <div className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl rounded-lg mb-16">
-            <div className="bg-gradient-to-r from-purple-600/90 to-pink-600/90 backdrop-blur-sm text-black dark:text-white rounded-t-lg p-6">
+            <div className="bg-gradient-to-r from-pink-700/90 to-pink-600/90 backdrop-blur-sm text-white rounded-t-lg p-6">
               <h2 className="text-2xl font-bold flex items-center gap-3">
                 <svg
                   className="w-6 h-6"

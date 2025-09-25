@@ -49,7 +49,7 @@ export default function PolkadotLawPortal() {
         "Governance Frameworks",
       ],
       link: "/research",
-      color: "purple",
+      color: "magenta",
       status: "On Development",
       priority: "high",
     },
@@ -65,7 +65,7 @@ export default function PolkadotLawPortal() {
         "96,500 DOT Requested"
       ],
       link: "/legalbounty",
-      color: "blue",
+      color: "dark",
       status: "Active",
       priority: "high",
     },
@@ -119,15 +119,9 @@ export default function PolkadotLawPortal() {
   const getColorClasses = (color: string): string => {
     const colorMap: Record<string, string> = {
       pink: "border-pink-600/30 bg-pink-600/10 dark:bg-pink-600/20 hover:bg-pink-600/20 dark:hover:bg-pink-600/30 text-pink-600 dark:text-pink-400",
-      blue: "border-blue-600/30 bg-blue-600/10 dark:bg-blue-600/20 hover:bg-blue-600/20 dark:hover:bg-blue-600/30 text-blue-600 dark:text-blue-400",
-      green:
-        "border-green-600/30 bg-green-600/10 dark:bg-green-600/20 hover:bg-green-600/20 dark:hover:bg-green-600/30 text-green-600 dark:text-green-400",
-      purple:
-        "border-purple-600/30 bg-purple-600/10 dark:bg-purple-600/20 hover:bg-purple-600/20 dark:hover:bg-purple-600/30 text-purple-600 dark:text-purple-400",
-      orange:
-        "border-orange-600/30 bg-orange-600/10 dark:bg-orange-600/20 hover:bg-orange-600/20 dark:hover:bg-orange-600/30 text-orange-600 dark:text-orange-400",
-      indigo:
-        "border-indigo-600/30 bg-indigo-600/10 dark:bg-indigo-600/20 hover:bg-indigo-600/20 dark:hover:bg-indigo-600/30 text-indigo-600 dark:text-indigo-400",
+      light: "border-pink-400/30 bg-pink-400/10 dark:bg-pink-400/20 hover:bg-pink-400/20 dark:hover:bg-pink-400/30 text-pink-500 dark:text-pink-300",
+      dark: "border-pink-700/30 bg-pink-700/10 dark:bg-pink-700/20 hover:bg-pink-700/20 dark:hover:bg-pink-700/30 text-pink-700 dark:text-pink-500",
+      magenta: "border-pink-500/30 bg-pink-500/10 dark:bg-pink-500/20 hover:bg-pink-500/20 dark:hover:bg-pink-500/30 text-pink-600 dark:text-pink-400",
     };
     return colorMap[color] || colorMap.pink;
   };
@@ -135,11 +129,11 @@ export default function PolkadotLawPortal() {
   const getStatusColor = (status: string): string => {
     const statusMap: Record<string, string> = {
       Active:
-        "bg-green-600/20 text-green-600 dark:text-green-300 border-green-600/30",
+        "bg-pink-600/20 text-pink-600 dark:text-pink-300 border-pink-600/30",
       Published:
-        "bg-blue-600/20 text-blue-600 dark:text-blue-300 border-blue-600/30",
-      Development:
-        "bg-yellow-600/20 text-yellow-600 dark:text-yellow-300 border-yellow-600/30",
+        "bg-pink-500/20 text-pink-500 dark:text-pink-300 border-pink-500/30",
+      "On Development":
+        "bg-pink-400/20 text-pink-400 dark:text-pink-300 border-pink-400/30",
       Planning:
         "bg-gray-600/20 text-gray-600 dark:text-gray-300 border-gray-600/30",
     };
@@ -149,11 +143,11 @@ export default function PolkadotLawPortal() {
   const getPriorityIcon = (priority: string) => {
     switch (priority) {
       case "high":
-        return <AlertCircle className="w-3 h-3 text-red-400" />;
+        return <AlertCircle className="w-3 h-3 text-pink-600 dark:text-pink-400" />;
       case "medium":
-        return <Target className="w-3 h-3 text-yellow-400" />;
+        return <Target className="w-3 h-3 text-pink-500 dark:text-pink-300" />;
       default:
-        return <Zap className="w-3 h-3 text-green-400" />;
+        return <Zap className="w-3 h-3 text-pink-400 dark:text-pink-200" />;
     }
   };
 
@@ -443,7 +437,7 @@ export default function PolkadotLawPortal() {
 
             {/* Project Roadmap/Timeline */}
             <Card className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl mb-16">
-              <CardHeader className="bg-gradient-to-r from-purple-600/90 to-pink-600/90 backdrop-blur-sm text-white rounded-t-lg">
+              <CardHeader className="bg-gradient-to-r from-pink-700/90 to-pink-600/90 backdrop-blur-sm text-white rounded-t-lg">
                 <CardTitle className="flex items-center gap-3 text-2xl">
                   <Calendar className="w-6 h-6" />
                   Project Timeline & Milestones
@@ -456,9 +450,9 @@ export default function PolkadotLawPortal() {
                       key={index}
                       className={`p-6 rounded-lg border ${
                         milestone.status === "completed"
-                          ? "bg-green-600/10 border-green-600/30"
+                          ? "bg-pink-600/10 border-pink-600/30"
                           : milestone.status === "active"
-                          ? "bg-blue-600/10 border-blue-600/30"
+                          ? "bg-pink-500/10 border-pink-500/30"
                           : "bg-gray-200/50 dark:bg-gray-800/50 border-gray-400 dark:border-gray-600/30"
                       }`}
                     >
@@ -466,9 +460,9 @@ export default function PolkadotLawPortal() {
                         <div
                           className={`w-3 h-3 rounded-full ${
                             milestone.status === "completed"
-                              ? "bg-green-400"
+                              ? "bg-pink-600"
                               : milestone.status === "active"
-                              ? "bg-blue-400"
+                              ? "bg-pink-500"
                               : "bg-gray-400"
                           }`}
                         ></div>
@@ -491,14 +485,14 @@ export default function PolkadotLawPortal() {
             {/* Enhanced Featured Resources */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
               {/* Treasury Research Highlight */}
-              <Card className="bg-gradient-to-br from-purple-600/20 to-indigo-600/20 backdrop-blur-md border border-purple-600/30 shadow-xl">
+              <Card className="bg-gradient-to-br from-pink-600/20 to-pink-700/20 backdrop-blur-md border border-pink-600/30 shadow-xl">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 rounded-lg bg-purple-600/30">
-                      <BookOpen className="w-6 h-6 text-purple-300" />
+                    <div className="p-3 rounded-lg bg-pink-600/30">
+                      <BookOpen className="w-6 h-6 text-pink-300" />
                     </div>
                     <div className="flex flex-col">
-                      <span className="px-3 py-1 text-xs font-medium bg-purple-600/20 text-purple-300 rounded-full w-fit">
+                      <span className="px-3 py-1 text-xs font-medium bg-pink-600/20 text-pink-300 rounded-full w-fit">
                         Treasury Funded
                       </span>
                     </div>
@@ -515,7 +509,7 @@ export default function PolkadotLawPortal() {
                   </p>
                   <div className="flex gap-3">
                     <Button
-                      className="flex-1 bg-purple-600 hover:bg-purple-700 text-white"
+                      className="flex-1 bg-pink-600 hover:bg-pink-700 text-white"
                       asChild
                     >
                       <Link
@@ -531,7 +525,7 @@ export default function PolkadotLawPortal() {
               </Card>
 
               {/* PCF Structure Highlight */}
-              <Card className="bg-gradient-to-br from-pink-600/20 to-red-600/20 backdrop-blur-md border border-pink-600/30 shadow-xl">
+              <Card className="bg-gradient-to-br from-pink-500/20 to-pink-800/20 backdrop-blur-md border border-pink-600/30 shadow-xl">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-3 rounded-lg bg-pink-600/30">
