@@ -56,13 +56,14 @@ export default function PolkadotLawPortal() {
     {
       icon: Scale,
       title: "Legal Bounty",
-      description: "Comprehensive legal support for Polkadot ecosystem projects through international network of legal experts. Led by Amforc with Swiss law firm providing attorney-client privilege protection",
+      description:
+        "Comprehensive legal support for Polkadot ecosystem projects through international network of legal experts. Led by Amforc with Swiss law firm providing attorney-client privilege protection",
       category: "Legal Support",
       features: [
         "Global Legal Network",
         "Legal Templates & Knowledge Base",
         "Retroactive Payment Model",
-        "96,500 DOT Requested"
+        "96,500 DOT Requested",
       ],
       link: "/legalbounty",
       color: "dark",
@@ -72,56 +73,51 @@ export default function PolkadotLawPortal() {
   ];
 
   const projectMilestones = [
+    // {
+    //   title: "Team formation and Ecosystem Introduction.",
+    //   description:
+    //     "Welcome to softlaw team to Antonio and Gabriel as researchers of Polkadot DAO Structure funded by ref 1676. At the moment they are doing the PBA-X.",
+    //   status: "completed",
+    //   date: "Sep 2025",
+    // },
+
     {
-      title: "Team formation and Ecosystem Introduction.",
+      title: "Research Phase",
       description:
-        "Welcome to softlaw team to Antonio and Gabriel as researchers of Polkadot DAO Structure funded by ref 1676. At the moment they are doing the PBA-X.",
-      status: "completed",
-      date: "Sep 2025",
+        "Drafting, Literature Review, Bibliography, Researching laws and Polkadot current state.",
+      status: "active",
+      date: "Sep - Oct 2025",
+    },
+    {
+      title: "Writing Phase",
+      description: "Writing and feedback collection. ",
+      status: "planning",
+      date: "Oct - Dec 2025",
     },
 
     {
-      title: "DAO Structure research phase 1",
-      description:
-        "DAO Structure research phase on process, reading bibliography, researching laws and polkadot current state.",
-      status: "active",
-      date: "Sep - Oct 2025",
-    },
-    {
-      title: "Research Part 1 first Draft",
-      description:
-        "Draft first phase - DAO private publication and send to different interested ecosystems teamss for feedback. ",
-      status: "active",
-      date: "Sep - Oct 2025",
-    },
-    {
       title: "Legal Portal Launch v1",
       description: "Comprehensive legal resource portal v1 deployed",
-      status: "active",
-      date: "Sep - Nov 2025",
+      status: "planning",
+      date: "January 2026",
     },
     {
-      title: "Research Phase 2",
+      title: "Academic Paper Publishing",
       description:
-        "Write the content of the research Part 2 - Treasury Proposals Enforceability",
+        "The academic paper will be published on the website and Polkadot Forums, according to the ref 1676.",
       status: "planning",
-      date: "Nov- Dec 2025",
-    },
-    {
-      title: "Research Final Publication",
-      description:
-        "The research will be published on the website and Polkadot Forums, according to the ref 1676.",
-      status: "planning",
-      date: "Jan 2026",
+      date: "January 2026",
     },
   ];
 
   const getColorClasses = (color: string): string => {
     const colorMap: Record<string, string> = {
       pink: "border-pink-600/30 bg-pink-600/10 dark:bg-pink-600/20 hover:bg-pink-600/20 dark:hover:bg-pink-600/30 text-pink-600 dark:text-pink-400",
-      light: "border-pink-400/30 bg-pink-400/10 dark:bg-pink-400/20 hover:bg-pink-400/20 dark:hover:bg-pink-400/30 text-pink-500 dark:text-pink-300",
+      light:
+        "border-pink-400/30 bg-pink-400/10 dark:bg-pink-400/20 hover:bg-pink-400/20 dark:hover:bg-pink-400/30 text-pink-500 dark:text-pink-300",
       dark: "border-pink-700/30 bg-pink-700/10 dark:bg-pink-700/20 hover:bg-pink-700/20 dark:hover:bg-pink-700/30 text-pink-700 dark:text-pink-500",
-      magenta: "border-pink-500/30 bg-pink-500/10 dark:bg-pink-500/20 hover:bg-pink-500/20 dark:hover:bg-pink-500/30 text-pink-600 dark:text-pink-400",
+      magenta:
+        "border-pink-500/30 bg-pink-500/10 dark:bg-pink-500/20 hover:bg-pink-500/20 dark:hover:bg-pink-500/30 text-pink-600 dark:text-pink-400",
     };
     return colorMap[color] || colorMap.pink;
   };
@@ -143,7 +139,9 @@ export default function PolkadotLawPortal() {
   const getPriorityIcon = (priority: string) => {
     switch (priority) {
       case "high":
-        return <AlertCircle className="w-3 h-3 text-pink-600 dark:text-pink-400" />;
+        return (
+          <AlertCircle className="w-3 h-3 text-pink-600 dark:text-pink-400" />
+        );
       case "medium":
         return <Target className="w-3 h-3 text-pink-500 dark:text-pink-300" />;
       default:
@@ -525,7 +523,7 @@ export default function PolkadotLawPortal() {
               </Card>
 
               {/* PCF Structure Highlight */}
-              <Card className="bg-gradient-to-br from-pink-500/20 to-pink-800/20 backdrop-blur-md border border-pink-600/30 shadow-xl">
+              {/* <Card className="bg-gradient-to-br from-pink-500/20 to-pink-800/20 backdrop-blur-md border border-pink-600/30 shadow-xl">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-3 rounded-lg bg-pink-600/30">
@@ -566,7 +564,7 @@ export default function PolkadotLawPortal() {
                     </Button>
                   </div>
                 </CardContent>
-              </Card>
+              </Card> */}
             </div>
           </div>
         </div>
