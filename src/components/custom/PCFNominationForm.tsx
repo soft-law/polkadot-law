@@ -159,8 +159,8 @@ For official processing, please contact: info@polkadotcommunity.foundation
   };
 
   return (
-    <Card className="bg-black/70 backdrop-blur-md border border-white/10 shadow-xl">
-      <CardHeader className="bg-pink-600/90 backdrop-blur-sm text-white rounded-t-lg">
+    <Card className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl">
+      <CardHeader className="bg-polkadot-grey-950 dark:bg-polkadot-grey-950 backdrop-blur-sm text-white rounded-t-lg">
         <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl">
           <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
           DOT Director Nomination Form
@@ -168,9 +168,9 @@ For official processing, please contact: info@polkadotcommunity.foundation
       </CardHeader>
       <CardContent className="p-4 sm:p-6 lg:p-8">
         <div className="mb-4 sm:mb-6">
-          <div className="bg-gray-800/50 border border-gray-600/30 p-3 sm:p-4 rounded-lg">
-            <p className="text-gray-300 text-xs sm:text-sm">
-              <strong className="text-pink-400">Note:</strong> This form will
+          <div className="bg-polkadot-grey-100 dark:bg-gray-800/50 border border-polkadot-grey-300 dark:border-gray-600/30 p-3 sm:p-4 rounded-lg">
+            <p className="text-polkadot-grey-800 dark:text-gray-300 text-xs sm:text-sm">
+              <strong className="text-polkadot-grey-950 dark:text-polkadot-grey-400">Note:</strong> This form will
               prepare an email nomination that will be sent to
               info@polkadotcommunity.foundation. Your email client will open
               with the nomination details pre-filled for you to send.
@@ -181,27 +181,27 @@ For official processing, please contact: info@polkadotcommunity.foundation
         <div className="space-y-4 sm:space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div>
-              <label className="block text-sm font-medium text-gray-200 mb-2">
+              <label className="block text-sm font-medium text-polkadot-grey-900 dark:text-gray-200 mb-2">
                 Full Name *
               </label>
               <Input
                 type="text"
                 value={formData.name}
                 onChange={(e) => handleInputChange("name", e.target.value)}
-                className="w-full bg-gray-800/50 border-gray-600/30 text-white placeholder:text-gray-500 focus:border-pink-600 focus:ring-pink-600"
+                className="w-full bg-white dark:bg-gray-800/50 border-polkadot-grey-300 dark:border-gray-600/30 text-polkadot-grey-950 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-polkadot-grey-950 focus:ring-polkadot-grey-950"
                 placeholder="Your full name"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-200 mb-2">
+              <label className="block text-sm font-medium text-polkadot-grey-900 dark:text-gray-200 mb-2">
                 Contact Email *
               </label>
               <Input
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
-                className="w-full bg-gray-800/50 border-gray-600/30 text-white placeholder:text-gray-500 focus:border-pink-600 focus:ring-pink-600"
+                className="w-full bg-white dark:bg-gray-800/50 border-polkadot-grey-300 dark:border-gray-600/30 text-polkadot-grey-950 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-polkadot-grey-950 focus:ring-polkadot-grey-950"
                 placeholder="your@email.com"
                 required
               />
@@ -209,52 +209,52 @@ For official processing, please contact: info@polkadotcommunity.foundation
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-200 mb-2">
+            <label className="block text-sm font-medium text-polkadot-grey-900 dark:text-gray-200 mb-2">
               Background & Relevant Experience *
             </label>
             <Textarea
               value={formData.background}
               onChange={(e) => handleInputChange("background", e.target.value)}
-              className="w-full h-24 sm:h-32 bg-gray-800/50 border-gray-600/30 text-white placeholder:text-gray-500 focus:border-pink-600 focus:ring-pink-600"
+              className="w-full h-24 sm:h-32 bg-white dark:bg-gray-800/50 border-polkadot-grey-300 dark:border-gray-600/30 text-polkadot-grey-950 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-polkadot-grey-950 focus:ring-polkadot-grey-950"
               placeholder="Describe your professional experience, governance participation, Web3/Polkadot knowledge, etc."
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-200 mb-2">
+            <label className="block text-sm font-medium text-polkadot-grey-900 dark:text-gray-200 mb-2">
               Motivation to serve as DOT Director *
             </label>
             <Textarea
               value={formData.motivation}
               onChange={(e) => handleInputChange("motivation", e.target.value)}
-              className="w-full h-24 sm:h-32 bg-gray-800/50 border-gray-600/30 text-white placeholder:text-gray-500 focus:border-pink-600 focus:ring-pink-600"
+              className="w-full h-24 sm:h-32 bg-white dark:bg-gray-800/50 border-polkadot-grey-300 dark:border-gray-600/30 text-polkadot-grey-950 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-polkadot-grey-950 focus:ring-polkadot-grey-950"
               placeholder="Why do you want to serve as a DOT Director? What value would you bring to the PCF?"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-200 mb-2">
+            <label className="block text-sm font-medium text-polkadot-grey-900 dark:text-gray-200 mb-2">
               Polkadot/Kusama Experience
             </label>
             <Textarea
               value={formData.experience}
               onChange={(e) => handleInputChange("experience", e.target.value)}
-              className="w-full h-20 sm:h-24 bg-gray-800/50 border-gray-600/30 text-white placeholder:text-gray-500 focus:border-pink-600 focus:ring-pink-600"
+              className="w-full h-20 sm:h-24 bg-white dark:bg-gray-800/50 border-polkadot-grey-300 dark:border-gray-600/30 text-polkadot-grey-950 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:border-polkadot-grey-950 focus:ring-polkadot-grey-950"
               placeholder="OpenGov participation, parachain projects, ecosystem contributions, etc."
             />
           </div>
 
-          <div className="bg-gray-800/50 border border-yellow-600/30 p-3 sm:p-4 rounded-lg">
-            <h4 className="font-semibold text-yellow-400 mb-2 text-sm sm:text-base">
+          <div className="bg-yellow-50 dark:bg-gray-800/50 border border-yellow-600/50 dark:border-yellow-600/30 p-3 sm:p-4 rounded-lg">
+            <h4 className="font-semibold text-yellow-700 dark:text-yellow-400 mb-2 text-sm sm:text-base">
               Requirements Confirmation
             </h4>
             <div className="space-y-2 text-xs sm:text-sm">
-              <label className="flex items-start gap-2 cursor-pointer text-gray-200">
+              <label className="flex items-start gap-2 cursor-pointer text-polkadot-grey-900 dark:text-gray-200">
                 <input
                   type="checkbox"
-                  className="mt-1 flex-shrink-0 rounded border-gray-600 bg-gray-800 text-pink-600 focus:ring-pink-600 focus:ring-offset-0"
+                  className="mt-1 flex-shrink-0 rounded border-polkadot-grey-400 dark:border-gray-600 bg-white dark:bg-gray-800 text-polkadot-grey-950 focus:ring-polkadot-grey-950 focus:ring-offset-0"
                   checked={formData.kycConfirm}
                   onChange={(e) =>
                     handleInputChange("kycConfirm", e.target.checked)
@@ -266,10 +266,10 @@ For official processing, please contact: info@polkadotcommunity.foundation
                   verification process
                 </span>
               </label>
-              <label className="flex items-start gap-2 cursor-pointer text-gray-200">
+              <label className="flex items-start gap-2 cursor-pointer text-polkadot-grey-900 dark:text-gray-200">
                 <input
                   type="checkbox"
-                  className="mt-1 flex-shrink-0 rounded border-gray-600 bg-gray-800 text-pink-600 focus:ring-pink-600 focus:ring-offset-0"
+                  className="mt-1 flex-shrink-0 rounded border-polkadot-grey-400 dark:border-gray-600 bg-white dark:bg-gray-800 text-polkadot-grey-950 focus:ring-polkadot-grey-950 focus:ring-offset-0"
                   checked={formData.timeCommitment}
                   onChange={(e) =>
                     handleInputChange("timeCommitment", e.target.checked)
@@ -281,10 +281,10 @@ For official processing, please contact: info@polkadotcommunity.foundation
                   responsibilities
                 </span>
               </label>
-              <label className="flex items-start gap-2 cursor-pointer text-gray-200">
+              <label className="flex items-start gap-2 cursor-pointer text-polkadot-grey-900 dark:text-gray-200">
                 <input
                   type="checkbox"
-                  className="mt-1 flex-shrink-0 rounded border-gray-600 bg-gray-800 text-pink-600 focus:ring-pink-600 focus:ring-offset-0"
+                  className="mt-1 flex-shrink-0 rounded border-polkadot-grey-400 dark:border-gray-600 bg-white dark:bg-gray-800 text-polkadot-grey-950 focus:ring-polkadot-grey-950 focus:ring-offset-0"
                   checked={formData.legalResponsibilities}
                   onChange={(e) =>
                     handleInputChange("legalResponsibilities", e.target.checked)
@@ -296,10 +296,10 @@ For official processing, please contact: info@polkadotcommunity.foundation
                   Cayman Islands law
                 </span>
               </label>
-              <label className="flex items-start gap-2 cursor-pointer text-gray-200">
+              <label className="flex items-start gap-2 cursor-pointer text-polkadot-grey-900 dark:text-gray-200">
                 <input
                   type="checkbox"
-                  className="mt-1 flex-shrink-0 rounded border-gray-600 bg-gray-800 text-pink-600 focus:ring-pink-600 focus:ring-offset-0"
+                  className="mt-1 flex-shrink-0 rounded border-polkadot-grey-400 dark:border-gray-600 bg-white dark:bg-gray-800 text-polkadot-grey-950 focus:ring-polkadot-grey-950 focus:ring-offset-0"
                   checked={formData.dsaAgreement}
                   onChange={(e) =>
                     handleInputChange("dsaAgreement", e.target.checked)
@@ -319,7 +319,7 @@ For official processing, please contact: info@polkadotcommunity.foundation
               onClick={sendNominationEmail}
               disabled={isSubmitting}
               size="lg"
-              className="w-full sm:w-auto bg-pink-600 hover:bg-pink-700 text-white px-8 sm:px-12 py-3 disabled:opacity-50 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
+              className="w-full sm:w-auto bg-polkadot-grey-950 hover:bg-polkadot-grey-900 text-white px-8 sm:px-12 py-3 disabled:opacity-50 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
             >
               {isSubmitting ? (
                 <>Processing...</>
@@ -334,14 +334,14 @@ For official processing, please contact: info@polkadotcommunity.foundation
         </div>
 
         <div className="mt-6 sm:mt-8 text-center">
-          <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
+          <p className="text-polkadot-grey-600 dark:text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
             For the official process, contact directly:
           </p>
-          <div className="bg-gray-800/50 border border-gray-600/30 p-3 sm:p-4 rounded-lg">
-            <p className="font-semibold text-pink-400 text-sm sm:text-base">
+          <div className="bg-polkadot-grey-100 dark:bg-gray-800/50 border border-polkadot-grey-300 dark:border-gray-600/30 p-3 sm:p-4 rounded-lg">
+            <p className="font-semibold text-polkadot-grey-950 dark:text-polkadot-grey-400 text-sm sm:text-base">
               info@polkadotcommunity.foundation
             </p>
-            <p className="text-xs sm:text-sm text-gray-400 mt-2">
+            <p className="text-xs sm:text-sm text-polkadot-grey-600 dark:text-gray-400 mt-2">
               Use the official nomination form and participate in the on-chain
               referendum
             </p>

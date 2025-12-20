@@ -18,7 +18,7 @@ export default function NavigationBar() {
           <div className="flex items-center">
             <Link
               href="/"
-              className="text-black dark:text-white font-bold text-lg sm:text-xl hover:text-pink-400 transition-colors font-unbounded"
+              className="text-black dark:text-white font-bold text-lg sm:text-xl hover:text-polkadot-grey-600 dark:hover:text-polkadot-grey-400 transition-colors font-serif"
             >
               <Image
                 src="/Polkadot_Logo_Pink-White.png"
@@ -34,7 +34,7 @@ export default function NavigationBar() {
               href="/research"
               className={`flex items-center gap-2 px-3 lg:px-4 py-2 rounded-lg transition-all text-sm lg:text-base ${
                 pathname === "/research"
-                  ? "bg-pink-600 text-white"
+                  ? "bg-polkadot-grey-950 dark:bg-polkadot-grey-100 text-white dark:text-black"
                   : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
               }`}
             >
@@ -45,23 +45,12 @@ export default function NavigationBar() {
               href="/pcf"
               className={`flex items-center gap-2 px-3 lg:px-4 py-2 rounded-lg transition-all text-sm lg:text-base ${
                 pathname === "/pcf"
-                  ? "bg-pink-600 text-white"
+                  ? "bg-polkadot-grey-950 dark:bg-polkadot-grey-100 text-white dark:text-black"
                   : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
               }`}
             >
               <Building className="w-4 h-4" />
               PCF
-            </Link>
-
-            <Link
-              href="/legalbounty"
-              className={`flex items-center gap-2 px-3 lg:px-4 py-2 rounded-lg transition-all text-sm lg:text-base ${
-                pathname === "/legalbounty"
-                  ? "bg-pink-600 text-white"
-                  : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
-              }`}
-            >
-              Legal Bounty
             </Link>
 
             <a
@@ -93,7 +82,7 @@ export default function NavigationBar() {
               href="/research"
               className={`px-2 py-1.5 rounded-md transition-all text-xs whitespace-nowrap ${
                 pathname === "/research"
-                  ? "bg-pink-600 text-white"
+                  ? "bg-polkadot-grey-950 dark:bg-polkadot-grey-100 text-white dark:text-black"
                   : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
               }`}
             >
@@ -104,23 +93,12 @@ export default function NavigationBar() {
               href="/pcf"
               className={`flex items-center gap-1 px-2 py-1.5 rounded-md transition-all text-xs whitespace-nowrap ${
                 pathname === "/pcf"
-                  ? "bg-pink-600 text-white"
+                  ? "bg-polkadot-grey-950 dark:bg-polkadot-grey-100 text-white dark:text-black"
                   : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
               }`}
             >
               <Building className="w-3 h-3" />
               PCF
-            </Link>
-
-            <Link
-              href="/legalbounty"
-              className={`px-2 py-1.5 rounded-md transition-all text-xs whitespace-nowrap ${
-                pathname === "/legalbounty"
-                  ? "bg-pink-600 text-white"
-                  : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
-              }`}
-            >
-              Legal
             </Link>
 
             <a

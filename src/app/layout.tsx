@@ -1,22 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Unbounded } from "next/font/google";
+import { DM_Sans, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 import StructuredData from "@/components/custom/StructuredData";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmSerifDisplay = DM_Serif_Display({
+  variable: "--font-dm-serif-display",
   subsets: ["latin"],
-});
-
-const unbounded = Unbounded({
-  variable: "--font-unbounded",
-  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -104,7 +103,7 @@ export default function RootLayout({
         <StructuredData type="website" page="home" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${unbounded.variable} antialiased`}
+        className={`${dmSans.variable} ${dmSerifDisplay.variable} antialiased`}
       >
         <ThemeProvider>
           {children}

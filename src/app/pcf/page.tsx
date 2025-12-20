@@ -135,7 +135,7 @@ export default function PCFComprehensivePage() {
 
       {/* Main Content */}
       <div className="pt-14 sm:pt-16">
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-pink-100 to-gray-50 dark:from-black dark:via-pink-600 dark:to-black">
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-polkadot-grey-100 to-gray-50 dark:from-black dark:via-polkadot-grey-950 dark:to-black">
           {/* PCF Hero Section */}
           <div className="relative overflow-hidden">
             <div className="absolute inset-0 bg-white/20 dark:bg-black/20"></div>
@@ -143,7 +143,7 @@ export default function PCFComprehensivePage() {
               className="absolute inset-0 opacity-50"
               style={{
                 background: `
-                  radial-gradient(circle at 30% 70%, rgba(230, 0, 122, 0.3) 0%, transparent 50%),
+                  radial-gradient(circle at 30% 70%, rgba(15, 15, 15, 0.3) 0%, transparent 50%),
                   radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%)
                 `,
               }}
@@ -158,7 +158,7 @@ export default function PCFComprehensivePage() {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 font-unbounded">
                   <span
                     style={{
-                      background: "linear-gradient(45deg, #ffffff, #E6007A)",
+                      background: "linear-gradient(45deg, #ffffff, #0F0F0F)",
                       backgroundClip: "text",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
@@ -176,7 +176,7 @@ export default function PCFComprehensivePage() {
                 <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto bg-pink-600 hover:bg-pink-700 text-white px-6 sm:px-8 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
+                    className="w-full sm:w-auto bg-polkadot-grey-950 hover:bg-polkadot-grey-900 text-white px-6 sm:px-8 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
                     asChild
                   >
                     <a href="#nominate">
@@ -186,7 +186,7 @@ export default function PCFComprehensivePage() {
                   </Button>
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto bg-white text-pink-600 hover:bg-gray-100 px-6 sm:px-8 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
+                    className="w-full sm:w-auto bg-white text-polkadot-grey-950 hover:bg-gray-100 px-6 sm:px-8 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
                     asChild
                   >
                     <a href="#structure">View Refs</a>
@@ -202,11 +202,11 @@ export default function PCFComprehensivePage() {
               {ecosystemStats.map((stat, index) => (
                 <Card
                   key={index}
-                  className="bg-gray-800/70 backdrop-blur-md shadow-xl border border-gray-600/30"
+                  className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow-xl border border-polkadot-grey-300 dark:border-gray-600/30"
                 >
                   <CardContent className="p-4 sm:p-6 text-center text-black dark:text-white">
-                    <div className="inline-flex p-2 sm:p-3 rounded-full bg-pink-600/20 mb-3 sm:mb-4">
-                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-pink-400" />
+                    <div className="inline-flex p-2 sm:p-3 rounded-full bg-polkadot-grey-950/20 mb-3 sm:mb-4">
+                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-polkadot-grey-400" />
                     </div>
                     <div className="text-lg sm:text-xl font-bold text-black dark:text-white mb-1">
                       {stat.value}
@@ -233,7 +233,7 @@ export default function PCFComprehensivePage() {
               id="process"
               className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl mb-8 sm:mb-12"
             >
-              <CardHeader className="bg-pink-600/90 backdrop-blur-sm text-white rounded-t-lg">
+              <CardHeader className="bg-polkadot-grey-950/90 backdrop-blur-sm text-white rounded-t-lg">
                 <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl">
                   <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
                   Open-Gov Refs
@@ -249,7 +249,7 @@ export default function PCFComprehensivePage() {
                     {referenceLinks.map((link, index) => (
                       <Card
                         key={index}
-                        className="bg-gray-800/50 border border-gray-600/30 p-3 sm:p-4 hover:bg-gray-800/70 hover:border-pink-600/50 transition-all cursor-pointer"
+                        className="bg-polkadot-grey-100 dark:bg-gray-800/50 border border-polkadot-grey-300 dark:border-gray-600/30 p-3 sm:p-4 hover:bg-polkadot-grey-200 dark:hover:bg-gray-800/70 hover:border-polkadot-grey-950/50 transition-all cursor-pointer"
                       >
                         <a
                           href={link.url}
@@ -266,7 +266,7 @@ export default function PCFComprehensivePage() {
                                 {link.subtitle}
                               </div>
                             </div>
-                            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-pink-400" />
+                            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-polkadot-grey-400" />
                           </div>
                         </a>
                       </Card>
