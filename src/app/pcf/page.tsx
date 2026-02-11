@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
     title: "PCF - Polkadot Community Foundation",
     description:
       "Apply for DOT Director positions and learn about PCF structure, governance, and operations.",
-    images: ["/pcf-og.png"],
+    images: ["/polkadot-icon.svg"],
   },
 };
 import {
@@ -135,39 +134,30 @@ export default function PCFComprehensivePage() {
 
       {/* Main Content */}
       <div className="pt-14 sm:pt-16">
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-polkadot-grey-100 to-gray-50 dark:from-black dark:via-polkadot-grey-950 dark:to-black">
+        <div className="min-h-screen bg-gradient-to-br from-polkadot-grey-50 via-polkadot-grey-100 to-polkadot-grey-50 dark:from-polkadot-grey-950 dark:via-polkadot-grey-950 dark:to-polkadot-grey-950">
           {/* PCF Hero Section */}
           <div className="relative overflow-hidden">
-            <div className="absolute inset-0 bg-white/20 dark:bg-black/20"></div>
+            <div className="absolute inset-0 bg-polkadot-grey-200/20 dark:bg-polkadot-grey-950/20"></div>
             <div
               className="absolute inset-0 opacity-50"
               style={{
                 background: `
                   radial-gradient(circle at 30% 70%, rgba(15, 15, 15, 0.3) 0%, transparent 50%),
-                  radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%)
+                  radial-gradient(circle at 70% 30%, rgba(15, 15, 15, 0.05) 0%, transparent 50%)
                 `,
               }}
             />
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
               <div className="text-center text-black dark:text-white">
                 <div className="flex justify-center mb-4 sm:mb-6">
-                  <div className="p-3 sm:p-4 bg-white/10 rounded-full backdrop-blur-sm">
-                    <Scale className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
+                  <div className="p-3 sm:p-4 bg-polkadot-grey-200/10 dark:bg-polkadot-grey-800/30 rounded-full backdrop-blur-sm border border-polkadot-grey-300/30 dark:border-polkadot-grey-600/20">
+                    <Scale className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-polkadot-grey-950 dark:text-white" />
                   </div>
                 </div>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 font-unbounded">
-                  <span
-                    style={{
-                      background: "linear-gradient(45deg, #ffffff, #0F0F0F)",
-                      backgroundClip: "text",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                    }}
-                  >
-                    Polkadot Community Foundation
-                  </span>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-polkadot-grey-950 dark:text-white">
+                  Polkadot Community Foundation
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-4xl mx-auto text-gray-700 dark:text-gray-200 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-4xl mx-auto text-polkadot-grey-700 dark:text-polkadot-grey-200 leading-relaxed">
                   A support and contact information webpage of the{" "}
                   <strong>PCF structure</strong>, including the Cayman Islands
                   Foundation Company and Hong Kong subsidiary operations serving
@@ -176,7 +166,7 @@ export default function PCFComprehensivePage() {
                 <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto bg-polkadot-grey-950 hover:bg-polkadot-grey-900 text-white px-6 sm:px-8 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
+                    className="w-full sm:w-auto bg-polkadot-grey-950 dark:bg-polkadot-grey-800 hover:bg-polkadot-grey-900 dark:hover:bg-polkadot-grey-600 text-white px-6 sm:px-8 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
                     asChild
                   >
                     <a href="#nominate">
@@ -186,7 +176,7 @@ export default function PCFComprehensivePage() {
                   </Button>
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto bg-white text-polkadot-grey-950 hover:bg-gray-100 px-6 sm:px-8 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
+                    className="w-full sm:w-auto bg-polkadot-grey-50 dark:bg-polkadot-grey-800 text-polkadot-grey-950 dark:text-white hover:bg-polkadot-grey-100 dark:hover:bg-polkadot-grey-700/80 px-6 sm:px-8 py-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:scale-105"
                     asChild
                   >
                     <a href="#structure">View Refs</a>
@@ -198,23 +188,23 @@ export default function PCFComprehensivePage() {
 
           {/* Ecosystem Overview Stats */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 -mt-8 sm:-mt-10 relative z-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-12 max-w-3xl mx-auto">
               {ecosystemStats.map((stat, index) => (
                 <Card
                   key={index}
-                  className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow-xl border border-polkadot-grey-300 dark:border-gray-600/30"
+                  className="bg-polkadot-grey-50 dark:bg-polkadot-grey-950 backdrop-blur-md shadow-xl border border-polkadot-grey-300 dark:border-polkadot-grey-700/30"
                 >
                   <CardContent className="p-4 sm:p-6 text-center text-black dark:text-white">
                     <div className="inline-flex p-2 sm:p-3 rounded-full bg-polkadot-grey-950/20 mb-3 sm:mb-4">
-                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-polkadot-grey-400" />
+                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-polkadot-grey-600 dark:text-polkadot-grey-400" />
                     </div>
                     <div className="text-lg sm:text-xl font-bold text-black dark:text-white mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-2">
+                    <div className="text-xs sm:text-sm text-polkadot-grey-600 dark:text-polkadot-grey-300 mb-2">
                       {stat.label}
                     </div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">
+                    <div className="text-xs text-polkadot-grey-500 dark:text-polkadot-grey-400">
                       {stat.description}
                     </div>
                   </CardContent>
@@ -231,9 +221,9 @@ export default function PCFComprehensivePage() {
             {/* Process Section - Enhanced */}
             <Card
               id="process"
-              className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl mb-8 sm:mb-12"
+              className="bg-polkadot-grey-50 dark:bg-polkadot-grey-950 backdrop-blur-md border border-polkadot-grey-300 dark:border-polkadot-grey-700/30 shadow-xl mb-8 sm:mb-12"
             >
-              <CardHeader className="bg-polkadot-grey-950/90 backdrop-blur-sm text-white rounded-t-lg">
+              <CardHeader className="bg-polkadot-grey-950/90 dark:bg-polkadot-grey-950 backdrop-blur-sm text-white rounded-t-lg">
                 <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl">
                   <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
                   Open-Gov Refs
@@ -249,7 +239,7 @@ export default function PCFComprehensivePage() {
                     {referenceLinks.map((link, index) => (
                       <Card
                         key={index}
-                        className="bg-polkadot-grey-100 dark:bg-gray-800/50 border border-polkadot-grey-300 dark:border-gray-600/30 p-3 sm:p-4 hover:bg-polkadot-grey-200 dark:hover:bg-gray-800/70 hover:border-polkadot-grey-950/50 transition-all cursor-pointer"
+                        className="bg-polkadot-grey-100 dark:bg-polkadot-grey-900 border border-polkadot-grey-300 dark:border-polkadot-grey-700/30 p-3 sm:p-4 hover:bg-polkadot-grey-200 dark:hover:bg-polkadot-grey-800 hover:border-polkadot-grey-950/50 transition-all cursor-pointer"
                       >
                         <a
                           href={link.url}
@@ -262,11 +252,11 @@ export default function PCFComprehensivePage() {
                               <div className="font-semibold text-black dark:text-white text-sm sm:text-base">
                                 {link.title}
                               </div>
-                              <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                              <div className="text-xs sm:text-sm text-polkadot-grey-600 dark:text-polkadot-grey-400">
                                 {link.subtitle}
                               </div>
                             </div>
-                            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-polkadot-grey-400" />
+                            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-polkadot-grey-500 dark:text-polkadot-grey-400" />
                           </div>
                         </a>
                       </Card>

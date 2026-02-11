@@ -1,31 +1,28 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Building, Sun, Moon } from "lucide-react";
-import { useTheme } from "@/context/ThemeContext";
+import { useThemeStore } from "@/store/themeStore";
+import PolkadotIcon from "@/components/custom/PolkadotIcon";
 
 export default function NavigationBar() {
   const pathname = usePathname();
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useThemeStore();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-200 dark:border-white/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-polkadot-grey-50 dark:bg-polkadot-grey-950 backdrop-blur-md border-b border-polkadot-grey-200 dark:border-polkadot-grey-800/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-14 sm:h-16">
           <div className="flex items-center">
             <Link
               href="/"
-              className="text-black dark:text-white font-bold text-lg sm:text-xl hover:text-polkadot-grey-600 dark:hover:text-polkadot-grey-400 transition-colors font-serif"
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
-              <Image
-                src="/Polkadot_Logo_Pink-White.png"
-                alt="Polkadot Law"
-                width={100}
-                height={100}
-              />
+              <PolkadotIcon className="w-7 h-7 sm:w-8 sm:h-8 text-polkadot-grey-950 dark:text-polkadot-cool-gray" />
+              <span className="font-serif text-lg sm:text-xl font-bold text-polkadot-grey-950 dark:text-white tracking-tight">
+                Polkadot<span className="text-polkadot-grey-500 dark:text-polkadot-grey-400">.law</span>
+              </span>
             </Link>
           </div>
 
@@ -34,8 +31,8 @@ export default function NavigationBar() {
               href="/research"
               className={`flex items-center gap-2 px-3 lg:px-4 py-2 rounded-lg transition-all text-sm lg:text-base ${
                 pathname === "/research"
-                  ? "bg-polkadot-grey-950 dark:bg-polkadot-grey-100 text-white dark:text-black"
-                  : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
+                  ? "bg-polkadot-grey-950 dark:bg-polkadot-grey-800 text-white"
+                  : "text-polkadot-grey-700 dark:text-polkadot-grey-300 hover:text-black dark:hover:text-white hover:bg-polkadot-grey-100 dark:hover:bg-polkadot-grey-800"
               }`}
             >
               Research
@@ -45,27 +42,18 @@ export default function NavigationBar() {
               href="/pcf"
               className={`flex items-center gap-2 px-3 lg:px-4 py-2 rounded-lg transition-all text-sm lg:text-base ${
                 pathname === "/pcf"
-                  ? "bg-polkadot-grey-950 dark:bg-polkadot-grey-100 text-white dark:text-black"
-                  : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
+                  ? "bg-polkadot-grey-950 dark:bg-polkadot-grey-800 text-white"
+                  : "text-polkadot-grey-700 dark:text-polkadot-grey-300 hover:text-black dark:hover:text-white hover:bg-polkadot-grey-100 dark:hover:bg-polkadot-grey-800"
               }`}
             >
               <Building className="w-4 h-4" />
               PCF
             </Link>
 
-            <a
-              href="https://wiki.polkadot.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-3 lg:px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all text-sm lg:text-base"
-            >
-              Wiki
-            </a>
-
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all"
+              className="p-2 rounded-lg text-polkadot-grey-700 dark:text-polkadot-grey-300 hover:text-black dark:hover:text-white hover:bg-polkadot-grey-100 dark:hover:bg-polkadot-grey-800 transition-all"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? (
@@ -82,8 +70,8 @@ export default function NavigationBar() {
               href="/research"
               className={`px-2 py-1.5 rounded-md transition-all text-xs whitespace-nowrap ${
                 pathname === "/research"
-                  ? "bg-polkadot-grey-950 dark:bg-polkadot-grey-100 text-white dark:text-black"
-                  : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
+                  ? "bg-polkadot-grey-950 dark:bg-polkadot-grey-800 text-white"
+                  : "text-polkadot-grey-700 dark:text-polkadot-grey-300 hover:text-black dark:hover:text-white hover:bg-polkadot-grey-100 dark:hover:bg-polkadot-grey-800"
               }`}
             >
               Research
@@ -93,27 +81,18 @@ export default function NavigationBar() {
               href="/pcf"
               className={`flex items-center gap-1 px-2 py-1.5 rounded-md transition-all text-xs whitespace-nowrap ${
                 pathname === "/pcf"
-                  ? "bg-polkadot-grey-950 dark:bg-polkadot-grey-100 text-white dark:text-black"
-                  : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
+                  ? "bg-polkadot-grey-950 dark:bg-polkadot-grey-800 text-white"
+                  : "text-polkadot-grey-700 dark:text-polkadot-grey-300 hover:text-black dark:hover:text-white hover:bg-polkadot-grey-100 dark:hover:bg-polkadot-grey-800"
               }`}
             >
               <Building className="w-3 h-3" />
               PCF
             </Link>
 
-            <a
-              href="https://wiki.polkadot.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-2 py-1.5 rounded-md text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all text-xs whitespace-nowrap"
-            >
-              Wiki
-            </a>
-
             {/* Mobile Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-1.5 rounded-md text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all flex-shrink-0"
+              className="p-1.5 rounded-md text-polkadot-grey-700 dark:text-polkadot-grey-300 hover:text-black dark:hover:text-white hover:bg-polkadot-grey-100 dark:hover:bg-polkadot-grey-800 transition-all flex-shrink-0"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? (

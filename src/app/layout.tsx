@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/context/ThemeContext";
+import ThemeInitializer from "@/components/custom/ThemeInitializer";
 import StructuredData from "@/components/custom/StructuredData";
 
 const dmSans = DM_Sans({
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     siteName: 'Polkadot.law',
     images: [
       {
-        url: '/og-image.png',
+        url: '/polkadot-icon.svg',
         width: 1200,
         height: 630,
         alt: 'Polkadot.law Legal Resource Portal',
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Polkadot.law - Legal Resource Portal',
     description: 'Treasury-funded legal research and resources for the Polkadot DAO ecosystem.',
-    images: ['/og-image.png'],
+    images: ['/polkadot-icon.svg'],
   },
   robots: {
     index: true,
@@ -86,9 +86,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'google-verification-code',
-  },
   category: 'legal services',
 };
 
@@ -100,14 +97,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <StructuredData type="website" page="home" />
       </head>
       <body
         className={`${dmSans.variable} ${dmSerifDisplay.variable} antialiased`}
       >
-        <ThemeProvider>
+        <ThemeInitializer>
           {children}
-        </ThemeProvider>
+        </ThemeInitializer>
       </body>
     </html>
   );

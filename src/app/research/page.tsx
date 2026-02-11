@@ -1,15 +1,35 @@
-import React from "react";
+import { Metadata } from "next";
 import NavigationBar from "@/components/custom/NavigationBar";
 import Footer from "@/components/custom/Footer";
 import { Calendar, Clock, Sparkles } from "lucide-react";
 
-const ResearchPage = () => {
+export const metadata: Metadata = {
+  title: "Academic Research - Polkadot DAO Legal Framework Study",
+  description:
+    "Treasury-funded academic research on Polkadot DAO structures under U.S. and international law. BlockGov Cookbook, legal precedents, and governance frameworks.",
+  keywords: [
+    "Polkadot DAO research",
+    "blockchain governance",
+    "legal framework",
+    "BlockGov Cookbook",
+    "treasury funded research",
+    "DAO legal precedents",
+  ],
+  openGraph: {
+    title: "Academic Research - Polkadot DAO Legal Framework Study",
+    description:
+      "Treasury-funded academic research on Polkadot DAO structures under U.S. and international law.",
+    images: ["/polkadot-icon.svg"],
+  },
+};
+
+export default function ResearchPage() {
   return (
     <>
       <NavigationBar />
 
       <div className="pt-14 sm:pt-16">
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-polkadot-grey-100 to-gray-50 dark:from-black dark:via-polkadot-grey-950 dark:to-black flex items-center justify-center px-4 sm:px-6 py-20">
+        <div className="min-h-screen bg-gradient-to-br from-polkadot-grey-50 via-polkadot-grey-100 to-polkadot-grey-50 dark:from-polkadot-grey-950 dark:via-polkadot-grey-900 dark:to-polkadot-grey-950 flex items-center justify-center px-4 sm:px-6 py-20">
           {/* Animated Background Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-polkadot-grey-950/20 rounded-full blur-3xl animate-pulse"></div>
@@ -24,7 +44,7 @@ const ResearchPage = () => {
             </div>
 
             {/* Coming Soon Card */}
-            <div className="bg-gradient-to-br from-white/95 to-white/80 dark:from-black/95 dark:to-black/80 backdrop-blur-2xl shadow-2xl border-2 border-polkadot-grey-950/30 rounded-3xl overflow-hidden transform hover:scale-[1.02] transition-all duration-500">
+            <div className="bg-gradient-to-br from-polkadot-grey-50 to-polkadot-grey-100 dark:from-polkadot-grey-950 dark:to-polkadot-grey-950/90 backdrop-blur-2xl shadow-2xl border-2 border-polkadot-grey-950/30 dark:border-polkadot-grey-700/30 rounded-3xl overflow-hidden transform hover:scale-[1.02] transition-all duration-500">
               {/* Header */}
               <div className="relative bg-gradient-to-r from-polkadot-grey-950 via-polkadot-grey-950 to-polkadot-grey-800 p-12 sm:p-16 text-center overflow-hidden">
                 {/* Animated Background Pattern */}
@@ -55,7 +75,7 @@ const ResearchPage = () => {
                 <div className="flex items-center justify-center gap-2 mb-8">
                   <Clock className="w-6 h-6 text-polkadot-grey-950 dark:text-polkadot-grey-400" />
                   <h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-white">
-                    January 2026
+                    Q1 2026
                   </h2>
                 </div>
               </div>
@@ -67,6 +87,4 @@ const ResearchPage = () => {
       <Footer />
     </>
   );
-};
-
-export default ResearchPage;
+}

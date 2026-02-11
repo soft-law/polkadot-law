@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,6 +14,8 @@ import {
 import Link from "next/link";
 import NavigationBar from "@/components/custom/NavigationBar";
 import Footer from "@/components/custom/Footer";
+import HeroBackground from "@/components/custom/HeroBackground";
+import PolkadotIcon from "@/components/custom/PolkadotIcon";
 
 export default function PolkadotLawPortal() {
   const legalResources = [
@@ -22,7 +23,7 @@ export default function PolkadotLawPortal() {
       icon: Building,
       title: "Community Foundation (PCF)",
       description:
-        "A overview and contact information of the Polkadot Community Foundation structure, governance, and operations including Cayman Islands incorporation and Hong Kong subsidiary operations",
+        "An overview and contact information of the Polkadot Community Foundation structure, governance, and operations including Cayman Islands incorporation and Hong Kong subsidiary operations",
       category: "Foundation",
       features: [
         "Cayman Islands Structure",
@@ -31,7 +32,7 @@ export default function PolkadotLawPortal() {
         "Director Nominations",
       ],
       link: "/pcf",
-      color: "pink",
+      color: "primary",
       status: "Active",
       priority: "high",
     },
@@ -48,8 +49,8 @@ export default function PolkadotLawPortal() {
         "Governance Frameworks",
       ],
       link: "/research",
-      color: "magenta",
-      status: "On Development",
+      color: "secondary",
+      status: "In Development",
       priority: "high",
     },
   ];
@@ -59,41 +60,40 @@ export default function PolkadotLawPortal() {
       title: "Research Phase",
       description:
         "Drafting, Literature Review, Bibliography, Researching laws and Polkadot current state.",
-      status: "active",
+      status: "completed",
       date: "Sep - Oct 2025",
     },
     {
       title: "Writing Phase",
-      description: "Writing and feedback collection. ",
-      status: "planning",
+      description: "Writing and feedback collection.",
+      status: "completed",
       date: "Oct - Dec 2025",
     },
-
     {
       title: "Legal Portal Launch v1",
       description: "Comprehensive legal resource portal v1 deployed",
-      status: "planning",
-      date: "January 2026",
+      status: "active",
+      date: "February 2026",
     },
     {
       title: "Academic Paper Publishing",
       description:
         "The academic paper will be published on the website and Polkadot Forums, according to the ref 1676.",
-      status: "planning",
-      date: "January 2026",
+      status: "active",
+      date: "February 2026",
     },
   ];
 
   const getColorClasses = (color: string): string => {
     const colorMap: Record<string, string> = {
-      pink: "border-polkadot-grey-950/30 bg-polkadot-grey-950/10 dark:bg-polkadot-grey-950/20 hover:bg-polkadot-grey-950/20 dark:hover:bg-polkadot-grey-950/30 text-polkadot-grey-950 dark:text-polkadot-grey-400",
+      primary: "border-polkadot-grey-950/30 dark:border-polkadot-grey-700/30 bg-polkadot-grey-950/10 dark:bg-polkadot-grey-900 hover:bg-polkadot-grey-950/20 dark:hover:bg-polkadot-grey-800 text-polkadot-grey-950 dark:text-polkadot-grey-400",
       light:
-        "border-polkadot-grey-400/30 bg-polkadot-grey-400/10 dark:bg-polkadot-grey-400/20 hover:bg-polkadot-grey-400/20 dark:hover:bg-polkadot-grey-400/30 text-polkadot-grey-800 dark:text-polkadot-grey-300",
-      dark: "border-polkadot-grey-950/30 bg-polkadot-grey-950/10 dark:bg-polkadot-grey-950/20 hover:bg-polkadot-grey-950/20 dark:hover:bg-polkadot-grey-950/30 text-polkadot-grey-950 dark:text-polkadot-grey-800",
-      magenta:
-        "border-polkadot-grey-800/30 bg-polkadot-grey-800/10 dark:bg-polkadot-grey-800/20 hover:bg-polkadot-grey-800/20 dark:hover:bg-polkadot-grey-800/30 text-polkadot-grey-950 dark:text-polkadot-grey-400",
+        "border-polkadot-grey-400/30 dark:border-polkadot-grey-700/30 bg-polkadot-grey-400/10 dark:bg-polkadot-grey-900 hover:bg-polkadot-grey-400/20 dark:hover:bg-polkadot-grey-800 text-polkadot-grey-800 dark:text-polkadot-grey-300",
+      dark: "border-polkadot-grey-950/30 dark:border-polkadot-grey-700/30 bg-polkadot-grey-950/10 dark:bg-polkadot-grey-900 hover:bg-polkadot-grey-950/20 dark:hover:bg-polkadot-grey-800 text-polkadot-grey-950 dark:text-polkadot-grey-300",
+      secondary:
+        "border-polkadot-grey-800/30 dark:border-polkadot-grey-700/30 bg-polkadot-grey-800/10 dark:bg-polkadot-grey-900 hover:bg-polkadot-grey-800/20 dark:hover:bg-polkadot-grey-800 text-polkadot-grey-950 dark:text-polkadot-grey-400",
     };
-    return colorMap[color] || colorMap.pink;
+    return colorMap[color] || colorMap.primary;
   };
 
   const getStatusColor = (status: string): string => {
@@ -101,11 +101,11 @@ export default function PolkadotLawPortal() {
       Active:
         "bg-polkadot-grey-950/20 text-polkadot-grey-950 dark:text-polkadot-grey-300 border-polkadot-grey-950/30",
       Published:
-        "bg-polkadot-grey-800/20 text-polkadot-grey-800 dark:text-polkadot-grey-300 border-polkadot-grey-800/30",
-      "On Development":
-        "bg-polkadot-grey-400/20 text-polkadot-grey-400 dark:text-polkadot-grey-300 border-polkadot-grey-400/30",
+        "bg-polkadot-grey-800/20 text-polkadot-grey-700 dark:text-polkadot-grey-300 border-polkadot-grey-800/30",
+      "In Development":
+        "bg-polkadot-grey-400/20 text-polkadot-grey-600 dark:text-polkadot-grey-300 border-polkadot-grey-400/30",
       Planning:
-        "bg-gray-600/20 text-gray-600 dark:text-gray-300 border-gray-600/30",
+        "bg-polkadot-grey-600/20 text-polkadot-grey-600 dark:text-polkadot-grey-300 border-polkadot-grey-600/30",
     };
     return statusMap[status] || statusMap.Planning;
   };
@@ -119,7 +119,7 @@ export default function PolkadotLawPortal() {
       case "medium":
         return <Target className="w-3 h-3 text-polkadot-grey-800 dark:text-polkadot-grey-300" />;
       default:
-        return <Zap className="w-3 h-3 text-polkadot-grey-400 dark:text-polkadot-grey-200" />;
+        return <Zap className="w-3 h-3 text-polkadot-grey-500 dark:text-polkadot-grey-300" />;
     }
   };
 
@@ -133,160 +133,11 @@ export default function PolkadotLawPortal() {
         <div className="min-h-screen bg-gradient-to-br from-polkadot-grey-50 via-polkadot-grey-100 to-polkadot-grey-50 dark:from-polkadot-grey-950 dark:via-polkadot-grey-900 dark:to-polkadot-grey-950">
           {/* Enhanced Hero Section */}
           <div className="relative overflow-hidden">
-            <div className="absolute inset-0 bg-white/20 dark:bg-black/20"></div>
+            <div className="absolute inset-0 bg-polkadot-grey-200/20 dark:bg-polkadot-grey-950/20"></div>
 
-            {/* Network Animation Background */}
-            <div className="absolute inset-0 opacity-30">
-              <svg className="w-full h-full" viewBox="0 0 1000 600">
-                <g
-                  className="stroke-gray-600 dark:stroke-white transition-colors duration-300"
-                  strokeWidth="1"
-                  fill="none"
-                  opacity="0.4"
-                >
-                  <line
-                    x1="50"
-                    y1="100"
-                    x2="200"
-                    y2="150"
-                    className="animate-pulse delay-100"
-                  />
-                  <line
-                    x1="200"
-                    y1="150"
-                    x2="400"
-                    y2="120"
-                    className="animate-pulse delay-300"
-                  />
-                  <line
-                    x1="400"
-                    y1="120"
-                    x2="600"
-                    y2="140"
-                    className="animate-pulse delay-500"
-                  />
-                  <line
-                    x1="600"
-                    y1="140"
-                    x2="800"
-                    y2="100"
-                    className="animate-pulse delay-700"
-                  />
-                  <line
-                    x1="150"
-                    y1="300"
-                    x2="350"
-                    y2="280"
-                    className="animate-pulse delay-1000"
-                  />
-                  <line
-                    x1="350"
-                    y1="280"
-                    x2="550"
-                    y2="300"
-                    className="animate-pulse delay-1200"
-                  />
-                  <line
-                    x1="550"
-                    y1="300"
-                    x2="750"
-                    y2="280"
-                    className="animate-pulse delay-1500"
-                  />
-                  <line
-                    x1="100"
-                    y1="500"
-                    x2="300"
-                    y2="480"
-                    className="animate-pulse delay-1700"
-                  />
-                  <line
-                    x1="300"
-                    y1="480"
-                    x2="500"
-                    y2="500"
-                    className="animate-pulse delay-2000"
-                  />
-                  <line
-                    x1="500"
-                    y1="500"
-                    x2="700"
-                    y2="480"
-                    className="animate-pulse delay-100"
-                  />
-                </g>
-                <g
-                  className="fill-gray-600 dark:fill-white transition-colors duration-300"
-                  opacity="0.6"
-                >
-                  <circle
-                    cx="200"
-                    cy="150"
-                    r="3"
-                    className="animate-pulse delay-300"
-                  />
-                  <circle
-                    cx="400"
-                    cy="120"
-                    r="4"
-                    className="animate-pulse delay-600"
-                  />
-                  <circle
-                    cx="600"
-                    cy="140"
-                    r="3"
-                    className="animate-pulse delay-900"
-                  />
-                  <circle
-                    cx="350"
-                    cy="280"
-                    r="3"
-                    className="animate-pulse delay-1200"
-                  />
-                  <circle
-                    cx="550"
-                    cy="300"
-                    r="4"
-                    className="animate-pulse delay-1500"
-                  />
-                  <circle
-                    cx="300"
-                    cy="480"
-                    r="3"
-                    className="animate-pulse delay-1800"
-                  />
-                  <circle
-                    cx="500"
-                    cy="500"
-                    r="3"
-                    className="animate-pulse delay-100"
-                  />
-                </g>
-                <g fill="#0F0F0F">
-                  <circle cx="400" cy="120" r="6" className="animate-bounce">
-                    <animate
-                      attributeName="r"
-                      values="4;8;4"
-                      dur="3s"
-                      repeatCount="indefinite"
-                    />
-                  </circle>
-                  <circle
-                    cx="550"
-                    cy="300"
-                    r="6"
-                    className="animate-bounce delay-1000"
-                  >
-                    <animate
-                      attributeName="r"
-                      values="4;8;4"
-                      dur="3s"
-                      repeatCount="indefinite"
-                      begin="1s"
-                    />
-                  </circle>
-                </g>
-              </svg>
+            {/* Three.js Network Animation Background */}
+            <div className="absolute inset-0 opacity-50">
+              <HeroBackground />
             </div>
 
             <div
@@ -294,7 +145,7 @@ export default function PolkadotLawPortal() {
               style={{
                 background: `
                 radial-gradient(circle at 30% 70%, rgba(15, 15, 15, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%)
+                radial-gradient(circle at 70% 30%, rgba(15, 15, 15, 0.05) 0%, transparent 50%)
               `,
               }}
             />
@@ -302,29 +153,25 @@ export default function PolkadotLawPortal() {
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 lg:py-32">
               <div className="text-center text-black dark:text-white">
                 <div className="flex justify-center mb-6 sm:mb-8">
-                  <div className="p-4 sm:p-6 bg-white/10 rounded-full backdrop-blur-sm">
-                    <BookOpen className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />
+                  <div className="p-5 sm:p-7 bg-polkadot-grey-200/10 dark:bg-polkadot-grey-800/30 rounded-full backdrop-blur-sm border border-polkadot-grey-300/30 dark:border-polkadot-grey-600/20">
+                    <PolkadotIcon className="w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-polkadot-grey-950 dark:text-polkadot-cool-gray" />
                   </div>
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8 font-unbounded">
-                  <span
-                    style={{
-                      background: "linear-gradient(45deg, #ffffff, #0F0F0F)",
-                      backgroundClip: "text",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                    }}
-                  >
-                    Polkadot.law
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8 font-serif tracking-tight">
+                  <span className="text-polkadot-grey-950 dark:text-white">
+                    Polkadot
+                  </span>
+                  <span className="text-polkadot-grey-500 dark:text-polkadot-grey-400">
+                    .law
                   </span>
                 </h1>
 
-                <p className="text-xl sm:text-2xl md:text-3xl mb-6 sm:mb-8 max-w-4xl mx-auto text-gray-700 dark:text-gray-200 leading-relaxed font-light">
+                <p className="text-xl sm:text-2xl md:text-3xl mb-6 sm:mb-8 max-w-4xl mx-auto text-polkadot-grey-700 dark:text-polkadot-grey-200 leading-relaxed font-light">
                   Legal Resource Portal
                 </p>
 
-                <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-12 max-w-4xl mx-auto text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-12 max-w-4xl mx-auto text-polkadot-grey-600 dark:text-polkadot-grey-300 leading-relaxed">
                   Comprehensive legal portal for the Polkadot ecosystem.
                 </p>
               </div>
@@ -339,7 +186,7 @@ export default function PolkadotLawPortal() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-16 max-w-4xl mx-auto">
               {legalResources.map((resource, index) => (
                 <Card
                   key={index}
@@ -349,11 +196,11 @@ export default function PolkadotLawPortal() {
                 >
                   <CardHeader className="pb-4">
                     <div className="flex items-start justify-between mb-4">
-                      <div className="p-3 rounded-lg bg-gray-200/50 dark:bg-black/30">
+                      <div className="p-3 rounded-lg bg-polkadot-grey-200/50 dark:bg-polkadot-grey-800">
                         <resource.icon className="w-6 h-6" />
                       </div>
                       <div className="flex flex-col gap-2">
-                        <span className="px-3 py-1 text-xs font-medium bg-gray-100/50 dark:bg-white/10 rounded-full text-gray-700 dark:text-gray-300">
+                        <span className="px-3 py-1 text-xs font-medium bg-polkadot-grey-100/50 dark:bg-polkadot-grey-800 rounded-full text-polkadot-grey-700 dark:text-polkadot-grey-300">
                           {resource.category}
                         </span>
                         <span
@@ -373,7 +220,7 @@ export default function PolkadotLawPortal() {
                       {resource.priority && getPriorityIcon(resource.priority)}
                     </div>
 
-                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
+                    <p className="text-polkadot-grey-600 dark:text-polkadot-grey-300 text-sm leading-relaxed mb-3">
                       {resource.description}
                     </p>
                   </CardHeader>
@@ -382,8 +229,8 @@ export default function PolkadotLawPortal() {
                     <div className="space-y-2 mb-6">
                       {resource.features.map((feature, fIndex) => (
                         <div key={fIndex} className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 opacity-60" />
-                          <span className="text-sm text-gray-600 dark:text-gray-300">
+                          <CheckCircle className="w-4 h-4 text-polkadot-grey-500 dark:text-polkadot-grey-400" />
+                          <span className="text-sm text-polkadot-grey-600 dark:text-polkadot-grey-300">
                             {feature}
                           </span>
                         </div>
@@ -391,7 +238,7 @@ export default function PolkadotLawPortal() {
                     </div>
 
                     <Button
-                      className="w-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 text-black dark:text-white border border-gray-300 dark:border-white/20"
+                      className="w-full bg-polkadot-grey-100 dark:bg-polkadot-grey-800 hover:bg-polkadot-grey-200 dark:hover:bg-polkadot-grey-700 text-black dark:text-white border border-polkadot-grey-300 dark:border-polkadot-grey-700/30"
                       asChild
                     >
                       <Link
@@ -408,8 +255,8 @@ export default function PolkadotLawPortal() {
             </div>
 
             {/* Project Roadmap/Timeline */}
-            <Card className="bg-white/70 dark:bg-black/70 backdrop-blur-md border border-gray-300 dark:border-white/10 shadow-xl mb-16">
-              <CardHeader className="bg-gradient-to-r from-polkadot-grey-950/90 to-polkadot-grey-950/90 backdrop-blur-sm text-white rounded-t-lg">
+            <Card className="bg-polkadot-grey-50 dark:bg-polkadot-grey-950 backdrop-blur-md border border-polkadot-grey-300 dark:border-polkadot-grey-800/40 shadow-xl mb-16">
+              <CardHeader className="bg-gradient-to-r from-polkadot-grey-950/90 to-polkadot-grey-950/90 dark:from-polkadot-grey-950 dark:to-polkadot-grey-900 backdrop-blur-sm text-white rounded-t-lg">
                 <CardTitle className="flex items-center gap-3 text-2xl">
                   <Calendar className="w-6 h-6" />
                   Project Timeline & Milestones
@@ -422,30 +269,31 @@ export default function PolkadotLawPortal() {
                       key={index}
                       className={`p-6 rounded-lg border ${
                         milestone.status === "completed"
-                          ? "bg-polkadot-grey-950/10 border-polkadot-grey-950/30"
+                          ? "bg-polkadot-grey-100 dark:bg-polkadot-grey-900 border-polkadot-grey-300 dark:border-polkadot-grey-700/40"
                           : milestone.status === "active"
-                          ? "bg-polkadot-grey-800/10 border-polkadot-grey-800/30"
-                          : "bg-gray-200/50 dark:bg-gray-800/50 border-gray-400 dark:border-gray-600/30"
+                          ? "bg-polkadot-grey-950/10 dark:bg-polkadot-grey-900 border-polkadot-grey-950/30 dark:border-polkadot-grey-600/40"
+                          : "bg-polkadot-grey-200/50 dark:bg-polkadot-grey-900/80 border-polkadot-grey-400 dark:border-polkadot-grey-700/30"
                       }`}
                     >
                       <div className="flex items-center gap-2 mb-3">
-                        <div
-                          className={`w-3 h-3 rounded-full ${
-                            milestone.status === "completed"
-                              ? "bg-polkadot-grey-950"
-                              : milestone.status === "active"
-                              ? "bg-polkadot-grey-800"
-                              : "bg-gray-400"
-                          }`}
-                        ></div>
-                        <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
+                        {milestone.status === "completed" ? (
+                          <CheckCircle className="w-4 h-4 text-polkadot-grey-950 dark:text-polkadot-grey-200" />
+                        ) : milestone.status === "active" ? (
+                          <div className="relative flex h-3 w-3">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-polkadot-grey-950 dark:bg-polkadot-grey-300 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-polkadot-grey-950 dark:bg-polkadot-grey-300"></span>
+                          </div>
+                        ) : (
+                          <div className="w-3 h-3 rounded-full border-2 border-polkadot-grey-400 dark:border-polkadot-grey-400"></div>
+                        )}
+                        <span className="text-xs font-medium text-polkadot-grey-600 dark:text-polkadot-grey-400">
                           {milestone.date}
                         </span>
                       </div>
                       <h4 className="font-semibold text-black dark:text-white mb-2">
                         {milestone.title}
                       </h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">
+                      <p className="text-sm text-polkadot-grey-600 dark:text-polkadot-grey-300">
                         {milestone.description}
                       </p>
                     </div>
@@ -455,33 +303,34 @@ export default function PolkadotLawPortal() {
             </Card>
 
             {/* Enhanced Featured Resources */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <div className="mb-16 max-w-2xl mx-auto">
               {/* Treasury Research Highlight */}
-              <Card className="bg-gradient-to-br from-polkadot-grey-950/20 to-polkadot-grey-950/20 backdrop-blur-md border border-polkadot-grey-950/30 shadow-xl">
+              <Card className="bg-polkadot-grey-50 dark:bg-polkadot-grey-950 backdrop-blur-md border border-polkadot-grey-300 dark:border-polkadot-grey-700/40 shadow-xl">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 rounded-lg bg-polkadot-grey-950/30">
-                      <BookOpen className="w-6 h-6 text-polkadot-grey-300" />
+                    <div className="p-3 rounded-lg bg-polkadot-grey-200 dark:bg-polkadot-grey-800">
+                      <BookOpen className="w-6 h-6 text-polkadot-grey-950 dark:text-polkadot-grey-200" />
                     </div>
                     <div className="flex flex-col">
-                      <span className="px-3 py-1 text-xs font-medium bg-polkadot-grey-950/20 text-polkadot-grey-300 rounded-full w-fit">
-                        Treasury Funded
+                      <span className="px-3 py-1 text-xs font-medium bg-polkadot-grey-200 dark:bg-polkadot-grey-800 text-polkadot-grey-700 dark:text-polkadot-grey-300 rounded-full w-fit">
+                        Community Initiative
                       </span>
                     </div>
                   </div>
-                  <CardTitle className="text-2xl font-bold text-white">
-                    Legal Research Publication
+                  <CardTitle className="text-2xl font-bold text-black dark:text-white">
+                    Legal Research Hub
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                    Comprehensive academic research on Polkadot DAO structures
-                    under U.S. and international law, funded by community
-                    treasury through Referendum #1676.
+                  <p className="text-polkadot-grey-600 dark:text-polkadot-grey-300 mb-6 leading-relaxed">
+                    A growing resource for academic publications, legal analysis,
+                    and educational materials on DAO regulation — helping
+                    policymakers and lawyers shape blockchain governance
+                    frameworks worldwide.
                   </p>
                   <div className="flex gap-3">
                     <Button
-                      className="flex-1 bg-polkadot-grey-950 hover:bg-polkadot-grey-900 text-white"
+                      className="flex-1 bg-polkadot-grey-950 dark:bg-polkadot-grey-800 hover:bg-polkadot-grey-900 dark:hover:bg-polkadot-grey-600 text-white"
                       asChild
                     >
                       <Link
@@ -489,7 +338,7 @@ export default function PolkadotLawPortal() {
                         className="flex items-center justify-center gap-2"
                       >
                         <Eye className="w-4 h-4" />
-                        Read Research
+                        Explore Research
                       </Link>
                     </Button>
                   </div>

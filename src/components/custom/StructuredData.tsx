@@ -1,32 +1,34 @@
-"use client";
-
-import React from "react";
-
 interface StructuredDataProps {
   type?: "website" | "organization" | "article";
   page?: "home" | "research" | "pcf";
 }
 
-const StructuredData: React.FC<StructuredDataProps> = ({
+export default function StructuredData({
   type = "website",
-  page = "home"
-}) => {
+  page = "home",
+}: StructuredDataProps) {
   const getStructuredData = () => {
     const baseData = {
       "@context": "https://schema.org",
-      "@type": type === "website" ? "WebSite" : type === "organization" ? "Organization" : "Article",
+      "@type":
+        type === "website"
+          ? "WebSite"
+          : type === "organization"
+          ? "Organization"
+          : "Article",
       name: "Polkadot.law",
       url: "https://polkadot.law",
-      description: "Comprehensive legal resource portal for the Polkadot ecosystem",
+      description:
+        "Comprehensive legal resource portal for the Polkadot ecosystem",
       creator: {
         "@type": "Organization",
         name: "soft.law",
-        url: "https://www.soft.law/"
+        url: "https://www.soft.law/",
       },
       publisher: {
         "@type": "Organization",
-        name: "Polkadot Community"
-      }
+        name: "Polkadot Community",
+      },
     };
 
     if (page === "research") {
@@ -34,20 +36,21 @@ const StructuredData: React.FC<StructuredDataProps> = ({
         ...baseData,
         "@type": "Article",
         headline: "Academic Research - Polkadot DAO Legal Framework Study",
-        description: "Treasury-funded academic research on Polkadot DAO structures under U.S. and international law",
+        description:
+          "Treasury-funded academic research on Polkadot DAO structures under U.S. and international law",
         author: {
           "@type": "Organization",
           name: "soft.law",
-          url: "https://www.soft.law/"
+          url: "https://www.soft.law/",
         },
         funding: {
           "@type": "Grant",
           funder: {
             "@type": "Organization",
-            name: "Polkadot Treasury"
+            name: "Polkadot Treasury",
           },
-          identifier: "Referendum #1676"
-        }
+          identifier: "Referendum #1676",
+        },
       };
     }
 
@@ -57,17 +60,12 @@ const StructuredData: React.FC<StructuredDataProps> = ({
         "@type": "Organization",
         name: "Polkadot Community Foundation",
         alternateName: "PCF",
-        description: "Cayman Islands foundation company serving the Polkadot ecosystem",
+        description:
+          "Cayman Islands foundation company serving the Polkadot ecosystem",
         location: [
-          {
-            "@type": "Place",
-            name: "Cayman Islands"
-          },
-          {
-            "@type": "Place",
-            name: "Hong Kong"
-          }
-        ]
+          { "@type": "Place", name: "Cayman Islands" },
+          { "@type": "Place", name: "Hong Kong" },
+        ],
       };
     }
 
@@ -77,14 +75,14 @@ const StructuredData: React.FC<StructuredDataProps> = ({
         "@type": "SearchAction",
         target: {
           "@type": "EntryPoint",
-          urlTemplate: "https://polkadot.law?q={search_term_string}"
+          urlTemplate: "https://polkadot.law?q={search_term_string}",
         },
-        "query-input": "required name=search_term_string"
+        "query-input": "required name=search_term_string",
       },
       sameAs: [
         "https://github.com/soft-law/polkadot-law",
-        "https://polkadot.network"
-      ]
+        "https://polkadot.network",
+      ],
     };
   };
 
@@ -96,6 +94,4 @@ const StructuredData: React.FC<StructuredDataProps> = ({
       }}
     />
   );
-};
-
-export default StructuredData;
+}

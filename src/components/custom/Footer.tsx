@@ -1,17 +1,17 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
-const Footer = () => {
+import PolkadotIcon from "@/components/custom/PolkadotIcon";
+
+export default function Footer() {
   return (
-    <footer className="bg-white/80 dark:bg-black/80 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 mt-16">
+    <footer className="bg-polkadot-grey-50 dark:bg-polkadot-grey-950 backdrop-blur-md border-t border-polkadot-grey-200 dark:border-polkadot-grey-800/40 mt-16">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-6">
         <div className="flex flex-col items-center justify-center space-y-3">
           {/* Main attribution */}
-          <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+          <div className="flex items-center gap-2 text-polkadot-grey-600 dark:text-polkadot-grey-300">
             <span>Made with</span>
             <svg
-              className="w-4 h-4 text-red-500"
+              className="w-4 h-4 text-polkadot-grey-950 dark:text-polkadot-grey-200"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
@@ -29,23 +29,19 @@ const Footer = () => {
           </div>
 
           {/* Funding and community info */}
-          <div className="flex flex-col items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
+          <div className="flex flex-col items-center gap-1 text-sm text-polkadot-grey-500 dark:text-polkadot-grey-400">
             <div className="flex items-center gap-2">
               <span>Funded by</span>
               <div className="flex items-center gap-1">
-                <Image
-                  src="/Polkadot_Logo_Pink-White.png"
-                  alt="Polkadot Law"
-                  width={100}
-                  height={100}
-                />
+                <PolkadotIcon className="w-5 h-5 text-polkadot-grey-950 dark:text-polkadot-grey-300" />
+                <span className="font-semibold text-polkadot-grey-700 dark:text-polkadot-grey-300">Polkadot</span>
               </div>
               <span>•</span>
               <a
                 href="https://polkadot.subsquare.io/referenda/1676"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline transition-colors duration-200"
+                className="text-polkadot-grey-950 dark:text-polkadot-grey-200 hover:text-polkadot-grey-700 dark:hover:text-white underline transition-colors duration-200"
               >
                 Referendum #1676
               </a>
@@ -53,7 +49,7 @@ const Footer = () => {
           </div>
 
           {/* Legal and links */}
-          <div className="flex flex-col items-center gap-1 text-xs text-gray-400 dark:text-gray-500">
+          <div className="flex flex-col items-center gap-1 text-xs text-polkadot-grey-500 dark:text-polkadot-grey-400">
             <div className="text-center">
               Project rights belong to the community
             </div>
@@ -62,7 +58,7 @@ const Footer = () => {
                 href="https://github.com/soft-law/polkadot-law"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
+                className="hover:text-polkadot-grey-600 dark:hover:text-polkadot-grey-300 transition-colors duration-200"
               >
                 GitHub
               </a>
@@ -71,7 +67,7 @@ const Footer = () => {
                 href="https://polkadot.network"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
+                className="hover:text-polkadot-grey-600 dark:hover:text-polkadot-grey-300 transition-colors duration-200"
               >
                 Polkadot Network
               </a>
@@ -81,6 +77,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

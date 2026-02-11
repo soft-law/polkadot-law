@@ -48,9 +48,9 @@
   /* Polkadot Second Age - Light Mode */
   --background: oklch(0.98 0 0); /* #FAFAF9 - grey-50 */
   --foreground: oklch(0.195 0 0); /* #1C1917 - grey-900 */
-  --card: oklch(1 0 0); /* #FFFFFF - surface */
+  --card: oklch(0.98 0 0); /* #FAFAF9 - grey-50 */
   --card-foreground: oklch(0.195 0 0); /* #1C1917 - grey-900 */
-  --popover: oklch(1 0 0); /* #FFFFFF */
+  --popover: oklch(0.98 0 0); /* #FAFAF9 - grey-50 */
   --popover-foreground: oklch(0.195 0 0); /* #1C1917 - grey-900 */
   --primary: oklch(0.09 0 0); /* #0F0F0F - grey-950, black accent */
   --primary-foreground: oklch(0.98 0 0); /* #FAFAF9 - light text on black */
@@ -83,9 +83,9 @@
   /* Polkadot Second Age - Dark Mode (inverted) */
   --background: oklch(0.195 0 0); /* #1C1917 - grey-900 */
   --foreground: oklch(0.98 0 0); /* #FAFAF9 - grey-50 */
-  --card: oklch(0.23 0 0); /* #292524 - grey-800 */
+  --card: oklch(0.145 0 0); /* #1C1917 - grey-900, dark card surface */
   --card-foreground: oklch(0.98 0 0); /* #FAFAF9 - grey-50 */
-  --popover: oklch(0.23 0 0); /* #292524 - grey-800 */
+  --popover: oklch(0.145 0 0); /* #1C1917 - grey-900 */
   --popover-foreground: oklch(0.98 0 0); /* #FAFAF9 - grey-50 */
   --primary: oklch(0.96 0 0); /* #F5F5F4 - grey-100, light accent on dark */
   --primary-foreground: oklch(0.09 0 0); /* #0F0F0F - grey-950 */
@@ -104,7 +104,7 @@
   --chart-3: oklch(0.696 0 0); /* grey-400 */
   --chart-4: oklch(0.533 0 0); /* grey-500 */
   --chart-5: oklch(0.389 0 0); /* grey-600 */
-  --sidebar: oklch(0.23 0 0); /* #292524 - grey-800 */
+  --sidebar: oklch(0.145 0 0); /* #1C1917 - grey-900 */
   --sidebar-foreground: oklch(0.98 0 0); /* #FAFAF9 - grey-50 */
   --sidebar-primary: oklch(0.96 0 0); /* #F5F5F4 - grey-100 */
   --sidebar-primary-foreground: oklch(0.09 0 0); /* #0F0F0F - grey-950 */
