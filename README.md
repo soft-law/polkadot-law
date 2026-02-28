@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Polkadot.law
+
+Legal research hub for the Web3 ecosystem, built and funded by the Polkadot DAO ([Referendum #1676](https://polkadot.subsquare.io/referenda/1676)).
+
+Live at **[polkadot.law](https://polkadot.law)**
+
+---
+
+## About
+
+Polkadot.law publishes academic research at the intersection of law and Web3. The first paper — *Polkadot DAO Academic Research: DAO Legal Frameworks and Treasury Proposals Under U.S. and International Law* — is hosted on IPFS and readable directly in the browser.
+
+Research is produced by [soft.law](https://www.soft.law/) and all project rights belong to the Polkadot DAO.
+
+---
+
+## Tech Stack
+
+- **Next.js 15** (App Router, Turbopack)
+- **React 19** + TypeScript strict
+- **Tailwind CSS v4**
+- **Zustand** — dark/light theme state
+- **Three.js** via `@react-three/fiber` — animated particle network background
+- **react-pdf** — in-browser PDF viewer with virtualized scroll
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## PDF Hosting
 
-## Learn More
+Papers are served from IPFS via a dedicated Pinata gateway. The canonical public IPFS URL is also stored in `src/data/papers.ts` for reference.
 
-To learn more about Next.js, take a look at the following resources:
+| Field | URL |
+|---|---|
+| `pdfUrl` | `https://harlequin-quiet-smelt-978.mypinata.cloud/ipfs/<CID>` |
+| `ipfsUrl` | `https://ipfs.io/ipfs/<CID>` |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+src/
+  app/
+    page.tsx              # Home — hero + PDF viewer
+    layout.tsx            # Root layout, metadata, theme init
+    sitemap.ts
+  components/custom/
+    NavigationBar.tsx     # Logo + theme toggle
+    Footer.tsx            # Attribution, links
+    PdfViewer.tsx         # Full-featured PDF viewer (zoom, sections, full-page mode)
+    PdfViewerWrapper.tsx  # SSR boundary for react-pdf
+    HeroBackground.tsx    # Lazy-loaded Three.js wrapper
+    NetworkAnimation.tsx  # Particle network (Three.js / r3f)
+    ThemeInitializer.tsx  # localStorage + DOM class sync
+  data/
+    papers.ts             # Paper metadata and IPFS URLs
+  store/
+    themeStore.ts         # Zustand theme store
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+
+This project is open source. Issues and PRs welcome at [github.com/soft-law/polkadot-law](https://github.com/soft-law/polkadot-law).

@@ -21,25 +21,24 @@ const dmSerifDisplay = DM_Serif_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "Polkadot.law - Legal Resource Portal for Polkadot Ecosystem",
-    template: "%s | Polkadot.law"
+    default: "Polkadot.law — Legal Research for the Web3 Ecosystem",
+    template: "%s | Polkadot.law",
   },
-  description: "Comprehensive legal resource portal for the Polkadot ecosystem. Treasury-funded academic research on DAO structures, PCF governance, and legal frameworks for blockchain governance under U.S. and international law.",
+  description:
+    "Treasury-funded academic research on DAO legal frameworks, blockchain governance, and international law — produced by soft.law for the Polkadot community.",
   keywords: [
     "Polkadot",
     "DAO",
-    "legal",
-    "governance",
-    "treasury",
-    "PCF",
-    "Polkadot Community Foundation",
-    "blockchain law",
-    "cryptocurrency legal",
-    "referendum",
+    "DAO legal framework",
+    "blockchain governance",
+    "web3 legal research",
+    "decentralized autonomous organization",
     "OpenGov",
-    "legal framework",
-    "academic research",
-    "soft.law"
+    "Polkadot treasury",
+    "soft.law",
+    "cryptocurrency law",
+    "international law",
+    "smart contracts",
   ],
   authors: [{ name: "soft.law", url: "https://www.soft.law/" }],
   creator: "soft.law",
@@ -49,31 +48,35 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://polkadot.law'),
+  metadataBase: new URL("https://polkadot.law"),
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   openGraph: {
-    title: "Polkadot.law - Legal Resource Portal for Polkadot Ecosystem",
-    description: "Treasury-funded legal research and resources for the Polkadot DAO. Academic research on blockchain governance, PCF structure, and legal frameworks.",
-    url: 'https://polkadot.law',
-    siteName: 'Polkadot.law',
+    title: "Polkadot.law — Legal Research for the Web3 Ecosystem",
+    description:
+      "Treasury-funded academic research on DAO legal frameworks, blockchain governance, and international law — produced by soft.law for the Polkadot community.",
+    url: "https://polkadot.law",
+    siteName: "Polkadot.law",
     images: [
       {
-        url: '/polkadot-icon.svg',
-        width: 1200,
-        height: 630,
-        alt: 'Polkadot.law Legal Resource Portal',
+        url: "/polkadot-law-logo-dark.png",
+        width: 1600,
+        height: 400,
+        alt: "Polkadot.law",
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Polkadot.law - Legal Resource Portal',
-    description: 'Treasury-funded legal research and resources for the Polkadot DAO ecosystem.',
-    images: ['/polkadot-icon.svg'],
+    card: "summary_large_image",
+    title: "Polkadot.law — Legal Research for the Web3 Ecosystem",
+    description:
+      "Treasury-funded academic research on DAO legal frameworks, blockchain governance, and international law.",
+    site: "@soft_law",
+    creator: "@soft_law",
+    images: ["/polkadot-law-logo-dark.png"],
   },
   robots: {
     index: true,
@@ -81,12 +84,12 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  category: 'legal services',
+  category: "legal research",
 };
 
 export default function RootLayout({
@@ -98,7 +101,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <StructuredData type="website" page="home" />
+        <StructuredData />
       </head>
       <body
         className={`${dmSans.variable} ${dmSerifDisplay.variable} antialiased`}
