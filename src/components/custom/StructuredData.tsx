@@ -3,7 +3,7 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Polkadot.law",
-    url: "https://polkadot.law",
+    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://polkadot.law",
     description:
       "Treasury-funded academic research on DAO legal frameworks, blockchain governance, and international law.",
     creator: {

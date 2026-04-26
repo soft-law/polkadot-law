@@ -71,6 +71,16 @@ src/
 
 ---
 
+## Licensing
+
+| What | License |
+|------|---------|
+| Source code | [Apache 2.0](LICENSE) |
+| Research & papers | [CC BY-NC 4.0](LICENSE-RESEARCH) |
+| Trademarks | See [NOTICE](NOTICE) |
+
+---
+
 ## Contributing
 
 This project is open source. Issues and PRs welcome at [github.com/soft-law/polkadot-law](https://github.com/soft-law/polkadot-law).

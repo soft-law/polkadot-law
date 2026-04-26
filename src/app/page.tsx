@@ -29,7 +29,7 @@ export default function PolkadotLawPortal() {
               {/* Logo */}
               <div className="flex justify-center mb-4 sm:mb-5">
                 <div className="p-3 sm:p-4 lg:p-5 bg-polkadot-grey-200/10 dark:bg-polkadot-grey-800/30 rounded-full backdrop-blur-sm border border-polkadot-grey-300/30 dark:border-polkadot-grey-600/20">
-                  <PolkadotIcon className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-polkadot-grey-950 dark:text-polkadot-cool-gray" />
+                  <PolkadotIcon aria-label="Polkadot" className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-polkadot-grey-950 dark:text-polkadot-cool-gray" />
                 </div>
               </div>
 
